@@ -1,0 +1,1 @@
+enum EnrollLocalizations { ar, en }
