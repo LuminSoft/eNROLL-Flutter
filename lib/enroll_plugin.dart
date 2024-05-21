@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:enroll_plugin/constants/enroll_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -18,6 +19,7 @@ class EnrollPlugin extends StatefulWidget {
   final Function(String error) onError;
   final BuildContext mainScreenContext;
   final String? googleApiKey;
+  final EnrollColors? enrollColors;
 
   const EnrollPlugin({
     super.key,
@@ -29,6 +31,7 @@ class EnrollPlugin extends StatefulWidget {
     required this.onError,
     required this.mainScreenContext,
     this.googleApiKey,
+    this.enrollColors,
   });
 
   @override
@@ -57,6 +60,7 @@ class _EnrollPluginState extends State<EnrollPlugin> {
       googleApiKey: widget.googleApiKey,
       enrollEnvironment: widget.enrollEnvironment.name,
       localizationCode: widget.localizationCode.name,
+      colors: widget.enrollColors,
     );
   }
 
