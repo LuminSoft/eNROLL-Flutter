@@ -22,26 +22,26 @@ public class EnrollPlugin: NSObject, FlutterPlugin, EnrollCallBack {
     
     
     //MARK: - Registering
-  public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "enroll_plugin", binaryMessenger: registrar.messenger())
-    let instance = EnrollPlugin()
-    registrar.addMethodCallDelegate(instance, channel: channel)
-  }
-
-  public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-      self.result = result
-    switch call.method {
-    case "startEnroll":
+    public static func register(with registrar: FlutterPluginRegistrar) {
+        let channel = FlutterMethodChannel(name: "enroll_plugin", binaryMessenger: registrar.messenger())
+        let instance = EnrollPlugin()
+        registrar.addMethodCallDelegate(instance, channel: channel)
+    }
+    
+    public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
+        self.result = result
+        switch call.method {
+        case "startEnroll":
             if let json = call.arguments as? String{
                 launchEnroll(json: json)
             }
-        
-        self.onSuccess()
-        break
-    default:
-      result(FlutterMethodNotImplemented)
+            
+            self.onSuccess()
+            break
+        default:
+            result(FlutterMethodNotImplemented)
+        }
     }
-  }
     
     //MARK: - Launching Enroll
     func launchEnroll(json: String){
@@ -63,7 +63,25 @@ public class EnrollPlugin: NSObject, FlutterPlugin, EnrollCallBack {
                     }
                     var localizationName = dict["localizationCode"] as? String ?? ""
                     var environmentName = dict["enrollEnvironment"] as? String ?? ""
-                    localizationCode = localizationName == "ar" ? .ar : .en
+                    if localizationName == "ar" {
+                        localizationCode = .ar
+                        UIView.appearance().semanticContentAttribute = .forceRightToLeft
+                        UICollectionView.appearance().semanticContentAttribute = .forceRightToLeft
+                        UINavigationBar.appearance().semanticContentAttribute = .forceRightToLeft
+                        UITextField.appearance().semanticContentAttribute = .forceRightToLeft
+                        UITextField.appearance().textAlignment = .right
+                        UITextView.appearance().semanticContentAttribute = .forceRightToLeft
+                        UITableView.appearance().semanticContentAttribute = .forceRightToLeft
+                    }else {
+                        localizationCode = .en
+                        UIView.appearance().semanticContentAttribute = .forceLeftToRight
+                        UICollectionView.appearance().semanticContentAttribute = .forceLeftToRight
+                        UINavigationBar.appearance().semanticContentAttribute = .forceLeftToRight
+                        UITextField.appearance().semanticContentAttribute = .forceLeftToRight
+                        UITextView.appearance().semanticContentAttribute = .forceLeftToRight
+                        UITextField.appearance().textAlignment = .left
+                        UITableView.appearance().semanticContentAttribute = .forceLeftToRight
+                    }
                     enrollEnvironment = environmentName == "staging" ? .staging : .production
                     
                     
@@ -104,45 +122,45 @@ public class EnrollPlugin: NSObject, FlutterPlugin, EnrollCallBack {
                 appBackgroundColor = UIColor(red: CGFloat(red)/255, green: CGFloat(green)/255, blue: CGFloat(blue)/255, alpha: CGFloat(alpha))
             }
         }
-
+        
         if let black = colors?["appBlack"] as? [String: Any] {
             if let red = black["r"] as? Int, let green = black["g"] as? Int, let blue = black["b"] as? Int, let alpha = black["opacity"] as? Double {
                 appBlack = UIColor(red: CGFloat(red)/255, green: CGFloat(green)/255, blue: CGFloat(blue)/255, alpha: CGFloat(alpha))
             }
         }
-
+        
         if let secondaryColor = colors?["secondary"] as? [String: Any] {
             if let red = secondaryColor["r"] as? Int, let green = secondaryColor["g"] as? Int, let blue = secondaryColor["b"] as? Int, let alpha = secondaryColor["opacity"] as? Double {
                 secondary = UIColor(red: CGFloat(red)/255, green: CGFloat(green)/255, blue: CGFloat(blue)/255, alpha: CGFloat(alpha))
             }
         }
-
-
+        
+        
         if let white = colors?["appWhite"] as? [String: Any] {
             if let red = white["r"] as? Int, let green = white["g"] as? Int, let blue = white["b"] as? Int, let alpha = white["opacity"] as? Double {
                 appWhite = UIColor(red: CGFloat(red)/255, green: CGFloat(green)/255, blue: CGFloat(blue)/255, alpha: CGFloat(alpha))
             }
         }
-
-
+        
+        
         if let error = colors?["errorColor"] as? [String: Any] {
             if let red = error["r"] as? Int, let green = error["g"] as? Int, let blue = error["b"] as? Int, let alpha = error["opacity"] as? Double {
                 errorColor = UIColor(red: CGFloat(red)/255, green: CGFloat(green)/255, blue: CGFloat(blue)/255, alpha: CGFloat(alpha))
             }
         }
-
+        
         if let text = colors?["textColor"] as? [String: Any] {
             if let red = text["r"] as? Int, let green = text["g"] as? Int, let blue = text["b"] as? Int, let alpha = text["opacity"] as? Double {
                 textColor = UIColor(red: CGFloat(red)/255, green: CGFloat(green)/255, blue: CGFloat(blue)/255, alpha: CGFloat(alpha))
             }
         }
-
+        
         if let success = colors?["successColor"] as? [String: Any] {
             if let red = success["r"] as? Int, let green = success["g"] as? Int, let blue = success["b"] as? Int, let alpha = success["opacity"] as? Double {
                 successColor = UIColor(red: CGFloat(red)/255, green: CGFloat(green)/255, blue: CGFloat(blue)/255, alpha: CGFloat(alpha))
             }
         }
-
+        
         if let warning = colors?["warningColor"] as? [String: Any] {
             if let red = warning["r"] as? Int, let green = warning["g"] as? Int, let blue = warning["b"] as? Int, let alpha = warning["opacity"] as? Double {
                 warningColor = UIColor(red: CGFloat(red)/255, green: CGFloat(green)/255, blue: CGFloat(blue)/255, alpha: CGFloat(alpha))
