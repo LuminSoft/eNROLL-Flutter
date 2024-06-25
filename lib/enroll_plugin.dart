@@ -54,6 +54,14 @@ class _EnrollPluginState extends State<EnrollPlugin> {
       DeviceOrientation.portraitDown,
     ]);
 
+    if (widget.tenantId == ''){
+      widget.onError('Tenant id cannot be empty');
+      Navigator.of(context).pop();
+    }
+    if (widget.tenantSecret.isEmpty){
+      widget.onError('Tenant secret cannot be empty');
+      Navigator.of(context).pop();
+    }
     model = EnrollInitModel(
       tenantId: widget.tenantId,
       tenantSecret: widget.tenantSecret,

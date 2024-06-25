@@ -22,7 +22,7 @@ class _EnrollScreenState extends State<EnrollScreen> {
         mainScreenContext: context,
         localizationCode: widget.localization,
         enrollEnvironment: EnrollEnvironment.staging,
-        tenantId: const String.fromEnvironment("TENANT_ID"),
+        tenantId: '',
         onSuccess: () {
           debugPrint("Success");
         },
