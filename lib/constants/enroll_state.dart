@@ -9,4 +9,10 @@ class EnrollError implements EnrollState{
   EnrollError({required this.errorString});
 }
 
+
+class RequestIdReceived implements EnrollState{
+  final String requestId;
+  RequestIdReceived({required this.requestId});
+}
+
 class EnrollSuccess implements EnrollState{}
