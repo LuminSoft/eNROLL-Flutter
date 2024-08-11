@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/enroll_plugin.iml" filepath="$PROJECT_DIR$/.idea/enroll_plugin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android/enroll_plugin_android.iml" filepath="$PROJECT_DIR$/android/enroll_plugin_android.iml" />
     </modules>
   </component>
 </project>

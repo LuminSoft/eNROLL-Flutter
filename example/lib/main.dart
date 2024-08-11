@@ -15,9 +15,17 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  bool _isChecked = false;
+
   @override
   void initState() {
     super.initState();
+  }
+
+  void _handleCheckboxChange(bool? value) {
+    setState(() {
+      _isChecked = value ?? false;
+    });
   }
 
   @override
@@ -37,6 +45,18 @@ class _MyAppState extends State<MyApp> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      Center(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('Skip Tutorial'),
+                            Checkbox(
+                              value: _isChecked,
+                              onChanged: _handleCheckboxChange,
+                            ),
+                          ],
+                        ),
+                      ),
                       Container(
                         margin: const EdgeInsets.only(top: 20),
                         width: 300,
@@ -44,8 +64,8 @@ class _MyAppState extends State<MyApp> {
                             onPressed: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const EnrollScreen(
-                                          localization: EnrollLocalizations.ar,
+                                    builder: (context) =>  EnrollScreen(
+                                          localization: EnrollLocalizations.ar, skipTutorial: _isChecked,
                                         ))),
                             child: const Text("أبدأ")),
                       ),
@@ -56,7 +76,8 @@ class _MyAppState extends State<MyApp> {
                             onPressed: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const EnrollScreen(
+                                    builder: (context) =>  EnrollScreen(
+                                          skipTutorial: _isChecked,
                                           localization: EnrollLocalizations.en,
                                         ))),
                             child: const Text("Start")),
