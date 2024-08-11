@@ -1,4 +1,3 @@
-
 import 'package:enroll_plugin/constants/enroll_colors.dart';
 import 'package:enroll_plugin/constants/enroll_environment.dart';
 import 'package:enroll_plugin/constants/enroll_localizations.dart';
@@ -10,7 +9,8 @@ class EnrollScreen extends StatefulWidget {
   final EnrollLocalizations localization;
   final bool skipTutorial;
 
-  const EnrollScreen({super.key, required this.localization,required this.skipTutorial});
+  const EnrollScreen(
+      {super.key, required this.localization, required this.skipTutorial});
 
   @override
   State<EnrollScreen> createState() => _EnrollScreenState();
@@ -25,7 +25,7 @@ class _EnrollScreenState extends State<EnrollScreen> {
         localizationCode: widget.localization,
         enrollMode: EnrollMode.ONBOARDING,
         enrollEnvironment: EnrollEnvironment.production,
-        tenantId:     const String.fromEnvironment('TENANT_ID'),
+        tenantId: const String.fromEnvironment('TENANT_ID'),
         applicationId: const String.fromEnvironment('APPLICATION_ID'),
         skipTutorial: widget.skipTutorial,
         levelOfTrust: const String.fromEnvironment('LEVEL_OF_TRUST_TOKEN'),

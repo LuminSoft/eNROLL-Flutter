@@ -39,6 +39,7 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
       }
     }
   }
+
   /*
   fun convertEnrollColorsToAppColors(enrollColors: EnrollColors): AppColors {
     return AppColors(

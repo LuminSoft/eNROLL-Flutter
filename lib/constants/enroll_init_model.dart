@@ -12,19 +12,18 @@ class EnrollInitModel {
   String? googleApiKey;
   EnrollColors? colors;
 
-  EnrollInitModel({
-    this.localizationCode,
-    this.enrollEnvironment,
-    this.enrollMode,
-    this.tenantId,
-    this.tenantSecret,
-    this.googleApiKey,
-    this.colors,
-    this.applicationId,
-    this.levelOfTrust,
-    this.skipTutorial,
-    required Function(String requestId) ongettingRequestId
-  });
+  EnrollInitModel(
+      {this.localizationCode,
+      this.enrollEnvironment,
+      this.enrollMode,
+      this.tenantId,
+      this.tenantSecret,
+      this.googleApiKey,
+      this.colors,
+      this.applicationId,
+      this.levelOfTrust,
+      this.skipTutorial,
+      required Function(String requestId) onGettingRequestId});
 
   EnrollInitModel.fromJson(Map<String, dynamic> json) {
     localizationCode = json['localizationCode'];
@@ -37,7 +36,6 @@ class EnrollInitModel {
     tenantSecret = json['tenantSecret'];
     googleApiKey = json['googleApiKey'];
     colors = null;
-
   }
 
   Map<String, dynamic> toJson() {

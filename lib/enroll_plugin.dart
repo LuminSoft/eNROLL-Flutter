@@ -39,8 +39,10 @@ class EnrollPlugin extends StatefulWidget {
     required this.onGettingRequestId,
     required this.mainScreenContext,
     this.googleApiKey,
-    this.enrollColors, this.levelOfTrust,
-    this.applicationId, this.skipTutorial,
+    this.enrollColors,
+    this.levelOfTrust,
+    this.applicationId,
+    this.skipTutorial,
   });
 
   @override
@@ -66,11 +68,11 @@ class _EnrollPluginState extends State<EnrollPlugin> {
       DeviceOrientation.portraitDown,
     ]);
 
-    if (widget.tenantId == ''){
+    if (widget.tenantId == '') {
       widget.onError('Tenant id cannot be empty');
       Navigator.of(context).pop();
     }
-    if (widget.tenantSecret.isEmpty){
+    if (widget.tenantSecret.isEmpty) {
       widget.onError('Tenant secret cannot be empty');
       Navigator.of(context).pop();
     }
@@ -84,10 +86,10 @@ class _EnrollPluginState extends State<EnrollPlugin> {
       enrollEnvironment: widget.enrollEnvironment.name,
       localizationCode: widget.localizationCode.name,
       enrollMode: widget.enrollMode.name,
-      ongettingRequestId: widget.onGettingRequestId,
+      onGettingRequestId: widget.onGettingRequestId,
       colors: EnrollColors(
-        // primary: widget.enrollColors?.primary. ?? Colors.blue,
-      ),
+          // primary: widget.enrollColors?.primary. ?? Colors.blue,
+          ),
     );
   }
 
@@ -122,15 +124,13 @@ class _EnrollPluginState extends State<EnrollPlugin> {
   void _startEnroll() {
     var json = jsonEncode(model.toJson());
 
-
     _platform.invokeMethod('startEnroll', json).then((value) {
       if (value is String) {
         if (value.contains('success')) {
           enrollStream.add(EnrollSuccess());
         } else if (value.contains('ENROLL_ERROR')) {
           enrollStream.add(EnrollError(errorString: value));
-        }
-        else {
+        } else {
           enrollStream.add(RequestIdReceived(requestId: value));
         }
       } else {
