@@ -26,10 +26,13 @@ class _EnrollScreenState extends State<EnrollScreen> {
         localizationCode: widget.localization,
         enrollMode: EnrollMode.ONBOARDING,
         enrollEnvironment: EnrollEnvironment.production,
-        tenantId:     const String.fromEnvironment('TENANT_ID'),
-        applicationId: const String.fromEnvironment('APPLICATION_ID'),
+        tenantId:     '3489aa92-46f7-4e6e-a0f8-369083a6fb03',
+        // tenantId:     const String.fromEnvironment('TENANT_ID'),
+        applicationId: '1721303900563',
+        // applicationId: const String.fromEnvironment('APPLICATION_ID'),
         skipTutorial: widget.skipTutorial,
-        levelOfTrust: const String.fromEnvironment('LEVEL_OF_TRUST_TOKEN'),
+        levelOfTrust: '036a26e5-3f06-4d37-8275-a94f1e781b75',
+        // levelOfTrust: const String.fromEnvironment('LEVEL_OF_TRUST_TOKEN'),
         onSuccess: () {
           debugPrint("Success");
         },
@@ -39,9 +42,11 @@ class _EnrollScreenState extends State<EnrollScreen> {
         onGettingRequestId: (requestId) {
           debugPrint("requestId:: $requestId");
         },
-        tenantSecret: const String.fromEnvironment('TENANT_SECRET'),
+        tenantSecret: '83d7afe4-42f5-4438-a6ba-5e38d43af4fc',
+        // tenantSecret: const String.fromEnvironment('TENANT_SECRET'),
         enrollColors: EnrollColors(),
-        googleApiKey: const String.fromEnvironment('GOOGLE_API_KEY'),
+        googleApiKey: 'AIzaSyCqLOHRPi_s1LO6hj8YeqY7HByu7G5kqcY',
+        // googleApiKey: const String.fromEnvironment('GOOGLE_API_KEY'),
       ),
     );
   }
