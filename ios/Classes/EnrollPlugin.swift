@@ -2,21 +2,44 @@ import Flutter
 import UIKit
 import EnrollFramework
 
-public class EnrollPlugin: NSObject, FlutterPlugin, EnrollCallBack {
+public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, EnrollCallBack {
     public func onInitializeRequest(requestId: String) {
+        if let eventSink = eventSink {
+            var dict: [String: Any?] = [:]
+            dict["event"] = "on_request_id"
+            dict["data"] = ["requestId": requestId]
+            eventSink(dictionartToJsonString(dictionary: dict))
+        }
     }
     
+    
+    func dictionartToJsonString(dictionary: [String: Any?]) -> String{
+        guard let decoded = try? JSONSerialization.data(withJSONObject: dictionary, options: .fragmentsAllowed) else {
+            return "enExpectedError"
+        }
+        guard let jsonString = String(data: decoded, encoding: .utf8) else {
+            print("Something is wrong while converting JSON data to JSON string.")
+            return "unexpected Error"
+        }
+        return jsonString
+    }
     
     //MARK: - Enroll Callbacks
     public func onSuccess() {
         if let eventSink = eventSink {
-            eventSink("success")
+            var dict: [String: Any?] = [:]
+            dict["event"] = "on_success"
+            dict["data"] = nil
+            eventSink(dictionartToJsonString(dictionary: dict))
         }
     }
     
     public func onError(message: String) {
         if let eventSink = eventSink {
-            eventSink("error: \(message)")
+            var dict: [String: Any?] = [:]
+            dict["event"] = "on_error"
+            dict["data"] = ["message": message]
+            eventSink(dictionartToJsonString(dictionary: dict))
         }
     }
     
@@ -30,8 +53,9 @@ public class EnrollPlugin: NSObject, FlutterPlugin, EnrollCallBack {
         let eventChannel = FlutterEventChannel(name: eventChannelName, binaryMessenger: registrar.messenger())
         
         let instance = EnrollPlugin()
-        registrar.addMethodCallDelegate(instance, channel: channel)
         eventChannel.setStreamHandler(instance)
+        registrar.addMethodCallDelegate(instance, channel: channel)
+        
     }
     
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
@@ -205,10 +229,7 @@ public class EnrollPlugin: NSObject, FlutterPlugin, EnrollCallBack {
         
         return EnrollColors(primary: primaryColor, secondary: secondary, appBackgroundColor: appBackgroundColor, textColor: textColor, errorColor: errorColor, successColor: successColor, warningColor: warningColor, appWhite: appWhite, appBlack: appBlack)
     }
-}
-
-
-extension EnrollPlugin: FlutterStreamHandler {
+    
     public func onListen(withArguments arguments: Any?, eventSink events: @escaping FlutterEventSink) -> FlutterError? {
         self.eventSink = events
         return nil
