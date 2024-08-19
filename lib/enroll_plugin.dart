@@ -76,6 +76,16 @@ class _EnrollPluginState extends State<EnrollPlugin> {
       widget.onError('Tenant secret cannot be empty');
       Navigator.of(context).pop();
     }
+    if (widget.enrollMode == EnrollMode.AUTH) {
+      if (widget.applicationId == null) {
+        widget.onError('Application Id cannot be empty');
+        Navigator.of(context).pop();
+      }
+      if (widget.levelOfTrust == null) {
+        widget.onError('Level of trust cannot be empty');
+        Navigator.of(context).pop();
+      }
+    }
     model = EnrollInitModel(
       applicationId: widget.applicationId,
       levelOfTrust: widget.levelOfTrust,
