@@ -36,7 +36,7 @@ class EnrollInitModel {
     skipTutorial = json['skipTutorial'];
     tenantSecret = json['tenantSecret'];
     googleApiKey = json['googleApiKey'];
-    colors = null;
+    colors = json['colors'];
 
   }
 

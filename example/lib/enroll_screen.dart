@@ -44,7 +44,7 @@ class _EnrollScreenState extends State<EnrollScreen> {
         },
         tenantSecret: '83d7afe4-42f5-4438-a6ba-5e38d43af4fc',
         // tenantSecret: const String.fromEnvironment('TENANT_SECRET'),
-        enrollColors: EnrollColors(),
+        enrollColors: EnrollColors(textColor: Colors.red),
         googleApiKey: 'AIzaSyCqLOHRPi_s1LO6hj8YeqY7HByu7G5kqcY',
         // googleApiKey: const String.fromEnvironment('GOOGLE_API_KEY'),
       ),

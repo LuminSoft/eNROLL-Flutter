@@ -85,9 +85,7 @@ class _EnrollPluginState extends State<EnrollPlugin> {
       localizationCode: widget.localizationCode.name,
       enrollMode: widget.enrollMode.name,
       ongettingRequestId: widget.onGettingRequestId,
-      colors: EnrollColors(
-        // primary: widget.enrollColors?.primary. ?? Colors.blue,
-      ),
+      colors: widget.enrollColors,
     );
   }
 

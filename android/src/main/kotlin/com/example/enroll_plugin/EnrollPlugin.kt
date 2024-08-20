@@ -1,4 +1,7 @@
 package com.example.enroll_plugin
+//import android.graphics.Color
+import androidx.compose.ui.graphics.Color
+import org.json.JSONObject
 
 import android.util.Log
 import android.content.Context
@@ -39,29 +42,60 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
       }
     }
   }
-  /*
-  fun convertEnrollColorsToAppColors(enrollColors: EnrollColors): AppColors {
-    return AppColors(
-//      primary = enrollColors.primary?.let { convertDynamicColorToColor(it) } ?: AppColors().primary,
-//      secondary = enrollColors.secondary?.let { convertDynamicColorToColor(it) } ?: AppColors().secondary,
-//      backGround = enrollColors.appBackgroundColor?.let { convertDynamicColorToColor(it) } ?: AppColors().backGround,
-//      textColor = enrollColors.textColor?.let { convertDynamicColorToColor(it) } ?: AppColors().textColor,
-//      errorColor = enrollColors.errorColor?.let { convertDynamicColorToColor(it) } ?: AppColors().errorColor,
-//      successColor = enrollColors.successColor?.let { convertDynamicColorToColor(it) } ?: AppColors().successColor,
-//      warningColor = enrollColors.warningColor?.let { convertDynamicColorToColor(it) } ?: AppColors().warningColor,
-//      white = enrollColors.appWhite?.let { convertDynamicColorToColor(it) } ?: AppColors().white,
-//      black = enrollColors.appBlack?.let { convertDynamicColorToColor(it) } ?: AppColors().black
+
+  fun convertJsonToEnrollColors(json: JSONObject): EnrollColors {
+    return EnrollColors(
+      primary = json.optJSONObject("primary")?.let { parseDynamicColor(it) },
+      secondary = json.optJSONObject("secondary")?.let { parseDynamicColor(it) },
+      appBackgroundColor = json.optJSONObject("appBackgroundColor")?.let { parseDynamicColor(it) },
+      textColor = json.optJSONObject("textColor")?.let { parseDynamicColor(it) },
+      errorColor = json.optJSONObject("errorColor")?.let { parseDynamicColor(it) },
+      successColor = json.optJSONObject("successColor")?.let { parseDynamicColor(it) },
+      warningColor = json.optJSONObject("warningColor")?.let { parseDynamicColor(it) },
+      appWhite = json.optJSONObject("appWhite")?.let { parseDynamicColor(it) },
+      appBlack = json.optJSONObject("appBlack")?.let { parseDynamicColor(it) }
     )
   }
 
-  fun convertDynamicColorToColor(dynamicColor: DynamicColor): Color {
-    return Color.argb(
-      (dynamicColor.opacity ?: 1.0) * 255.0,
-      dynamicColor.r ?: 0,
-      dynamicColor.g ?: 0,
-      dynamicColor.b ?: 0
+  fun parseDynamicColor(json: JSONObject): DynamicColor {
+    return DynamicColor(
+      r = json.optInt("r", 0).takeIf { json.has("r") },
+      g = json.optInt("g", 0).takeIf { json.has("g") },
+      b = json.optInt("b", 0).takeIf { json.has("b") },
+      opacity = json.optDouble("opacity", 1.0).takeIf { json.has("opacity") }
     )
-  }*/
+  }
+
+  fun convertDynamicColorToColor(dynamicColor: DynamicColor?): Color {
+    return dynamicColor?.let {
+      Color(
+        alpha = (it.opacity ?: 1.0).toFloat(),
+        red = (it.r ?: 0) / 255f,
+        green = (it.g ?: 0) / 255f,
+        blue = (it.b ?: 0) / 255f
+      )
+    } ?: Color(0xFFFFFFFF) // Default white color if dynamicColor is null
+  }
+
+fun convertEnrollColorsToAppColors(enrollColors: EnrollColors): AppColors {
+  return AppColors(
+    primary = convertDynamicColorToColor(enrollColors.primary),
+    secondary = convertDynamicColorToColor(enrollColors.secondary),
+    backGround = convertDynamicColorToColor(enrollColors.appBackgroundColor),
+    textColor = convertDynamicColorToColor(enrollColors.textColor),
+    errorColor = convertDynamicColorToColor(enrollColors.errorColor),
+    successColor = convertDynamicColorToColor(enrollColors.successColor),
+    warningColor = convertDynamicColorToColor(enrollColors.warningColor),
+    white = convertDynamicColorToColor(enrollColors.appWhite),
+    black = convertDynamicColorToColor(enrollColors.appBlack)
+  )
+}
+
+  fun processEnrollColorsJson(jsonString: String): AppColors {
+    val jsonObject = JSONObject(jsonString)
+    val enrollColors = convertJsonToEnrollColors(jsonObject)
+    return convertEnrollColorsToAppColors(enrollColors)
+  }
 
   private fun handleStartEnroll(call: MethodCall, result: MethodChannel.Result) {
     if (activity == null) {
@@ -97,7 +131,8 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
       } else {
         LocalizationCode.EN
       }
-      val enrollColors = null  // Handle this appropriately if used
+      val enrollColors = jsonObject.get("colors").toString()
+      val appColors = processEnrollColorsJson(enrollColors)
 
       Log.d("EnrollPlugin", "tenantId is $tenantId")
       Log.d("EnrollPlugin", "tenantSecret is $tenantSecret")
@@ -108,7 +143,7 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
       Log.d("EnrollPlugin", "enrollEnvironment is $enrollEnvironment")
       Log.d("EnrollPlugin", "enrollMode is $enrollMode")
       Log.d("EnrollPlugin", "localizationCode is $localizationCode")
-      Log.d("EnrollPlugin", "enrollColors is $enrollColors")
+      Log.d("EnrollPlugin", "appColors is $appColors")
 
       eNROLL.init(
         tenantId,
@@ -137,7 +172,7 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
         },
         googleApiKey = googleApiKey,
         skipTutorial = skipTutorial,
-        appColors = AppColors()
+        appColors = appColors
       )
 
       eNROLL.launch(activity!!)
@@ -167,3 +202,22 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
     activity = null
   }
 }
+
+data class EnrollColors(
+  val primary: DynamicColor?,
+  val secondary: DynamicColor?,
+  val appBackgroundColor: DynamicColor?,
+  val textColor: DynamicColor?,
+  val errorColor: DynamicColor?,
+  val successColor: DynamicColor?,
+  val warningColor: DynamicColor?,
+  val appWhite: DynamicColor?,
+  val appBlack: DynamicColor?
+)
+
+data class DynamicColor(
+  val r: Int?,
+  val g: Int?,
+  val b: Int?,
+  val opacity: Double?
+)
