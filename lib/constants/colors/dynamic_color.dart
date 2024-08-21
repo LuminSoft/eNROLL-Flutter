@@ -14,11 +14,11 @@ class DynamicColor {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['r'] = this.r;
-    data['g'] = this.g;
-    data['b'] = this.b;
-    data['opacity'] = this.opacity;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['r'] = r;
+    data['g'] = g;
+    data['b'] = b;
+    data['opacity'] = opacity;
     return data;
   }
 }

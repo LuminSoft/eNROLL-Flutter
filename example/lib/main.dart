@@ -67,7 +67,7 @@ class _MyAppState extends State<MyApp> {
                                     builder: (context) =>  EnrollScreen(
                                           localization: EnrollLocalizations.ar, skipTutorial: _isChecked,
                                         ))),
-                            child: Text("ابدأ")),
+                            child: const Text("أبدأ")),
                       ),
                       Container(
                         margin: const EdgeInsets.only(top: 20),
