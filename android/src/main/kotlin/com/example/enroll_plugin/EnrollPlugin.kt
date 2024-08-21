@@ -119,11 +119,17 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
       val gson = Gson()
       val jsonObject = gson.fromJson(json, JsonObject::class.java)
       val tenantId = jsonObject.get("tenantId")?.asString ?: ""
-      val applicationId = jsonObject.get("applicationId")?.asString ?: ""
-      val levelOfTrust = jsonObject.get("levelOfTrust")?.asString ?: ""
       val skipTutorial = jsonObject.get("skipTutorial")?.asBoolean ?: false
       val googleApiKey = jsonObject.get("googleApiKey")?.asString ?: ""
       val tenantSecret = jsonObject.get("tenantSecret")?.asString ?: ""
+      var applicationId = ""
+      if (jsonObject.has("applicationId") && !jsonObject.get("applicationId").isJsonNull) {
+        applicationId = jsonObject.get("applicationId").asString
+      }
+      var levelOfTrust = ""
+      if (jsonObject.has("levelOfTrust") && !jsonObject.get("levelOfTrust").isJsonNull) {
+        applicationId = jsonObject.get("levelOfTrust").asString
+      }
       val enrollMode = if (jsonObject.get("enrollMode")?.asString == "ONBOARDING") {
         EnrollMode.ONBOARDING
       } else {
