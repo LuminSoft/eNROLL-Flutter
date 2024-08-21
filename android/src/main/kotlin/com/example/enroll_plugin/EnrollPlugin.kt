@@ -57,14 +57,20 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
     )
   }
 
-  fun parseDynamicColor(json: JSONObject): DynamicColor {
-    return DynamicColor(
-      r = json.optInt("r", 0).takeIf { json.has("r") },
-      g = json.optInt("g", 0).takeIf { json.has("g") },
-      b = json.optInt("b", 0).takeIf { json.has("b") },
-      opacity = json.optDouble("opacity", 1.0).takeIf { json.has("opacity") }
-    )
+  //return null if all values are null
+  fun parseDynamicColor(json: JSONObject): DynamicColor? {
+    val r = json.optInt("r", -1).takeIf { it != -1 }
+    val g = json.optInt("g", -1).takeIf { it != -1 }
+    val b = json.optInt("b", -1).takeIf { it != -1 }
+    val opacity = json.optDouble("opacity", -1.0).takeIf { it != -1.0 }
+
+    return if (r == null && g == null && b == null && opacity == null) {
+      null
+    } else {
+      DynamicColor(r, g, b, opacity)
+    }
   }
+
 
   fun convertDynamicColorToColor(dynamicColor: DynamicColor?): Color {
     return dynamicColor?.let {
@@ -77,25 +83,28 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
     } ?: Color(0xFFFFFFFF) // Default white color if dynamicColor is null
   }
 
-fun convertEnrollColorsToAppColors(enrollColors: EnrollColors): AppColors {
-  return AppColors(
-    primary = convertDynamicColorToColor(enrollColors.primary),
-    secondary = convertDynamicColorToColor(enrollColors.secondary),
-    backGround = convertDynamicColorToColor(enrollColors.appBackgroundColor),
-    textColor = convertDynamicColorToColor(enrollColors.textColor),
-    errorColor = convertDynamicColorToColor(enrollColors.errorColor),
-    successColor = convertDynamicColorToColor(enrollColors.successColor),
-    warningColor = convertDynamicColorToColor(enrollColors.warningColor),
-    white = convertDynamicColorToColor(enrollColors.appWhite),
-    black = convertDynamicColorToColor(enrollColors.appBlack)
-  )
-}
 
-  fun processEnrollColorsJson(jsonString: String): AppColors {
-    val jsonObject = JSONObject(jsonString)
-    val enrollColors = convertJsonToEnrollColors(jsonObject)
-    return convertEnrollColorsToAppColors(enrollColors)
+  //only add non-null colors
+  fun convertEnrollColorsToAppColors(enrollColors: EnrollColors, defaultColors: AppColors): AppColors {
+    return AppColors(
+      primary = enrollColors.primary?.let { convertDynamicColorToColor(it) } ?: defaultColors.primary,
+      secondary = enrollColors.secondary?.let { convertDynamicColorToColor(it) } ?: defaultColors.secondary,
+      backGround = enrollColors.appBackgroundColor?.let { convertDynamicColorToColor(it) } ?: defaultColors.backGround,
+      textColor = enrollColors.textColor?.let { convertDynamicColorToColor(it) } ?: defaultColors.textColor,
+      errorColor = enrollColors.errorColor?.let { convertDynamicColorToColor(it) } ?: defaultColors.errorColor,
+      successColor = enrollColors.successColor?.let { convertDynamicColorToColor(it) } ?: defaultColors.successColor,
+      warningColor = enrollColors.warningColor?.let { convertDynamicColorToColor(it) } ?: defaultColors.warningColor,
+      white = enrollColors.appWhite?.let { convertDynamicColorToColor(it) } ?: defaultColors.white,
+      appBlack = enrollColors.appBlack?.let { convertDynamicColorToColor(it) } ?: defaultColors.appBlack
+    )
   }
+
+  fun processEnrollColorsJson(jsonString: String): EnrollColors {
+    val jsonObject = JSONObject(jsonString)
+    return convertJsonToEnrollColors(jsonObject)
+  }
+
+
 
   private fun handleStartEnroll(call: MethodCall, result: MethodChannel.Result) {
     if (activity == null) {
@@ -131,8 +140,29 @@ fun convertEnrollColorsToAppColors(enrollColors: EnrollColors): AppColors {
       } else {
         LocalizationCode.EN
       }
-      val enrollColors = jsonObject.get("colors").toString()
-      val appColors = processEnrollColorsJson(enrollColors)
+
+      val defaultAppColors = AppColors(
+        primary = Color(0xFF1D56B8),
+        secondary = Color(0xff5791DB),
+        backGround = Color(0xFFFFFFFF),
+        textColor = Color(0xff004194),
+        errorColor = Color(0xFFDB305B),
+        successColor = Color(0xff61CC3D),
+        warningColor = Color(0xFFF9D548),
+        white = Color(0xffffffff),
+        appBlack = Color(0xff333333)
+      )
+
+      // Check if "colors" field is present and not null
+      val appColors = if (jsonObject.has("colors") && !jsonObject.get("colors").isJsonNull) {
+        val enrollColorsJson = jsonObject.get("colors").toString()
+        val enrollColors = processEnrollColorsJson(enrollColorsJson)
+        convertEnrollColorsToAppColors(enrollColors, defaultAppColors)
+      } else {
+        // Use defaultAppColors if "colors" field is not present
+        defaultAppColors
+      }
+
 
       Log.d("EnrollPlugin", "tenantId is $tenantId")
       Log.d("EnrollPlugin", "tenantSecret is $tenantSecret")
