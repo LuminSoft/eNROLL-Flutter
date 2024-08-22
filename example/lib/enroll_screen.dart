@@ -25,9 +25,9 @@ class _EnrollScreenState extends State<EnrollScreen> {
         mainScreenContext: context,
         localizationCode: widget.localization,
         enrollMode: EnrollMode.ONBOARDING,
-        enrollEnvironment: EnrollEnvironment.production,
-        tenantId:     '3489aa92-46f7-4e6e-a0f8-369083a6fb03',
-        // tenantId:     const String.fromEnvironment('TENANT_ID'),
+        enrollEnvironment: EnrollEnvironment.staging,
+        // tenantId:     '3489aa92-46f7-4e6e-a0f8-369083a6fb03',
+        tenantId:     const String.fromEnvironment('TENANT_ID'),
         applicationId: '1721303900563',
         // applicationId: const String.fromEnvironment('APPLICATION_ID'),
         skipTutorial: widget.skipTutorial,
@@ -42,8 +42,8 @@ class _EnrollScreenState extends State<EnrollScreen> {
         onGettingRequestId: (requestId) {
           debugPrint("requestId:: $requestId");
         },
-        tenantSecret: '83d7afe4-42f5-4438-a6ba-5e38d43af4fc',
-        // tenantSecret: const String.fromEnvironment('TENANT_SECRET'),
+        // tenantSecret: '83d7afe4-42f5-4438-a6ba-5e38d43af4fc',
+        tenantSecret: const String.fromEnvironment('TENANT_SECRET'),
         enrollColors: EnrollColors(),
         googleApiKey: 'AIzaSyCqLOHRPi_s1LO6hj8YeqY7HByu7G5kqcY',
         // googleApiKey: const String.fromEnvironment('GOOGLE_API_KEY'),
