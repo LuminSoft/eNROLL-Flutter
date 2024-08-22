@@ -3,6 +3,9 @@ import UIKit
 import EnrollFramework
 
 public class EnrollPlugin: NSObject, FlutterPlugin, EnrollCallBack {
+    public func onInitializeRequest(requestId: String) {
+    }
+    
     
     //MARK: - Enroll Callbacks
     public func onSuccess() {
@@ -52,6 +55,10 @@ public class EnrollPlugin: NSObject, FlutterPlugin, EnrollCallBack {
             var enrollEnvironment: EnrollFramework.EnrollEnviroment = .staging
             var localizationCode: EnrollFramework.LocalizationEnum = .en
             var enrollColors: EnrollColors?
+            var skip: Bool?
+            var mode: EnrollMode?
+            var applicantId: String?
+            var levelOfTrust: String?
             
             if let data = json.data(using: .utf8){
                 let jsonObject = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
@@ -60,6 +67,20 @@ public class EnrollPlugin: NSObject, FlutterPlugin, EnrollCallBack {
                     tenantSecret = dict["tenantSecret"] as? String ?? ""
                     if let colors = dict["colors"] as? [String: Any]{
                         enrollColors = generateDynamicColors(colors: colors)
+                    }
+                    if let enrollMode = dict["enrollMode"] as? String{
+                        if let value = getEnrollMode(mode: enrollMode) {
+                            mode = value
+                        }
+                    }
+                    if let skipTutorial = dict["skipTutorial"] as? Bool{
+                        skip = skipTutorial
+                    }
+                    if let levelOfTrustSring =  dict["levelOfTrust"] as? String {
+                        levelOfTrust = levelOfTrustSring
+                    }
+                    if let appId =  dict["applicationId"] as? String {
+                        applicantId = appId
                     }
                     var localizationName = dict["localizationCode"] as? String ?? ""
                     var environmentName = dict["enrollEnvironment"] as? String ?? ""
@@ -88,7 +109,7 @@ public class EnrollPlugin: NSObject, FlutterPlugin, EnrollCallBack {
                 }
             }
             
-            UIApplication.shared.delegate?.window??.rootViewController?.present(try Enroll.initViewController(enrollInitModel: EnrollInitModel(tenantId: tenatId, tenantSecret: tenantSecret, enrollEnviroment: enrollEnvironment, localizationCode: localizationCode, enrollCallBack: self, enrollColors: enrollColors), presenterVC: (UIApplication.shared.delegate?.window??.rootViewController!)!), animated: true)
+            UIApplication.shared.delegate?.window??.rootViewController?.present(try Enroll.initViewController(enrollInitModel: EnrollInitModel(tenantId: tenatId, tenantSecret: tenantSecret, enrollEnviroment: enrollEnvironment, localizationCode: localizationCode, enrollCallBack: self, enrollMode: mode ?? .onboarding, skipTutorial: skip ?? false, enrollColors: enrollColors, levelOffTrustId: levelOfTrust, applicantId: applicantId), presenterVC: (UIApplication.shared.delegate?.window??.rootViewController!)!), animated: true)
         }catch{
             if let result = result {
                 result(FlutterMethodNotImplemented)
@@ -99,6 +120,20 @@ public class EnrollPlugin: NSObject, FlutterPlugin, EnrollCallBack {
     }
     
     //MARK: - Helpers
+    
+    func getEnrollMode(mode: String) -> EnrollMode?{
+        switch mode.lowercased() {
+        case  "onboarding":
+            return .onboarding
+        case  "update":
+            return .update
+        case  "auth":
+            return .authentication
+        default:
+            return nil
+        }
+    }
+    
     func generateDynamicColors(colors: [String: Any]?) -> EnrollColors{
         var primaryColor: UIColor?
         var appBackgroundColor: UIColor?
