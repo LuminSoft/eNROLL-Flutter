@@ -53,10 +53,28 @@ class _EnrollPluginState extends State<EnrollPlugin> {
   final StreamController<EnrollState> enrollStream = StreamController();
   late EnrollInitModel model;
   static const MethodChannel _platform = MethodChannel('enroll_plugin');
+  static const EventChannel _eventChannel = EventChannel('enroll_plugin_channel');
+
+  Stream<String>? _stream;
 
   @override
   void initState() {
     super.initState();
+
+    _stream = _eventChannel.receiveBroadcastStream().map<String>((event) {
+      if (event is String) {
+        if (event.contains('success')) {
+          enrollStream.add(EnrollSuccess());
+        } else if (event.contains('ENROLL_ERROR')) {
+          enrollStream.add(EnrollError(errorString: event));
+        } else {
+          enrollStream.add(RequestIdReceived(requestId: event));
+        }
+      } else {
+        enrollStream.add(EnrollError(errorString: event ?? ""));
+      }
+      return event;
+    });
 
     enrollStream.add(EnrollStart());
 
@@ -131,21 +149,25 @@ class _EnrollPluginState extends State<EnrollPlugin> {
     );
   }
 
+  // void invokeValueToStream(String data) {
+  //   _eventChannel.invoke
+  // }
+
   void _startEnroll() {
     var json = jsonEncode(model.toJson());
 
     _platform.invokeMethod('startEnroll', json).then((value) {
-      if (value is String) {
-        if (value.contains('success')) {
-          enrollStream.add(EnrollSuccess());
-        } else if (value.contains('ENROLL_ERROR')) {
-          enrollStream.add(EnrollError(errorString: value));
-        } else {
-          enrollStream.add(RequestIdReceived(requestId: value));
-        }
-      } else {
-        enrollStream.add(EnrollError(errorString: value ?? ""));
-      }
+      // if (value is String) {
+      //   if (value.contains('success')) {
+      //     enrollStream.add(EnrollSuccess());
+      //   } else if (value.contains('ENROLL_ERROR')) {
+      //     enrollStream.add(EnrollError(errorString: value));
+      //   } else {
+      //     enrollStream.add(RequestIdReceived(requestId: value));
+      //   }
+      // } else {
+      //   enrollStream.add(EnrollError(errorString: value ?? ""));
+      // }
     }).catchError((error) {
       if (error is PlatformException) {
         enrollStream.add(EnrollError(errorString: error.message ?? ""));

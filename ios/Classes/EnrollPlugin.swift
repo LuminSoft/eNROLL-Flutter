@@ -9,42 +9,43 @@ public class EnrollPlugin: NSObject, FlutterPlugin, EnrollCallBack {
     
     //MARK: - Enroll Callbacks
     public func onSuccess() {
-        if let result = result {
-            result(String("success"))
+        if let eventSink = eventSink {
+            eventSink("success")
         }
     }
     
     public func onError(message: String) {
-        if let result = result {
-            result(FlutterError(code: "0", message: message, details: nil))
+        if let eventSink = eventSink {
+            eventSink("error: \(message)")
         }
     }
     
     //MARK: - Properties
-    var result: FlutterResult?
-    
+    var eventSink: FlutterEventSink?
     
     //MARK: - Registering
     public static func register(with registrar: FlutterPluginRegistrar) {
         let channel = FlutterMethodChannel(name: "enroll_plugin", binaryMessenger: registrar.messenger())
+        let eventChannelName = "enroll_plugin_channel"
+        let eventChannel = FlutterEventChannel(name: eventChannelName, binaryMessenger: registrar.messenger())
+        
         let instance = EnrollPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
+        eventChannel.setStreamHandler(instance)
     }
     
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-        self.result = result
         switch call.method {
         case "startEnroll":
-            if let json = call.arguments as? String{
+            if let json = call.arguments as? String {
                 launchEnroll(json: json)
             }
-            
-            self.onSuccess()
             break
         default:
             result(FlutterMethodNotImplemented)
         }
     }
+    
     
     //MARK: - Launching Enroll
     func launchEnroll(json: String){
@@ -111,8 +112,8 @@ public class EnrollPlugin: NSObject, FlutterPlugin, EnrollCallBack {
             
             UIApplication.shared.delegate?.window??.rootViewController?.present(try Enroll.initViewController(enrollInitModel: EnrollInitModel(tenantId: tenatId, tenantSecret: tenantSecret, enrollEnviroment: enrollEnvironment, localizationCode: localizationCode, enrollCallBack: self, enrollMode: mode ?? .onboarding, skipTutorial: skip ?? false, enrollColors: enrollColors, levelOffTrustId: levelOfTrust, applicantId: applicantId), presenterVC: (UIApplication.shared.delegate?.window??.rootViewController!)!), animated: true)
         }catch{
-            if let result = result {
-                result(FlutterMethodNotImplemented)
+            if let eventSink = eventSink {
+                eventSink("unexpected error")
             }
             
         }
@@ -203,5 +204,18 @@ public class EnrollPlugin: NSObject, FlutterPlugin, EnrollCallBack {
         }
         
         return EnrollColors(primary: primaryColor, secondary: secondary, appBackgroundColor: appBackgroundColor, textColor: textColor, errorColor: errorColor, successColor: successColor, warningColor: warningColor, appWhite: appWhite, appBlack: appBlack)
+    }
+}
+
+
+extension EnrollPlugin: FlutterStreamHandler {
+    public func onListen(withArguments arguments: Any?, eventSink events: @escaping FlutterEventSink) -> FlutterError? {
+        self.eventSink = events
+        return nil
+    }
+    
+    public func onCancel(withArguments arguments: Any?) -> FlutterError? {
+        self.eventSink = nil
+        return nil
     }
 }
