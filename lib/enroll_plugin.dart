@@ -55,7 +55,7 @@ class _EnrollPluginState extends State<EnrollPlugin> {
   late EnrollInitModel model;
   static const MethodChannel _platform = MethodChannel('enroll_plugin');
   static const EventChannel _eventChannel =
-      EventChannel('enroll_plugin_channel');
+  EventChannel('enroll_plugin_channel');
 
   Stream<String>? _stream;
 
@@ -78,8 +78,9 @@ class _EnrollPluginState extends State<EnrollPlugin> {
           enrollStream.add(EnrollError(errorString: errorModel.message ?? ''));
         case NativeEventTypes.onRequestId:
           var requestIdModel = RequestIdEventModel.fromJson(model.data!);
-          enrollStream.add(
-              RequestIdReceived(requestId: requestIdModel.requestId ?? ''));
+          widget.onGettingRequestId(requestIdModel.requestId ?? "");
+      // enrollStream.add(
+      //     EnrollError(errorString: 'requestIdModel.requestId' ?? ''));
         default:
           break;
       }
@@ -95,11 +96,11 @@ class _EnrollPluginState extends State<EnrollPlugin> {
       DeviceOrientation.portraitDown,
     ]);
 
-    if (widget.tenantId == ''){
+    if (widget.tenantId == '') {
       widget.onError('Tenant id cannot be empty');
       Navigator.of(context).pop();
     }
-    if (widget.tenantSecret.isEmpty){
+    if (widget.tenantSecret.isEmpty) {
       widget.onError('Tenant secret cannot be empty');
       Navigator.of(context).pop();
     }
@@ -124,7 +125,9 @@ class _EnrollPluginState extends State<EnrollPlugin> {
       localizationCode: widget.localizationCode.name,
       enrollMode: widget.enrollMode.name,
       onGettingRequestId: widget.onGettingRequestId,
-      colors: widget.enrollColors,
+      colors: EnrollColors(
+        // primary: widget.enrollColors?.primary. ?? Colors.blue,
+      ),
     );
   }
 
@@ -158,10 +161,6 @@ class _EnrollPluginState extends State<EnrollPlugin> {
           }),
     );
   }
-
-  // void invokeValueToStream(String data) {
-  //   _eventChannel.invoke
-  // }
 
   void _startEnroll() {
     var json = jsonEncode(model.toJson());

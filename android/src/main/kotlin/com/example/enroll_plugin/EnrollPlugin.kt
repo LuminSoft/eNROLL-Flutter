@@ -1,8 +1,7 @@
 package com.example.enroll_plugin
-//import android.graphics.Color
 import androidx.compose.ui.graphics.Color
 import org.json.JSONObject
-
+import io.flutter.plugin.common.EventChannel
 import android.util.Log
 import android.content.Context
 import android.app.Activity
@@ -20,6 +19,8 @@ import com.luminsoft.enroll_sdk.ui_components.theme.AppColors
 /** EnrollPlugin */
 class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAware {
   private lateinit var channel: MethodChannel
+  private lateinit var eventChannel: EventChannel
+  private var eventSink: EventChannel.EventSink? = null
   private lateinit var context: Context
   private var activity: Activity? = null
 
@@ -27,8 +28,39 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
     channel = MethodChannel(flutterPluginBinding.binaryMessenger, "enroll_plugin")
     channel.setMethodCallHandler(this)
     context = flutterPluginBinding.applicationContext
+
+    eventChannel = EventChannel(flutterPluginBinding.binaryMessenger, "enroll_plugin_channel")
+    eventChannel.setStreamHandler(object : EventChannel.StreamHandler {
+      override fun onListen(arguments: Any?, events: EventChannel.EventSink?) {
+        eventSink = events
+      }
+
+      override fun onCancel(arguments: Any?) {
+        eventSink = null
+      }
+    })
   }
 
+  override fun onDetachedFromEngine(binding: FlutterPlugin.FlutterPluginBinding) {
+    channel.setMethodCallHandler(null)
+    eventChannel.setStreamHandler(null)
+  }
+
+  override fun onAttachedToActivity(binding: ActivityPluginBinding) {
+    activity = binding.activity
+  }
+
+  override fun onDetachedFromActivity() {
+    activity = null
+  }
+
+  override fun onReattachedToActivityForConfigChanges(binding: ActivityPluginBinding) {
+    activity = binding.activity
+  }
+
+  override fun onDetachedFromActivityForConfigChanges() {
+    activity = null
+  }
   override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
     when (call.method) {
       "getPlatformVersion" -> {
@@ -104,6 +136,16 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
     return convertJsonToEnrollColors(jsonObject)
   }
 
+  fun mapToJsonString(map: Map<String, Any?>): String {
+    return try {
+      val json = JSONObject(map).toString()
+      json
+    } catch (e: Exception) {
+      Log.e("EnrollPlugin", "Error converting map to JSON string: ${e.message}")
+      "unexpected_error"
+    }
+  }
+
 
 
   private fun handleStartEnroll(call: MethodCall, result: MethodChannel.Result) {
@@ -128,7 +170,7 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
       }
       var levelOfTrust = ""
       if (jsonObject.has("levelOfTrust") && !jsonObject.get("levelOfTrust").isJsonNull) {
-        applicationId = jsonObject.get("levelOfTrust").asString
+        levelOfTrust = jsonObject.get("levelOfTrust").asString
       }
       val enrollMode = if (jsonObject.get("enrollMode")?.asString == "ONBOARDING") {
         EnrollMode.ONBOARDING
@@ -192,18 +234,29 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
         object : EnrollCallback {
           override fun success(enrollSuccessModel: EnrollSuccessModel) {
             Log.d("EnrollPlugin", "eNROLL Message: ${enrollSuccessModel.enrollMessage}")
-            result.success("Enrollment started successfully")
+            val eventData = mapOf(
+              "event" to "on_success",
+              "data" to mapOf("message" to enrollSuccessModel.enrollMessage)
+            )
+            eventSink?.success(mapToJsonString(eventData))
           }
 
           override fun error(enrollFailedModel: EnrollFailedModel) {
             Log.e("EnrollPlugin", "eNROLL Error: ${enrollFailedModel.failureMessage}")
-            result.error("ENROLL_ERROR", enrollFailedModel.failureMessage, null)
+            val eventData = mapOf(
+              "event" to "on_error",
+              "data" to mapOf("message" to enrollFailedModel.failureMessage)
+            )
+            eventSink?.success(mapToJsonString(eventData))
           }
 
           override fun getRequestId(requestId: String) {
             Log.d("EnrollPlugin", "requestId: $requestId")
-            result.success(requestId)
-
+            val eventData = mapOf(
+              "event" to "on_request_id",
+              "data" to mapOf("requestId" to requestId)
+            )
+            eventSink?.success(mapToJsonString(eventData))
           }
         },
         googleApiKey = googleApiKey,
@@ -212,32 +265,13 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
       )
 
       eNROLL.launch(activity!!)
+
     } catch (e: Exception) {
       Log.e("EnrollPlugin", "Error in handleStartEnroll: ${e.message}", e)
-      result.error("ENROLLMENT_ERROR", "An error occurred: ${e.message}", null)
+      eventSink?.error("ENROLLMENT_ERROR", "An error occurred: ${e.message}", null)
     }
-  }
 
-  override fun onDetachedFromEngine(binding: FlutterPlugin.FlutterPluginBinding) {
-    channel.setMethodCallHandler(null)
-  }
-
-  override fun onAttachedToActivity(binding: ActivityPluginBinding) {
-    activity = binding.activity
-  }
-
-  override fun onDetachedFromActivity() {
-    activity = null
-  }
-
-  override fun onReattachedToActivityForConfigChanges(binding: ActivityPluginBinding) {
-    activity = binding.activity
-  }
-
-  override fun onDetachedFromActivityForConfigChanges() {
-    activity = null
-  }
-}
+  } }
 
 data class EnrollColors(
   val primary: DynamicColor?,
