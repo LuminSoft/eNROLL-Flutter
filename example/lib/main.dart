@@ -49,7 +49,7 @@ class _MyAppState extends State<MyApp> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text('Skip Tutorial'),
+                            const Text('Skip Tutorial'),
                             Checkbox(
                               value: _isChecked,
                               onChanged: _handleCheckboxChange,
@@ -64,8 +64,9 @@ class _MyAppState extends State<MyApp> {
                             onPressed: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) =>  EnrollScreen(
-                                          localization: EnrollLocalizations.ar, skipTutorial: _isChecked,
+                                    builder: (context) => EnrollScreen(
+                                          localization: EnrollLocalizations.ar,
+                                          skipTutorial: _isChecked,
                                         ))),
                             child: const Text("أبدأ")),
                       ),
@@ -76,7 +77,7 @@ class _MyAppState extends State<MyApp> {
                             onPressed: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) =>  EnrollScreen(
+                                    builder: (context) => EnrollScreen(
                                           skipTutorial: _isChecked,
                                           localization: EnrollLocalizations.en,
                                         ))),

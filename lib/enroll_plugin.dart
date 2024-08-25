@@ -1,9 +1,11 @@
 import 'dart:async';
 import 'dart:convert';
+
 import 'package:enroll_plugin/constants/enroll_colors.dart';
 import 'package:enroll_plugin/constants/native_event_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'constants/enroll_environment.dart';
 import 'constants/enroll_init_model.dart';
 import 'constants/enroll_localizations.dart';
@@ -32,7 +34,7 @@ class EnrollPlugin extends StatefulWidget {
     super.key,
     this.localizationCode = EnrollLocalizations.en,
     this.enrollEnvironment = EnrollEnvironment.staging,
-    this.enrollMode = EnrollMode.ONBOARDING,
+    this.enrollMode = EnrollMode.onboarding,
     required this.tenantId,
     required this.tenantSecret,
     required this.onSuccess,
@@ -55,7 +57,7 @@ class _EnrollPluginState extends State<EnrollPlugin> {
   late EnrollInitModel model;
   static const MethodChannel _platform = MethodChannel('enroll_plugin');
   static const EventChannel _eventChannel =
-  EventChannel('enroll_plugin_channel');
+      EventChannel('enroll_plugin_channel');
 
   Stream<String>? _stream;
 
@@ -79,8 +81,8 @@ class _EnrollPluginState extends State<EnrollPlugin> {
         case NativeEventTypes.onRequestId:
           var requestIdModel = RequestIdEventModel.fromJson(model.data!);
           widget.onGettingRequestId(requestIdModel.requestId ?? "");
-      // enrollStream.add(
-      //     EnrollError(errorString: 'requestIdModel.requestId' ?? ''));
+        // enrollStream.add(
+        //     EnrollError(errorString: 'requestIdModel.requestId' ?? ''));
         default:
           break;
       }
@@ -104,7 +106,7 @@ class _EnrollPluginState extends State<EnrollPlugin> {
       widget.onError('Tenant secret cannot be empty');
       Navigator.of(context).pop();
     }
-    if (widget.enrollMode == EnrollMode.AUTH) {
+    if (widget.enrollMode == EnrollMode.auth) {
       if (widget.applicationId == null) {
         widget.onError('Application Id cannot be empty');
         Navigator.of(context).pop();
@@ -126,8 +128,8 @@ class _EnrollPluginState extends State<EnrollPlugin> {
       enrollMode: widget.enrollMode.name,
       onGettingRequestId: widget.onGettingRequestId,
       colors: EnrollColors(
-        // primary: widget.enrollColors?.primary. ?? Colors.blue,
-      ),
+          // primary: widget.enrollColors?.primary. ?? Colors.blue,
+          ),
     );
   }
 
@@ -152,7 +154,8 @@ class _EnrollPluginState extends State<EnrollPlugin> {
                 } else if (snapshot.data is EnrollStart) {
                   _startEnroll();
                 } else if (snapshot.data is RequestIdReceived) {
-                  RequestIdReceived requestId = snapshot.data as RequestIdReceived;
+                  RequestIdReceived requestId =
+                      snapshot.data as RequestIdReceived;
                   widget.onGettingRequestId(requestId.requestId);
                 }
               }

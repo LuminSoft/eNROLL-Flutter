@@ -1,1 +1,4 @@
-enum EnrollMode { ONBOARDING, AUTH, }
+enum EnrollMode {
+  onboarding,
+  auth,
+}
