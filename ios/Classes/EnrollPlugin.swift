@@ -3,6 +3,7 @@ import UIKit
 import EnrollFramework
 
 public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, EnrollCallBack {
+
     public func onInitializeRequest(requestId: String) {
         if let eventSink = eventSink {
             var dict: [String: Any?] = [:]

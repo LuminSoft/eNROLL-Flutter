@@ -55,7 +55,7 @@ class _EnrollPluginState extends State<EnrollPlugin> {
   late EnrollInitModel model;
   static const MethodChannel _platform = MethodChannel('enroll_plugin');
   static const EventChannel _eventChannel =
-      EventChannel('enroll_plugin_channel');
+  EventChannel('enroll_plugin_channel');
 
   Stream<String>? _stream;
 
@@ -79,8 +79,8 @@ class _EnrollPluginState extends State<EnrollPlugin> {
         case NativeEventTypes.onRequestId:
           var requestIdModel = RequestIdEventModel.fromJson(model.data!);
           widget.onGettingRequestId(requestIdModel.requestId ?? "");
-          // enrollStream.add(
-          //     EnrollError(errorString: 'requestIdModel.requestId' ?? ''));
+      // enrollStream.add(
+      //     EnrollError(errorString: 'requestIdModel.requestId' ?? ''));
         default:
           break;
       }
@@ -126,8 +126,8 @@ class _EnrollPluginState extends State<EnrollPlugin> {
       enrollMode: widget.enrollMode.name,
       onGettingRequestId: widget.onGettingRequestId,
       colors: EnrollColors(
-          // primary: widget.enrollColors?.primary. ?? Colors.blue,
-          ),
+        // primary: widget.enrollColors?.primary. ?? Colors.blue,
+      ),
     );
   }
 
