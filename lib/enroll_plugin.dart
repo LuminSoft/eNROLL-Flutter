@@ -78,8 +78,9 @@ class _EnrollPluginState extends State<EnrollPlugin> {
           enrollStream.add(EnrollError(errorString: errorModel.message ?? ''));
         case NativeEventTypes.onRequestId:
           var requestIdModel = RequestIdEventModel.fromJson(model.data!);
-          enrollStream.add(
-              RequestIdReceived(requestId: requestIdModel.requestId ?? ''));
+          widget.onGettingRequestId(requestIdModel.requestId ?? "");
+          // enrollStream.add(
+          //     EnrollError(errorString: 'requestIdModel.requestId' ?? ''));
         default:
           break;
       }
@@ -160,10 +161,6 @@ class _EnrollPluginState extends State<EnrollPlugin> {
           }),
     );
   }
-
-  // void invokeValueToStream(String data) {
-  //   _eventChannel.invoke
-  // }
 
   void _startEnroll() {
     var json = jsonEncode(model.toJson());
