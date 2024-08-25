@@ -2,46 +2,74 @@ import Flutter
 import UIKit
 import EnrollFramework
 
-public class EnrollPlugin: NSObject, FlutterPlugin, EnrollCallBack {
+public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, EnrollCallBack {
+    public func onInitializeRequest(requestId: String) {
+        if let eventSink = eventSink {
+            var dict: [String: Any?] = [:]
+            dict["event"] = "on_request_id"
+            dict["data"] = ["requestId": requestId]
+            eventSink(dictionartToJsonString(dictionary: dict))
+        }
+    }
+    
+    
+    func dictionartToJsonString(dictionary: [String: Any?]) -> String{
+        guard let decoded = try? JSONSerialization.data(withJSONObject: dictionary, options: .fragmentsAllowed) else {
+            return "enExpectedError"
+        }
+        guard let jsonString = String(data: decoded, encoding: .utf8) else {
+            print("Something is wrong while converting JSON data to JSON string.")
+            return "unexpected Error"
+        }
+        return jsonString
+    }
     
     //MARK: - Enroll Callbacks
     public func onSuccess() {
-        if let result = result {
-            result(String("success"))
+        if let eventSink = eventSink {
+            var dict: [String: Any?] = [:]
+            dict["event"] = "on_success"
+            dict["data"] = nil
+            eventSink(dictionartToJsonString(dictionary: dict))
         }
     }
     
     public func onError(message: String) {
-        if let result = result {
-            result(FlutterError(code: "0", message: message, details: nil))
+        if let eventSink = eventSink {
+            var dict: [String: Any?] = [:]
+            dict["event"] = "on_error"
+            dict["data"] = ["message": message]
+            eventSink(dictionartToJsonString(dictionary: dict))
         }
     }
     
     //MARK: - Properties
-    var result: FlutterResult?
-    
+    var eventSink: FlutterEventSink?
     
     //MARK: - Registering
     public static func register(with registrar: FlutterPluginRegistrar) {
         let channel = FlutterMethodChannel(name: "enroll_plugin", binaryMessenger: registrar.messenger())
+        let eventChannelName = "enroll_plugin_channel"
+        let eventChannel = FlutterEventChannel(name: eventChannelName, binaryMessenger: registrar.messenger())
+        
         let instance = EnrollPlugin()
+        eventChannel.setStreamHandler(instance)
         registrar.addMethodCallDelegate(instance, channel: channel)
+        
     }
     
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-        self.result = result
         switch call.method {
         case "startEnroll":
-            if let json = call.arguments as? String{
+            if let json = call.arguments as? String {
                 launchEnroll(json: json)
             }
-            
-            self.onSuccess()
             break
         default:
             result(FlutterMethodNotImplemented)
         }
     }
+    
     
     //MARK: - Launching Enroll
     func launchEnroll(json: String){
@@ -52,6 +80,10 @@ public class EnrollPlugin: NSObject, FlutterPlugin, EnrollCallBack {
             var enrollEnvironment: EnrollFramework.EnrollEnviroment = .staging
             var localizationCode: EnrollFramework.LocalizationEnum = .en
             var enrollColors: EnrollColors?
+            var skip: Bool?
+            var mode: EnrollMode?
+            var applicantId: String?
+            var levelOfTrust: String?
             
             if let data = json.data(using: .utf8){
                 let jsonObject = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
@@ -60,6 +92,20 @@ public class EnrollPlugin: NSObject, FlutterPlugin, EnrollCallBack {
                     tenantSecret = dict["tenantSecret"] as? String ?? ""
                     if let colors = dict["colors"] as? [String: Any]{
                         enrollColors = generateDynamicColors(colors: colors)
+                    }
+                    if let enrollMode = dict["enrollMode"] as? String{
+                        if let value = getEnrollMode(mode: enrollMode) {
+                            mode = value
+                        }
+                    }
+                    if let skipTutorial = dict["skipTutorial"] as? Bool{
+                        skip = skipTutorial
+                    }
+                    if let levelOfTrustSring =  dict["levelOfTrust"] as? String {
+                        levelOfTrust = levelOfTrustSring
+                    }
+                    if let appId =  dict["applicationId"] as? String {
+                        applicantId = appId
                     }
                     var localizationName = dict["localizationCode"] as? String ?? ""
                     var environmentName = dict["enrollEnvironment"] as? String ?? ""
@@ -88,10 +134,10 @@ public class EnrollPlugin: NSObject, FlutterPlugin, EnrollCallBack {
                 }
             }
             
-            UIApplication.shared.delegate?.window??.rootViewController?.present(try Enroll.initViewController(enrollInitModel: EnrollInitModel(tenantId: tenatId, tenantSecret: tenantSecret, enrollEnviroment: enrollEnvironment, localizationCode: localizationCode, enrollCallBack: self, enrollColors: enrollColors), presenterVC: (UIApplication.shared.delegate?.window??.rootViewController!)!), animated: true)
+            UIApplication.shared.delegate?.window??.rootViewController?.present(try Enroll.initViewController(enrollInitModel: EnrollInitModel(tenantId: tenatId, tenantSecret: tenantSecret, enrollEnviroment: enrollEnvironment, localizationCode: localizationCode, enrollCallBack: self, enrollMode: mode ?? .onboarding, skipTutorial: skip ?? false, enrollColors: enrollColors, levelOffTrustId: levelOfTrust, applicantId: applicantId), presenterVC: (UIApplication.shared.delegate?.window??.rootViewController!)!), animated: true)
         }catch{
-            if let result = result {
-                result(FlutterMethodNotImplemented)
+            if let eventSink = eventSink {
+                eventSink("unexpected error")
             }
             
         }
@@ -99,6 +145,20 @@ public class EnrollPlugin: NSObject, FlutterPlugin, EnrollCallBack {
     }
     
     //MARK: - Helpers
+    
+    func getEnrollMode(mode: String) -> EnrollMode?{
+        switch mode.lowercased() {
+        case  "onboarding":
+            return .onboarding
+        case  "update":
+            return .update
+        case  "auth":
+            return .authentication
+        default:
+            return nil
+        }
+    }
+    
     func generateDynamicColors(colors: [String: Any]?) -> EnrollColors{
         var primaryColor: UIColor?
         var appBackgroundColor: UIColor?
@@ -168,5 +228,15 @@ public class EnrollPlugin: NSObject, FlutterPlugin, EnrollCallBack {
         }
         
         return EnrollColors(primary: primaryColor, secondary: secondary, appBackgroundColor: appBackgroundColor, textColor: textColor, errorColor: errorColor, successColor: successColor, warningColor: warningColor, appWhite: appWhite, appBlack: appBlack)
+    }
+    
+    public func onListen(withArguments arguments: Any?, eventSink events: @escaping FlutterEventSink) -> FlutterError? {
+        self.eventSink = events
+        return nil
+    }
+    
+    public func onCancel(withArguments arguments: Any?) -> FlutterError? {
+        self.eventSink = nil
+        return nil
     }
 }

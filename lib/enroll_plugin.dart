@@ -1,15 +1,16 @@
 import 'dart:async';
 import 'dart:convert';
-
 import 'package:enroll_plugin/constants/enroll_colors.dart';
+import 'package:enroll_plugin/constants/native_event_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import 'constants/enroll_environment.dart';
 import 'constants/enroll_init_model.dart';
 import 'constants/enroll_localizations.dart';
 import 'constants/enroll_mode.dart';
 import 'constants/enroll_state.dart';
+import 'constants/event_models.dart';
+import 'constants/native_event_types.dart';
 
 class EnrollPlugin extends StatefulWidget {
   final EnrollLocalizations localizationCode;
@@ -50,13 +51,39 @@ class EnrollPlugin extends StatefulWidget {
 }
 
 class _EnrollPluginState extends State<EnrollPlugin> {
-  final StreamController<EnrollState> enrollStream = StreamController();
+  late final StreamController<EnrollState> enrollStream;
   late EnrollInitModel model;
   static const MethodChannel _platform = MethodChannel('enroll_plugin');
+  static const EventChannel _eventChannel =
+      EventChannel('enroll_plugin_channel');
+
+  Stream<String>? _stream;
 
   @override
   void initState() {
     super.initState();
+
+    enrollStream = StreamController();
+
+    _stream = _eventChannel.receiveBroadcastStream().map<String>((event) {
+      return event;
+    });
+    _stream?.listen((event) {
+      NativeEventModel model = NativeEventModel.fromJson(json.decode(event));
+      switch (model.event) {
+        case NativeEventTypes.onSuccess:
+          enrollStream.add(EnrollSuccess());
+        case NativeEventTypes.onError:
+          var errorModel = ErrorEventModel.fromJson(model.data!);
+          enrollStream.add(EnrollError(errorString: errorModel.message ?? ''));
+        case NativeEventTypes.onRequestId:
+          var requestIdModel = RequestIdEventModel.fromJson(model.data!);
+          enrollStream.add(
+              RequestIdReceived(requestId: requestIdModel.requestId ?? ''));
+        default:
+          break;
+      }
+    });
 
     enrollStream.add(EnrollStart());
 
@@ -121,6 +148,9 @@ class _EnrollPluginState extends State<EnrollPlugin> {
                   Navigator.of(widget.mainScreenContext).pop();
                 } else if (snapshot.data is EnrollStart) {
                   _startEnroll();
+                } else if (snapshot.data is RequestIdReceived) {
+                  RequestIdReceived requestId = snapshot.data as RequestIdReceived;
+                  widget.onGettingRequestId(requestId.requestId);
                 }
               }
             });
@@ -129,22 +159,14 @@ class _EnrollPluginState extends State<EnrollPlugin> {
     );
   }
 
+  // void invokeValueToStream(String data) {
+  //   _eventChannel.invoke
+  // }
+
   void _startEnroll() {
     var json = jsonEncode(model.toJson());
 
-    _platform.invokeMethod('startEnroll', json).then((value) {
-      if (value is String) {
-        if (value.contains('success')) {
-          enrollStream.add(EnrollSuccess());
-        } else if (value.contains('ENROLL_ERROR')) {
-          enrollStream.add(EnrollError(errorString: value));
-        } else {
-          enrollStream.add(RequestIdReceived(requestId: value));
-        }
-      } else {
-        enrollStream.add(EnrollError(errorString: value ?? ""));
-      }
-    }).catchError((error) {
+    _platform.invokeMethod('startEnroll', json).catchError((error) {
       if (error is PlatformException) {
         enrollStream.add(EnrollError(errorString: error.message ?? ""));
       } else {

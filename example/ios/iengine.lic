@@ -1,10 +1,10 @@
 {
     "version": "2.1",
     "contract": {
-        "customer": "Excel",
+        "customer": "Excel_Evaluation",
         "expiration": {
-            "day": 27,
-            "month": 7,
+            "day": 21,
+            "month": 9,
             "year": 2024
         },
         "hwids": [
@@ -18,29 +18,25 @@
             "max_client_connections": 0
         },
         "dot": {
-            "evaluation": true,
             "mobile": {
                 "face": {
-                    "enabled": true,
-                    "features": {
-                        "matching": true,
-                        "passiveLiveness": true
-                    }
-                },
-                "document": {
                     "enabled": true
                 },
-                "nfc": {
+                "document": {
                     "enabled": true
                 },
                 "faceLite": {
                     "enabled": true
                 },
+                "nfc": {
+                    "enabled": true
+                },
                 "features": {
                     "realTimeTransactionReportingEnabled": true
                 }
-            }
+            },
+            "evaluation": true
         }
     },
-    "contract_signature": "b2JOnff23Yk/fqEADExGBxaBMgImJhi4d3+p4AgR7UBuyRXwZIY66Hn1V4JPoofL0NhOUgvifVQG3LxhjSCD081AJpZ+yLlBqgacse6LJbWW5H2wUFHrLjrpEkxdsIp9XfU4U6hRO32LvNNGmgcIf3n2Zwi0IPGygpGhVmJ6JfQ="
+    "contract_signature": "LLgjZ164ZhzkTT4VPkV7sTjSEY++0nWkH+QoBSOy95BzCgXFrbeDTJGxzgZKWzFCV9gvXRfYfPxAUemU2rNY0NT0CEbp9oQt1QNWpomN5UvLVKd7gZOa3d0+cZWqrD+k7Wg1lXeNhLKQ+GCbyz/Txzi9kJLFUqHsreAXP+B5XlM="
 }

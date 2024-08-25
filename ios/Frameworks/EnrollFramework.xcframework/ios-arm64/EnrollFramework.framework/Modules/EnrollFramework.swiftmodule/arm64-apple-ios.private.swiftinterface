@@ -16,6 +16,7 @@ import Swift
 import SwiftUI
 import UIKit
 import UserNotifications
+import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
@@ -89,11 +90,12 @@ public class EnrollColors {
 public protocol EnrollCallBack {
   func onSuccess()
   func onError(message: Swift.String)
+  func onInitializeRequest(requestId: Swift.String)
 }
 public enum EnrollMode {
   case onboarding
   case update
-  case authorize
+  case authentication
   case cantLogin
   public static func == (a: EnrollFramework.EnrollMode, b: EnrollFramework.EnrollMode) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
@@ -107,7 +109,7 @@ extension EnrollFramework.EliteOTPField : UIKit.UITextFieldDelegate {
   @_Concurrency.MainActor(unsafe) @objc final public func textFieldDidEndEditing(_ textField: UIKit.UITextField)
 }
 public struct EnrollInitModel {
-  public init(tenantId: Swift.String, tenantSecret: Swift.String, enrollEnviroment: EnrollFramework.EnrollEnviroment = .staging, localizationCode: EnrollFramework.LocalizationEnum = .en, enrollCallBack: (any EnrollFramework.EnrollCallBack)?, enrollColors: EnrollFramework.EnrollColors? = nil) throws
+  public init(tenantId: Swift.String, tenantSecret: Swift.String, enrollEnviroment: EnrollFramework.EnrollEnviroment = .staging, localizationCode: EnrollFramework.LocalizationEnum = .en, enrollCallBack: (any EnrollFramework.EnrollCallBack)?, enrollMode: EnrollFramework.EnrollMode, skipTutorial: Swift.Bool = true, enrollColors: EnrollFramework.EnrollColors? = nil, levelOffTrustId: Swift.String? = nil, applicantId: Swift.String? = nil, updateSteps: [EnrollFramework.EnrollUpdateTypes]? = nil) throws
 }
 extension UIKit.UIDevice {
   @_Concurrency.MainActor(unsafe) public static let modelName: Swift.String
@@ -249,6 +251,21 @@ public enum LocalizationEnum {
     get
   }
 }
+public enum EnrollUpdateTypes : Swift.Int, Swift.Codable {
+  case nationalID
+  case passport
+  case phone
+  case email
+  case device
+  case location
+  case securityQuestions
+  case password
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 extension EnrollFramework.EliteOTPAnimationTypes : Swift.Equatable {}
 extension EnrollFramework.EliteOTPAnimationTypes : Swift.Hashable {}
 extension EnrollFramework.EnrollMode : Swift.Equatable {}
@@ -263,3 +280,6 @@ extension EnrollFramework.EnrollEnviroment : Swift.Equatable {}
 extension EnrollFramework.EnrollEnviroment : Swift.Hashable {}
 extension EnrollFramework.LocalizationEnum : Swift.Equatable {}
 extension EnrollFramework.LocalizationEnum : Swift.Hashable {}
+extension EnrollFramework.EnrollUpdateTypes : Swift.Equatable {}
+extension EnrollFramework.EnrollUpdateTypes : Swift.Hashable {}
+extension EnrollFramework.EnrollUpdateTypes : Swift.RawRepresentable {}
