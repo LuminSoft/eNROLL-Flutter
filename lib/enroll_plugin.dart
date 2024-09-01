@@ -14,6 +14,10 @@ import 'constants/enroll_state.dart';
 import 'constants/event_models.dart';
 import 'constants/native_event_types.dart';
 
+export 'package:enroll_plugin/constants/enroll_environment.dart';
+export 'package:enroll_plugin/constants/enroll_localizations.dart';
+export 'package:enroll_plugin/constants/enroll_mode.dart';
+
 class EnrollPlugin extends StatefulWidget {
   final EnrollLocalizations localizationCode;
   final EnrollEnvironment enrollEnvironment;
