@@ -1,7 +1,5 @@
-import 'package:enroll_plugin/constants/enroll_localizations.dart';
+import 'package:enroll_plugin/enroll_plugin.dart';
 import 'package:flutter/material.dart';
-
-import 'enroll_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,17 +13,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool _isChecked = false;
-
   @override
   void initState() {
     super.initState();
-  }
-
-  void _handleCheckboxChange(bool? value) {
-    setState(() {
-      _isChecked = value ?? false;
-    });
   }
 
   @override
@@ -33,61 +23,35 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Builder(builder: (context) {
         return Scaffold(
-          appBar: AppBar(
-            title: const Text('Enroll'),
-            centerTitle: true,
-          ),
-          body: SafeArea(
-            child: Stack(
-              children: [
-                Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Center(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Text('Skip Tutorial'),
-                            Checkbox(
-                              value: _isChecked,
-                              onChanged: _handleCheckboxChange,
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(top: 20),
-                        width: 300,
-                        child: ElevatedButton(
-                            onPressed: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => EnrollScreen(
-                                          localization: EnrollLocalizations.ar,
-                                          skipTutorial: _isChecked,
-                                        ))),
-                            child: const Text("أبدأ")),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(top: 20),
-                        width: 300,
-                        child: ElevatedButton(
-                            onPressed: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => EnrollScreen(
-                                          skipTutorial: _isChecked,
-                                          localization: EnrollLocalizations.en,
-                                        ))),
-                            child: const Text("Start")),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+          body: EnrollPlugin(
+            mainScreenContext: context,
+            tenantId: 'TENANT_ID',
+            tenantSecret: 'TENANT_SECRET',
+            enrollMode: EnrollMode.auth,
+            enrollEnvironment: EnrollEnvironment.staging,
+            localizationCode: EnrollLocalizations.en,
+            onSuccess: () {
+              // Delay the state change until after the build completes
+              WidgetsBinding.instance.addPostFrameCallback((_) {
+                debugPrint("Success");
+              });
+            },
+            onError: (error) {
+              // Delay the state change until after the build completes
+              WidgetsBinding.instance.addPostFrameCallback((_) {
+                debugPrint("Error: ${error.toString()}");
+              });
+            },
+            onGettingRequestId: (requestId) {
+              // Delay the state change until after the build completes
+              WidgetsBinding.instance.addPostFrameCallback((_) {
+                debugPrint("requestId:: $requestId");
+              });
+            },
+            applicationId: 'APPLICATION_ID',
+            skipTutorial: false,
+            levelOfTrust: 'LEVEL_OF_TRUST_TOKEN',
+            googleApiKey: 'GOOGLE_API_KEY',
           ),
         );
       }),

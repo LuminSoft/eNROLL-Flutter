@@ -179,6 +179,7 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
             val tenantId = jsonObject.get("tenantId")?.asString ?: ""
             val skipTutorial = jsonObject.get("skipTutorial")?.asBoolean ?: false
             val googleApiKey = jsonObject.get("googleApiKey")?.asString ?: ""
+            val correlationId = jsonObject.get("correlationId")?.asString ?: ""
             val tenantSecret = jsonObject.get("tenantSecret")?.asString ?: ""
             var applicationId = ""
             if (jsonObject.has("applicationId") && !jsonObject.get("applicationId").isJsonNull) {
@@ -234,6 +235,7 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
             Log.d("EnrollPlugin", "applicationId is $applicationId")
             Log.d("EnrollPlugin", "levelOfTrust is $levelOfTrust")
             Log.d("EnrollPlugin", "skipTutorial is $skipTutorial")
+            Log.d("EnrollPlugin", "correlationId is $correlationId")
             Log.d("EnrollPlugin", "googleApiKey is $googleApiKey")
             Log.d("EnrollPlugin", "enrollEnvironment is $enrollEnvironment")
             Log.d("EnrollPlugin", "enrollMode is $enrollMode")
@@ -278,6 +280,7 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
                 },
                 googleApiKey = googleApiKey,
                 skipTutorial = skipTutorial,
+                correlationId = correlationId,
                 appColors = appColors
             )
 
