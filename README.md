@@ -79,10 +79,10 @@ buildscript {
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>"Your Message to the users"</string>
 	<key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
+      <dict>
+          <key>NSAllowsArbitraryLoads</key>
+          <true/>
+      </dict>
 ```
 
 - Add these two sources to the iOS project Podfile
