@@ -105,7 +105,8 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 
 - For iOS
-  ![App Screenshot](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGM6tCcdsukNbOigN9U2m%2Fuploads%2FHmZvkBnKQSX3ZJTtLdm1%2FScreen%20Shot%202024-02-20%20at%2012.37.20%20PM.png?alt=media&token=1b78f378-934b-47d0-9a9a-161b8e98fad5)
+
+![App Screenshot](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGM6tCcdsukNbOigN9U2m%2Fuploads%2FHmZvkBnKQSX3ZJTtLdm1%2FScreen%20Shot%202024-02-20%20at%2012.37.20%20PM.png?alt=media&token=1b78f378-934b-47d0-9a9a-161b8e98fad5)
 
 
 
