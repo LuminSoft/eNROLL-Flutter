@@ -101,12 +101,12 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 - For Android
 
-![App Screenshot](https://lumin-soft.gitbook.io/~gitbook/image?url=https%3A%2F%2F3826285197-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FGM6tCcdsukNbOigN9U2m%252Fuploads%252FidXQqrhFFiMjXmehyKng%252FScreen%2520Shot%25202024-03-24%2520at%252010.41.22%2520AM.png%3Falt%3Dmedia%26token%3Dde6d2485-8d25-46fc-967b-2d875011f6cd&width=768&dpr=4&quality=100&sign=a4cdc785&sv=1)
+![App Screenshot](https://firebasestorage.googleapis.com/v0/b/excel-hr-app.appspot.com/o/lic_android.png?alt=media&token=9a6556c1-cea1-4fce-b073-0dba76bedf8f)
 
 
 - For iOS
 
-![App Screenshot](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FGM6tCcdsukNbOigN9U2m%2Fuploads%2FHmZvkBnKQSX3ZJTtLdm1%2FScreen%20Shot%202024-02-20%20at%2012.37.20%20PM.png?alt=media&token=1b78f378-934b-47d0-9a9a-161b8e98fad5)
+![App Screenshot](https://firebasestorage.googleapis.com/v0/b/excel-hr-app.appspot.com/o/lic_ios.webp?alt=media&token=c4bcf3d8-d9d2-4c99-9a62-97349ff30fac)
 
 
 
