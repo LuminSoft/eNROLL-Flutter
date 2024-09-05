@@ -10,6 +10,7 @@ class EnrollInitModel {
   bool? skipTutorial;
   String? tenantSecret;
   String? googleApiKey;
+  String? correlationId;
   EnrollColors? colors;
 
   EnrollInitModel(
@@ -23,6 +24,7 @@ class EnrollInitModel {
       this.applicationId,
       this.levelOfTrust,
       this.skipTutorial,
+      this.correlationId,
       required Function(String requestId) onGettingRequestId});
 
   EnrollInitModel.fromJson(Map<String, dynamic> json) {
@@ -35,8 +37,8 @@ class EnrollInitModel {
     skipTutorial = json['skipTutorial'];
     tenantSecret = json['tenantSecret'];
     googleApiKey = json['googleApiKey'];
+    correlationId = json['correlationId'];
     colors = json['colors'];
-
   }
 
   Map<String, dynamic> toJson() {
@@ -50,6 +52,7 @@ class EnrollInitModel {
     data['applicationId'] = applicationId;
     data['levelOfTrust'] = levelOfTrust;
     data['skipTutorial'] = skipTutorial;
+    data['correlationId'] = correlationId;
     if (colors != null) {
       data['colors'] = colors!.toJson();
     }

@@ -31,6 +31,7 @@ class EnrollPlugin extends StatefulWidget {
   final String? googleApiKey;
   final String? levelOfTrust;
   final String? applicationId;
+  final String? correlationId;
   final bool? skipTutorial;
   final EnrollColors? enrollColors;
 
@@ -50,6 +51,7 @@ class EnrollPlugin extends StatefulWidget {
     this.levelOfTrust,
     this.applicationId,
     this.skipTutorial,
+    this.correlationId,
   });
 
   @override
@@ -131,6 +133,7 @@ class _EnrollPluginState extends State<EnrollPlugin> {
       localizationCode: widget.localizationCode.name,
       enrollMode: widget.enrollMode.name,
       onGettingRequestId: widget.onGettingRequestId,
+      correlationId: widget.correlationId,
       colors: EnrollColors(
           // primary: widget.enrollColors?.primary. ?? Colors.blue,
           ),
