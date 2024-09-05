@@ -164,6 +164,7 @@ import 'package:enroll_plugin/enroll_plugin.dart';
         skipTutorial: false,
         levelOfTrust: 'LEVEL_OF_TRUST_TOKEN',
         googleApiKey: 'GOOGLE_API_KEY',
+        correlationId: 'correlationId',
       );
 ```
 
@@ -185,6 +186,7 @@ import 'package:enroll_plugin/enroll_plugin.dart';
 | `levelOfTrustToken` | **Optional**. Write your Organization level of trust.                                                                                                              |
 | `skipTutorial`      | **Optional**. Choose to ignore the tutorial or not.                                                                                                                |
 | `appColors`         | **Optional**. Collection of the app colors that you could override like (primary - secondary - backGround - successColor - warningColor - errorColor - textColor). |
+| `correlationId`     | **Optional**. Correlation ID to connect your User ID with our Request ID.                                                                                          |
 
 
 

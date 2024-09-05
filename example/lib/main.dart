@@ -24,13 +24,19 @@ class _MyAppState extends State<MyApp> {
           enrollMode: EnrollMode.onboarding,
           enrollEnvironment: EnrollEnvironment.staging,
           onSuccess: () {
-            debugPrint("Success");
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              debugPrint("Success");
+            });
           },
           onError: (error) {
-            debugPrint("Error: ${error.toString()}");
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              debugPrint("Error: ${error.toString()}");
+            });
           },
           onGettingRequestId: (requestId) {
-            debugPrint("requestId:: $requestId");
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              debugPrint("requestId:: $requestId");
+            });
           },
           localizationCode: EnrollLocalizations.en,
           applicationId: 'APPLICATION_ID',
