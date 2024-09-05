@@ -1,6 +1,10 @@
 import 'package:enroll_plugin/enroll_plugin.dart';
 import 'package:flutter/material.dart';
 
+void main() {
+  runApp(const MyApp());
+}
+
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
@@ -15,13 +19,10 @@ class _MyAppState extends State<MyApp> {
       return Scaffold(
         body: EnrollPlugin(
           mainScreenContext: context,
-          localizationCode: EnrollLocalizations.ar,
-          enrollMode: EnrollMode.auth,
-          enrollEnvironment: EnrollEnvironment.production,
           tenantId: 'TENANT_ID',
-          applicationId: 'APPLICATION_ID',
-          skipTutorial: false,
-          levelOfTrust: 'LEVEL_OF_TRUST_TOKEN',
+          tenantSecret: 'TENANT_SECRET',
+          enrollMode: EnrollMode.onboarding,
+          enrollEnvironment: EnrollEnvironment.staging,
           onSuccess: () {
             debugPrint("Success");
           },
@@ -31,7 +32,10 @@ class _MyAppState extends State<MyApp> {
           onGettingRequestId: (requestId) {
             debugPrint("requestId:: $requestId");
           },
-          tenantSecret: 'TENANT_SECRET',
+          localizationCode: EnrollLocalizations.en,
+          applicationId: 'APPLICATION_ID',
+          skipTutorial: false,
+          levelOfTrust: 'LEVEL_OF_TRUST_TOKEN',
           googleApiKey: 'GOOGLE_API_KEY',
           correlationId: 'correlationIdTest',
         ),

@@ -42,3 +42,6 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 /android/app/src/main/res/raw
+
+/assets/config.json
+/lib/main_dev.dart

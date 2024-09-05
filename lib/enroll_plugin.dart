@@ -123,20 +123,18 @@ class _EnrollPluginState extends State<EnrollPlugin> {
       }
     }
     model = EnrollInitModel(
-      applicationId: widget.applicationId,
-      levelOfTrust: widget.levelOfTrust,
-      skipTutorial: widget.skipTutorial,
+      applicationId: widget.applicationId ?? '',
+      levelOfTrust: widget.levelOfTrust ?? '',
+      skipTutorial: widget.skipTutorial ?? false,
       tenantId: widget.tenantId,
       tenantSecret: widget.tenantSecret,
-      googleApiKey: widget.googleApiKey,
+      googleApiKey: widget.googleApiKey ?? '',
       enrollEnvironment: widget.enrollEnvironment.name,
       localizationCode: widget.localizationCode.name,
       enrollMode: widget.enrollMode.name,
       onGettingRequestId: widget.onGettingRequestId,
-      correlationId: widget.correlationId,
-      colors: EnrollColors(
-          // primary: widget.enrollColors?.primary. ?? Colors.blue,
-          ),
+      correlationId: widget.correlationId ?? '',
+      colors: widget.enrollColors ?? EnrollColors(),
     );
   }
 
