@@ -109,7 +109,7 @@ extension EnrollFramework.EliteOTPField : UIKit.UITextFieldDelegate {
   @_Concurrency.MainActor(unsafe) @objc final public func textFieldDidEndEditing(_ textField: UIKit.UITextField)
 }
 public struct EnrollInitModel {
-  public init(tenantId: Swift.String, tenantSecret: Swift.String, enrollEnviroment: EnrollFramework.EnrollEnviroment = .staging, localizationCode: EnrollFramework.LocalizationEnum = .en, enrollCallBack: (any EnrollFramework.EnrollCallBack)?, enrollMode: EnrollFramework.EnrollMode, skipTutorial: Swift.Bool = true, enrollColors: EnrollFramework.EnrollColors? = nil, levelOffTrustId: Swift.String? = nil, applicantId: Swift.String? = nil, updateSteps: [EnrollFramework.EnrollUpdateTypes]? = nil) throws
+  public init(tenantId: Swift.String, tenantSecret: Swift.String, enrollEnviroment: EnrollFramework.EnrollEnviroment = .staging, localizationCode: EnrollFramework.LocalizationEnum = .en, enrollCallBack: (any EnrollFramework.EnrollCallBack)?, enrollMode: EnrollFramework.EnrollMode, skipTutorial: Swift.Bool? = false, enrollColors: EnrollFramework.EnrollColors? = nil, levelOffTrustId: Swift.String? = nil, applicantId: Swift.String? = nil, correlationId: Swift.String? = nil, updateSteps: [EnrollFramework.EnrollUpdateTypes]? = nil) throws
 }
 extension UIKit.UIDevice {
   @_Concurrency.MainActor(unsafe) public static let modelName: Swift.String

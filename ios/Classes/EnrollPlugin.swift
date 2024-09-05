@@ -85,6 +85,7 @@ public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enroll
             var mode: EnrollMode?
             var applicantId: String?
             var levelOfTrust: String?
+            var correlationId: String?
             
             if let data = json.data(using: .utf8){
                 let jsonObject = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
@@ -108,6 +109,12 @@ public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enroll
                     if let appId =  dict["applicationId"] as? String {
                         applicantId = appId
                     }
+                    
+                    if let correlId =  dict["correlationId"] as? String {
+                        correlationId = correlId
+                    }
+                    
+                    
                     var localizationName = dict["localizationCode"] as? String ?? ""
                     var environmentName = dict["enrollEnvironment"] as? String ?? ""
                     if localizationName == "ar" {
@@ -135,7 +142,7 @@ public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enroll
                 }
             }
             
-            UIApplication.shared.delegate?.window??.rootViewController?.present(try Enroll.initViewController(enrollInitModel: EnrollInitModel(tenantId: tenatId, tenantSecret: tenantSecret, enrollEnviroment: enrollEnvironment, localizationCode: localizationCode, enrollCallBack: self, enrollMode: mode ?? .onboarding, skipTutorial: skip ?? false, enrollColors: enrollColors, levelOffTrustId: levelOfTrust, applicantId: applicantId), presenterVC: (UIApplication.shared.delegate?.window??.rootViewController!)!), animated: true)
+            UIApplication.shared.delegate?.window??.rootViewController?.present(try Enroll.initViewController(enrollInitModel: EnrollInitModel(tenantId: tenatId, tenantSecret: tenantSecret, enrollEnviroment: enrollEnvironment, localizationCode: localizationCode, enrollCallBack: self, enrollMode: mode ?? .onboarding, skipTutorial: skip ?? false, enrollColors: enrollColors, levelOffTrustId: levelOfTrust, applicantId: applicantId, correlationId: correlationId), presenterVC: (UIApplication.shared.delegate?.window??.rootViewController!)!), animated: true)
         }catch{
             if let eventSink = eventSink {
                 eventSink("unexpected error")
