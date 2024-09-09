@@ -2,17 +2,36 @@ import 'dart:ui';
 
 import 'colors/dynamic_color.dart';
 
+/// Represents the SDK colors
 class EnrollColors {
+  /// Represents the primary color
   DynamicColor? primary;
+
+  /// Represents the secondary color
   DynamicColor? secondary;
+
+  /// Represents the background color
   DynamicColor? appBackgroundColor;
+
+  /// Represents the text color
   DynamicColor? textColor;
+
+  /// Represents the error color
   DynamicColor? errorColor;
+
+  /// Represents the success color
   DynamicColor? successColor;
+
+  /// Represents the warning color
   DynamicColor? warningColor;
+
+  /// Represents the white color
   DynamicColor? appWhite;
+
+  /// Represents the black color
   DynamicColor? appBlack;
 
+  /// Represents the class constructor
   EnrollColors({
     Color? primary,
     Color? secondary,
@@ -71,6 +90,7 @@ class EnrollColors {
         opacity: appBlack?.opacity);
   }
 
+  /// Convert the colors map to json object
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     if (primary != null) {
@@ -102,5 +122,4 @@ class EnrollColors {
     }
     return data;
   }
-
 }
