@@ -1,4 +1,4 @@
-## 1.0.1
+## 1.0.3
 
-* Add Correlation Id
-* Make parameters optional
+* Delete Phone
+* Delete Mail
