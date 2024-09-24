@@ -18,23 +18,61 @@ export 'package:enroll_plugin/constants/enroll_environment.dart';
 export 'package:enroll_plugin/constants/enroll_localizations.dart';
 export 'package:enroll_plugin/constants/enroll_mode.dart';
 
+/// The [EnrollPlugin] widget is the main widget responsible for handling
+/// the enrollment process in the eNROLL plugin.
+///
+/// It takes configuration options such as localization, environment, mode,
+/// and various callbacks for handling success, errors, and request IDs.
 class EnrollPlugin extends StatefulWidget {
+  /// The localization code specifying the language of the plugin (e.g., Arabic or English).
   final EnrollLocalizations localizationCode;
+
+  /// The environment in which the enrollment will be performed (e.g., staging or production).
   final EnrollEnvironment enrollEnvironment;
+
+  /// The mode of the enrollment process (e.g., onboarding or authentication).
   final EnrollMode enrollMode;
+
+  /// The tenant ID for the organization using the enrollment process.
   final String tenantId;
+
+  /// The tenant secret key used for authentication.
   final String tenantSecret;
+
+  /// A callback function to execute when the enrollment is successful.
   final Function onSuccess;
+
+  /// A callback function to execute when an error occurs during enrollment.
   final Function(String error) onError;
+
+  /// A callback function to execute when a request ID is received during the process.
   final Function(String requestId) onGettingRequestId;
+
+  /// The context of the main screen where the plugin is being used.
   final BuildContext mainScreenContext;
+
+  /// The Google API key, used if required by the enrollment process.
   final String? googleApiKey;
+
+  /// The level of trust for the applicant, used for authentication.
   final String? levelOfTrust;
+
+  /// The ID of the application, used for authentication mode.
   final String? applicationId;
+
+  /// A unique correlation ID for tracking the enrollment session.
   final String? correlationId;
+
+  /// Determines whether to skip the tutorial during the enrollment process.
   final bool? skipTutorial;
+
+  /// Custom colors used in the enrollment process UI.
   final EnrollColors? enrollColors;
 
+  /// Constructor for the [EnrollPlugin] widget.
+  ///
+  /// Various configurations and callbacks must be provided for handling the
+  /// success, error, and request ID retrieval during the enrollment process.
   const EnrollPlugin({
     super.key,
     this.localizationCode = EnrollLocalizations.en,
@@ -61,7 +99,11 @@ class EnrollPlugin extends StatefulWidget {
 class _EnrollPluginState extends State<EnrollPlugin> {
   late final StreamController<EnrollState> enrollStream;
   late EnrollInitModel model;
+
+  /// The [MethodChannel] used to communicate with native platform code for enrollment.
   static const MethodChannel _platform = MethodChannel('enroll_plugin');
+
+  /// The [EventChannel] used to listen for native platform events during enrollment.
   static const EventChannel _eventChannel =
       EventChannel('enroll_plugin_channel');
 
@@ -73,6 +115,7 @@ class _EnrollPluginState extends State<EnrollPlugin> {
 
     enrollStream = StreamController();
 
+    // Listen to the event channel for native platform events.
     _stream = _eventChannel.receiveBroadcastStream().map<String>((event) {
       return event;
     });
@@ -81,14 +124,15 @@ class _EnrollPluginState extends State<EnrollPlugin> {
       switch (model.event) {
         case NativeEventTypes.onSuccess:
           enrollStream.add(EnrollSuccess());
+          break;
         case NativeEventTypes.onError:
           var errorModel = ErrorEventModel.fromJson(model.data!);
           enrollStream.add(EnrollError(errorString: errorModel.message ?? ''));
+          break;
         case NativeEventTypes.onRequestId:
           var requestIdModel = RequestIdEventModel.fromJson(model.data!);
           widget.onGettingRequestId(requestIdModel.requestId ?? "");
-        // enrollStream.add(
-        //     EnrollError(errorString: 'requestIdModel.requestId' ?? ''));
+          break;
         default:
           break;
       }
@@ -96,6 +140,7 @@ class _EnrollPluginState extends State<EnrollPlugin> {
 
     enrollStream.add(EnrollStart());
 
+    // Set up system UI and orientation settings.
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
     ));
@@ -104,8 +149,9 @@ class _EnrollPluginState extends State<EnrollPlugin> {
       DeviceOrientation.portraitDown,
     ]);
 
+    // Validate required inputs.
     if (widget.tenantId == '') {
-      widget.onError('Tenant id cannot be empty');
+      widget.onError('Tenant ID cannot be empty');
       Navigator.of(context).pop();
     }
     if (widget.tenantSecret.isEmpty) {
@@ -114,7 +160,7 @@ class _EnrollPluginState extends State<EnrollPlugin> {
     }
     if (widget.enrollMode == EnrollMode.auth) {
       if (widget.applicationId == null) {
-        widget.onError('Application Id cannot be empty');
+        widget.onError('Application ID cannot be empty');
         Navigator.of(context).pop();
       }
       if (widget.levelOfTrust == null) {
@@ -122,8 +168,10 @@ class _EnrollPluginState extends State<EnrollPlugin> {
         Navigator.of(context).pop();
       }
     }
+
+    // Initialize the enrollment model.
     model = EnrollInitModel(
-      applicationId: widget.applicationId ?? '',
+      applicantId: widget.applicationId ?? '',
       levelOfTrust: widget.levelOfTrust ?? '',
       skipTutorial: widget.skipTutorial ?? false,
       tenantId: widget.tenantId,
@@ -170,6 +218,7 @@ class _EnrollPluginState extends State<EnrollPlugin> {
     );
   }
 
+  /// Starts the enrollment process by invoking the 'startEnroll' method on the native platform.
   void _startEnroll() {
     var json = jsonEncode(model.toJson());
 
