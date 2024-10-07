@@ -1,4 +1,5 @@
-## 1.0.3
+## 1.0.4
 
-* Delete Phone
-* Delete Mail
+* Technical release. No changes.
+
+
