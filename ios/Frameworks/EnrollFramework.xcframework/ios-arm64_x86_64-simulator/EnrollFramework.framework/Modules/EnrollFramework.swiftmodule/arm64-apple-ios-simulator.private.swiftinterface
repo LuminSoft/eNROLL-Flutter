@@ -96,7 +96,7 @@ public enum EnrollMode {
   case onboarding
   case update
   case authentication
-  case cantLogin
+  case forget
   public static func == (a: EnrollFramework.EnrollMode, b: EnrollFramework.EnrollMode) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -266,6 +266,18 @@ public enum EnrollUpdateTypes : Swift.Int, Swift.Codable {
     get
   }
 }
+public enum EnrollForgetTypes : Swift.Int, Swift.Codable {
+  case phone
+  case email
+  case device
+  case location
+  case password
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 extension EnrollFramework.EliteOTPAnimationTypes : Swift.Equatable {}
 extension EnrollFramework.EliteOTPAnimationTypes : Swift.Hashable {}
 extension EnrollFramework.EnrollMode : Swift.Equatable {}
@@ -283,3 +295,6 @@ extension EnrollFramework.LocalizationEnum : Swift.Hashable {}
 extension EnrollFramework.EnrollUpdateTypes : Swift.Equatable {}
 extension EnrollFramework.EnrollUpdateTypes : Swift.Hashable {}
 extension EnrollFramework.EnrollUpdateTypes : Swift.RawRepresentable {}
+extension EnrollFramework.EnrollForgetTypes : Swift.Equatable {}
+extension EnrollFramework.EnrollForgetTypes : Swift.Hashable {}
+extension EnrollFramework.EnrollForgetTypes : Swift.RawRepresentable {}
