@@ -115,8 +115,8 @@ public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enroll
                     }
                     
                     
-                    var localizationName = dict["localizationCode"] as? String ?? ""
-                    var environmentName = dict["enrollEnvironment"] as? String ?? ""
+                    let localizationName = dict["localizationCode"] as? String ?? ""
+                    let environmentName = dict["enrollEnvironment"] as? String ?? ""
                     if localizationName == "ar" {
                         localizationCode = .ar
                         UIView.appearance().semanticContentAttribute = .forceRightToLeft
@@ -162,6 +162,8 @@ public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enroll
             return .update
         case  "auth":
             return .authentication
+        case "forget":
+            return .forget
         default:
             return nil
         }
