@@ -88,7 +88,7 @@ public class EnrollColors {
   @objc deinit
 }
 public protocol EnrollCallBack {
-  func onSuccess()
+  func onSuccess(documentNumber: Swift.String?, applicantId: Swift.String?)
   func onError(message: Swift.String)
   func onInitializeRequest(requestId: Swift.String)
 }

@@ -26,7 +26,7 @@ public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enroll
     }
     
     //MARK: - Enroll Callbacks
-    public func onSuccess() {
+    public func onSuccess(documentNumber: String?, applicantId: String?) {
         if let eventSink = eventSink {
             var dict: [String: Any?] = [:]
             dict["event"] = "on_success"
