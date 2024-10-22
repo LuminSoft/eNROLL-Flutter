@@ -1,5 +1,5 @@
-## 1.0.5
+## 1.0.6
 
-* Technical release. No changes.
+* Added applicantId in enrollSuccessCallback model
 
 
