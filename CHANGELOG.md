@@ -1,5 +1,5 @@
-## 1.0.6
+## 1.0.7
 
-* Added applicantId in enrollSuccessCallback model
+* Fix getRequestId in case of enable skipTutorial
 
 
