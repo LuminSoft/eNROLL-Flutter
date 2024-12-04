@@ -1,5 +1,5 @@
-## 1.0.7
+## 1.2.0
 
-* Fix getRequestId in case of enable skipTutorial
+* Fix Localization
 
 
