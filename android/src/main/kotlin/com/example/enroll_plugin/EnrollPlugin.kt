@@ -255,7 +255,7 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
                         Log.d("EnrollPlugin", "eNROLL Message: ${enrollSuccessModel.enrollMessage}")
                         val eventData = mapOf(
                             "event" to "on_success",
-                            "data" to mapOf("message" to enrollSuccessModel.enrollMessage)
+                            "data" to mapOf("applicantId" to enrollSuccessModel.applicantId)
                         )
                         eventSink?.success(mapToJsonString(eventData))
                     }

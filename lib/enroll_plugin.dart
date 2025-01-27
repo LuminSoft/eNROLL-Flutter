@@ -40,7 +40,7 @@ class EnrollPlugin extends StatefulWidget {
   final String tenantSecret;
 
   /// A callback function to execute when the enrollment is successful.
-  final Function onSuccess;
+  final Function(String applicantId) onSuccess;
 
   /// A callback function to execute when an error occurs during enrollment.
   final Function(String error) onError;
@@ -123,7 +123,9 @@ class _EnrollPluginState extends State<EnrollPlugin> {
       NativeEventModel model = NativeEventModel.fromJson(json.decode(event));
       switch (model.event) {
         case NativeEventTypes.onSuccess:
-          enrollStream.add(EnrollSuccess());
+          var successModel = SuccessEventModel.fromJson(model.data!);
+          enrollStream
+              .add(EnrollSuccess(applicantId: successModel.applicantId ?? ''));
           break;
         case NativeEventTypes.onError:
           var errorModel = ErrorEventModel.fromJson(model.data!);
@@ -198,7 +200,8 @@ class _EnrollPluginState extends State<EnrollPlugin> {
             WidgetsBinding.instance.addPostFrameCallback((_) {
               if (snapshot.data != null) {
                 if (snapshot.data is EnrollSuccess) {
-                  widget.onSuccess();
+                  EnrollSuccess enrollSuccess = snapshot.data as EnrollSuccess;
+                  widget.onSuccess(enrollSuccess.applicantId);
                   Navigator.of(widget.mainScreenContext).pop();
                 } else if (snapshot.data is EnrollError) {
                   EnrollError error = snapshot.data as EnrollError;

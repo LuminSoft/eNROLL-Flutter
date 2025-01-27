@@ -31,3 +31,18 @@ class RequestIdEventModel {
     requestId = json['requestId'];
   }
 }
+
+/// The [SuccessEventModel] class represents an event that captures a applicant ID.
+///
+/// This is used to handle events where a applicant ID is generated or received.
+class SuccessEventModel {
+  /// The applicant ID generated for the event.
+  String? applicantId;
+
+  /// Creates a [SuccessEventModel] object from a JSON map.
+  ///
+  /// This constructor deserializes the JSON data into a [SuccessEventModel] object.
+  SuccessEventModel.fromJson(Map<String, dynamic> json) {
+    applicantId = json['applicantId'];
+  }
+}

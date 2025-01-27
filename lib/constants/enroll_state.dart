@@ -32,4 +32,10 @@ class RequestIdReceived implements EnrollState {
 }
 
 /// The [EnrollSuccess] state indicates that the enrollment process has been completed successfully.
-class EnrollSuccess implements EnrollState {}
+class EnrollSuccess implements EnrollState {
+  /// A string representing the applicant ID received from the enrollment process.
+  final String applicantId;
+
+  /// Constructor for [EnrollSuccess] that requires a [applicantId].
+  EnrollSuccess({required this.applicantId});
+}
