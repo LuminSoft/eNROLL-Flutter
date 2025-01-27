@@ -30,7 +30,7 @@ public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enroll
         if let eventSink = eventSink {
             var dict: [String: Any?] = [:]
             dict["event"] = "on_success"
-            dict["data"] = nil
+            dict["data"] = ["applicantId": applicantId]
             eventSink(dictionartToJsonString(dictionary: dict))
         }
     }
