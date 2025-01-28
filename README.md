@@ -142,10 +142,10 @@ import 'package:enroll_plugin/enroll_plugin.dart';
         enrollMode: EnrollMode.auth,
         enrollEnvironment: EnrollEnvironment.staging,
         localizationCode: EnrollLocalizations.en,
-        onSuccess: () {
+        onSuccess: (applicantId) {
           // Delay the state change until after the build completes
           WidgetsBinding.instance.addPostFrameCallback((_) {
-            debugPrint("Success");
+            debugPrint("success: $applicantId");
           });
         },
         onError: (error) {

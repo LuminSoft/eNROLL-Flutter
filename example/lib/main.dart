@@ -21,13 +21,13 @@ class _MyAppState extends State<MyApp> {
       return Scaffold(
         body: EnrollPlugin(
           mainScreenContext: context,
-          tenantId: '378a21e5-228d-4579-9c3e-4552196e57aa',
-          tenantSecret: 'a50b16fe-1899-40c3-b9de-bf086c720cc1',
+          tenantId: 'TENANT_ID',
+          tenantSecret: 'TENANT_SECRET',
           enrollMode: EnrollMode.onboarding,
           enrollEnvironment: EnrollEnvironment.staging,
           onSuccess: (applicantId) {
             WidgetsBinding.instance.addPostFrameCallback((_) {
-              debugPrint("Success:: $applicantId");
+              debugPrint("success: $applicantId");
             });
           },
           onError: (error) {
