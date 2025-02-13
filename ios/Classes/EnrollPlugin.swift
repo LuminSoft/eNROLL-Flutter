@@ -3,15 +3,6 @@ import UIKit
 import EnrollFramework
 
 public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, EnrollCallBack {
-
-    public func onInitializeRequest(requestId: String) {
-        if let eventSink = eventSink {
-            var dict: [String: Any?] = [:]
-            dict["event"] = "on_request_id"
-            dict["data"] = ["requestId": requestId]
-            eventSink(dictionartToJsonString(dictionary: dict))
-        }
-    }
     
     
     func dictionartToJsonString(dictionary: [String: Any?]) -> String{
@@ -26,20 +17,30 @@ public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enroll
     }
     
     //MARK: - Enroll Callbacks
-    public func onSuccess(documentNumber: String?, applicantId: String?) {
+    
+    public func enrollDidSucceed(with model: EnrollFramework.EnrollSuccessModel) {
         if let eventSink = eventSink {
             var dict: [String: Any?] = [:]
             dict["event"] = "on_success"
-            dict["data"] = ["applicantId": applicantId]
+            dict["data"] = ["applicantId": model.applicantId]
             eventSink(dictionartToJsonString(dictionary: dict))
         }
     }
     
-    public func onError(message: String) {
+    public func enrollDidFail(with error: EnrollFramework.EnrollErrorModel) {
         if let eventSink = eventSink {
             var dict: [String: Any?] = [:]
             dict["event"] = "on_error"
-            dict["data"] = ["message": message]
+            dict["data"] = ["message": error.errorMessage]
+            eventSink(dictionartToJsonString(dictionary: dict))
+        }
+    }
+    
+    public func didInitializeRequest(with requestId: String) {
+        if let eventSink = eventSink {
+            var dict: [String: Any?] = [:]
+            dict["event"] = "on_request_id"
+            dict["data"] = ["requestId": requestId]
             eventSink(dictionartToJsonString(dictionary: dict))
         }
     }

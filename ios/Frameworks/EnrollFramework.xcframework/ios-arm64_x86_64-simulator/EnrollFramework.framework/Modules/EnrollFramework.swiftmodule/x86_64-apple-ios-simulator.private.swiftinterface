@@ -87,10 +87,14 @@ public class EnrollColors {
   public init(primary: UIKit.UIColor? = nil, secondary: UIKit.UIColor? = nil, appBackgroundColor: UIKit.UIColor? = nil, textColor: UIKit.UIColor? = nil, errorColor: UIKit.UIColor? = nil, successColor: UIKit.UIColor? = nil, warningColor: UIKit.UIColor? = nil, appWhite: UIKit.UIColor? = nil, appBlack: UIKit.UIColor? = nil)
   @objc deinit
 }
+public struct EnrollErrorModel {
+  public let errorMessage: Swift.String
+  public let applicantId: Swift.String?
+}
 public protocol EnrollCallBack {
-  func onSuccess(documentNumber: Swift.String?, applicantId: Swift.String?)
-  func onError(message: Swift.String)
-  func onInitializeRequest(requestId: Swift.String)
+  func enrollDidSucceed(with model: EnrollFramework.EnrollSuccessModel)
+  func enrollDidFail(with error: EnrollFramework.EnrollErrorModel)
+  func didInitializeRequest(with requestId: Swift.String)
 }
 public enum EnrollMode {
   case onboarding
@@ -108,8 +112,12 @@ extension EnrollFramework.EliteOTPField : UIKit.UITextFieldDelegate {
   @_Concurrency.MainActor(unsafe) @objc final public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
   @_Concurrency.MainActor(unsafe) @objc final public func textFieldDidEndEditing(_ textField: UIKit.UITextField)
 }
+public struct EnrollSuccessModel {
+  public let documentNumber: Swift.String?
+  public let applicantId: Swift.String?
+}
 public struct EnrollInitModel {
-  public init(tenantId: Swift.String, tenantSecret: Swift.String, enrollEnviroment: EnrollFramework.EnrollEnviroment = .staging, localizationCode: EnrollFramework.LocalizationEnum = .en, enrollCallBack: (any EnrollFramework.EnrollCallBack)?, enrollMode: EnrollFramework.EnrollMode, skipTutorial: Swift.Bool? = false, enrollColors: EnrollFramework.EnrollColors? = nil, levelOffTrustId: Swift.String? = nil, applicantId: Swift.String? = nil, correlationId: Swift.String? = nil, updateSteps: [EnrollFramework.EnrollUpdateTypes]? = nil) throws
+  public init(tenantId: Swift.String, tenantSecret: Swift.String, enrollEnviroment: EnrollFramework.EnrollEnviroment = .staging, localizationCode: EnrollFramework.LocalizationEnum = .en, enrollCallBack: (any EnrollFramework.EnrollCallBack)?, enrollMode: EnrollFramework.EnrollMode, skipTutorial: Swift.Bool? = false, enrollColors: EnrollFramework.EnrollColors? = nil, levelOffTrustId: Swift.String? = nil, applicantId: Swift.String? = nil, correlationId: Swift.String? = nil, updateSteps: [EnrollFramework.EnrollUpdateTypes]? = nil, customFontName: Swift.String? = nil, isEgyptionNationalId: Swift.Bool = false) throws
 }
 extension UIKit.UIDevice {
   @_Concurrency.MainActor(unsafe) public static let modelName: Swift.String
