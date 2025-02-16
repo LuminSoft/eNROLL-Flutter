@@ -1,5 +1,5 @@
-## 1.1.1
+## 1.1.2
 
-* Retrieve Applicant ID
+* Enhance iOS 
 
 
