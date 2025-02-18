@@ -191,8 +191,10 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
             }
             val enrollMode = if (jsonObject.get("enrollMode")?.asString == "onboarding") {
                 EnrollMode.ONBOARDING
-            } else {
+            } else if (jsonObject.get("enrollMode")?.asString == "auth") {
                 EnrollMode.AUTH
+            } else {
+                EnrollMode.UPDATE
             }
 
             val enrollEnvironment =

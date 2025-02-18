@@ -1,5 +1,5 @@
-## 1.1.3
+## 1.1.4
 
-* Enhance Phone OTP Screen 
+* Add Update Mode
 
 

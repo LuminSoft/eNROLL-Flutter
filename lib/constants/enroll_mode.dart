@@ -7,4 +7,7 @@ enum EnrollMode {
 
   /// The authentication mode, used when verifying the identity of an existing user.
   auth,
+
+  /// The update mode, used when verifying the identity of an existing user.
+  update
 }
