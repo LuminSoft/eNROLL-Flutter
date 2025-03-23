@@ -18481,64 +18481,57 @@
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/updatePassport\/presentation\/views\/UpdatePassportPreScanViewController.swift",
-      "kind": "BooleanLiteral",
-      "offset": 715,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/updatePassport\/presentation\/views\/UpdatePassportPreScanViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1532,
+      "offset": 1521,
       "length": 34,
       "value": "\"UpdatePassportDataViewController\""
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/updatePassport\/presentation\/views\/UpdatePassportPreScanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1753,
+      "offset": 1742,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/updatePassport\/presentation\/views\/UpdatePassportPreScanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2497,
+      "offset": 2486,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/updatePassport\/presentation\/views\/UpdatePassportPreScanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2779,
+      "offset": 2768,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/updatePassport\/presentation\/views\/UpdatePassportPreScanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3252,
+      "offset": 3241,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/updatePassport\/presentation\/views\/UpdatePassportPreScanViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 3840,
+      "offset": 3829,
       "length": 2,
       "value": "17"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/updatePassport\/presentation\/views\/UpdatePassportPreScanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4221,
+      "offset": 4210,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/updatePassport\/presentation\/views\/UpdatePassportPreScanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4396,
+      "offset": 4385,
       "length": 4,
       "value": "true"
     },
@@ -18845,50 +18838,43 @@
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/faceRecognition\/presentastion\/views\/FaceRecognitionPrescanViewController.swift",
-      "kind": "BooleanLiteral",
-      "offset": 728,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/faceRecognition\/presentastion\/views\/FaceRecognitionPrescanViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1568,
+      "offset": 1557,
       "length": 29,
       "value": "\"FaceAnimationViewController\""
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/faceRecognition\/presentastion\/views\/FaceRecognitionPrescanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1765,
+      "offset": 1754,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/faceRecognition\/presentastion\/views\/FaceRecognitionPrescanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2352,
+      "offset": 2341,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/faceRecognition\/presentastion\/views\/FaceRecognitionPrescanViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2985,
+      "offset": 2974,
       "length": 2,
       "value": "17"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/faceRecognition\/presentastion\/views\/FaceRecognitionPrescanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3327,
+      "offset": 3316,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/faceRecognition\/presentastion\/views\/FaceRecognitionPrescanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3502,
+      "offset": 3491,
       "length": 4,
       "value": "true"
     },
@@ -23214,42 +23200,35 @@
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/authentication\/features\/faceAuthentication\/presentation\/views\/FaceAuthenticationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 727,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/authentication\/features\/faceAuthentication\/presentation\/views\/FaceAuthenticationViewController.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1620,
+      "offset": 1609,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/authentication\/features\/faceAuthentication\/presentation\/views\/FaceAuthenticationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2342,
+      "offset": 2331,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/authentication\/features\/faceAuthentication\/presentation\/views\/FaceAuthenticationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2399,
+      "offset": 2388,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/authentication\/features\/faceAuthentication\/presentation\/views\/FaceAuthenticationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3609,
+      "offset": 3598,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/authentication\/features\/faceAuthentication\/presentation\/views\/FaceAuthenticationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3790,
+      "offset": 3779,
       "length": 4,
       "value": "true"
     },
@@ -23836,92 +23815,85 @@
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/personalConfirmation\/presentation\/nationalId\/views\/nationalIdPreScanViewController.swift",
-      "kind": "BooleanLiteral",
-      "offset": 746,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/personalConfirmation\/presentation\/nationalId\/views\/nationalIdPreScanViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1574,
+      "offset": 1563,
       "length": 35,
       "value": "\"FrontNationalIdDataViewController\""
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/personalConfirmation\/presentation\/nationalId\/views\/nationalIdPreScanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1797,
+      "offset": 1786,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/personalConfirmation\/presentation\/nationalId\/views\/nationalIdPreScanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2427,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/personalConfirmation\/presentation\/nationalId\/views\/nationalIdPreScanViewController.swift",
-      "kind": "StringLiteral",
-      "offset": 2615,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/personalConfirmation\/presentation\/nationalId\/views\/nationalIdPreScanViewController.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2701,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/personalConfirmation\/presentation\/nationalId\/views\/nationalIdPreScanViewController.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2936,
+      "offset": 2416,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/personalConfirmation\/presentation\/nationalId\/views\/nationalIdPreScanViewController.swift",
       "kind": "StringLiteral",
-      "offset": 3028,
+      "offset": 2604,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/personalConfirmation\/presentation\/nationalId\/views\/nationalIdPreScanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3048,
+      "offset": 2690,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/personalConfirmation\/presentation\/nationalId\/views\/nationalIdPreScanViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2925,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/personalConfirmation\/presentation\/nationalId\/views\/nationalIdPreScanViewController.swift",
+      "kind": "StringLiteral",
+      "offset": 3017,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/personalConfirmation\/presentation\/nationalId\/views\/nationalIdPreScanViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3037,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/personalConfirmation\/presentation\/nationalId\/views\/nationalIdPreScanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3365,
+      "offset": 3354,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/personalConfirmation\/presentation\/nationalId\/views\/nationalIdPreScanViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 3696,
+      "offset": 3685,
       "length": 2,
       "value": "17"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/personalConfirmation\/presentation\/nationalId\/views\/nationalIdPreScanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4071,
+      "offset": 4060,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/personalConfirmation\/presentation\/nationalId\/views\/nationalIdPreScanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4246,
+      "offset": 4235,
       "length": 4,
       "value": "true"
     },
@@ -24789,14 +24761,14 @@
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/presentation\/views\/baseViewController.swift",
       "kind": "StringLiteral",
-      "offset": 14629,
+      "offset": 14715,
       "length": 21,
       "value": "\"CS.Lang.Word.cancel\""
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/presentation\/views\/baseViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 14721,
+      "offset": 14807,
       "length": 4,
       "value": "true"
     },
@@ -26504,56 +26476,49 @@
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/authentication\/faceUpdateAuthentication\/presentation\/views\/FaceUpdateAuthenticationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 751,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/authentication\/faceUpdateAuthentication\/presentation\/views\/FaceUpdateAuthenticationViewController.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2093,
+      "offset": 2082,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/authentication\/faceUpdateAuthentication\/presentation\/views\/FaceUpdateAuthenticationViewController.swift",
       "kind": "StringLiteral",
-      "offset": 2196,
+      "offset": 2185,
       "length": 36,
       "value": "\"UpdateGeneralFeatureViewController\""
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/authentication\/faceUpdateAuthentication\/presentation\/views\/FaceUpdateAuthenticationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2397,
+      "offset": 2386,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/authentication\/faceUpdateAuthentication\/presentation\/views\/FaceUpdateAuthenticationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3032,
+      "offset": 3021,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/authentication\/faceUpdateAuthentication\/presentation\/views\/FaceUpdateAuthenticationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3089,
+      "offset": 3078,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/authentication\/faceUpdateAuthentication\/presentation\/views\/FaceUpdateAuthenticationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4299,
+      "offset": 4288,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/authentication\/faceUpdateAuthentication\/presentation\/views\/FaceUpdateAuthenticationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4480,
+      "offset": 4469,
       "length": 4,
       "value": "true"
     },
@@ -26756,70 +26721,70 @@
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/faceScanner\/InnovatricsSmileLivenessDelegates.swift",
       "kind": "StringLiteral",
-      "offset": 1821,
+      "offset": 1814,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/faceScanner\/InnovatricsSmileLivenessDelegates.swift",
       "kind": "FloatLiteral",
-      "offset": 1874,
+      "offset": 1867,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/faceScanner\/InnovatricsSmileLivenessDelegates.swift",
       "kind": "FloatLiteral",
-      "offset": 1901,
+      "offset": 1894,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/faceScanner\/InnovatricsSmileLivenessDelegates.swift",
       "kind": "BooleanLiteral",
-      "offset": 1965,
+      "offset": 1958,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/faceScanner\/InnovatricsSmileLivenessDelegates.swift",
       "kind": "IntegerLiteral",
-      "offset": 2192,
+      "offset": 2185,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/faceScanner\/InnovatricsSmileLivenessDelegates.swift",
       "kind": "BooleanLiteral",
-      "offset": 2267,
+      "offset": 2260,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/faceScanner\/InnovatricsSmileLivenessDelegates.swift",
       "kind": "BooleanLiteral",
-      "offset": 2633,
+      "offset": 2626,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/faceScanner\/InnovatricsSmileLivenessDelegates.swift",
       "kind": "StringLiteral",
-      "offset": 3198,
+      "offset": 3191,
       "length": 37,
       "value": "\"frontDocumentAutoCaptureInterrupted\""
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/faceScanner\/InnovatricsSmileLivenessDelegates.swift",
       "kind": "BooleanLiteral",
-      "offset": 3576,
+      "offset": 3569,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/faceScanner\/InnovatricsSmileLivenessDelegates.swift",
       "kind": "StringLiteral",
-      "offset": 3627,
+      "offset": 3620,
       "length": 17,
       "value": "\"timeoutExeption\""
     },
@@ -30024,120 +29989,106 @@
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/personalConfirmation\/presentation\/passport\/views\/PassportPreScanViewController.swift",
-      "kind": "BooleanLiteral",
-      "offset": 691,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/personalConfirmation\/presentation\/passport\/views\/PassportPreScanViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1519,
+      "offset": 1508,
       "length": 29,
       "value": "\"PassportDataViewConntroller\""
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/personalConfirmation\/presentation\/passport\/views\/PassportPreScanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1730,
+      "offset": 1719,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/personalConfirmation\/presentation\/passport\/views\/PassportPreScanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2310,
+      "offset": 2299,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/personalConfirmation\/presentation\/passport\/views\/PassportPreScanViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2943,
+      "offset": 2932,
       "length": 2,
       "value": "17"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/personalConfirmation\/presentation\/passport\/views\/PassportPreScanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3324,
+      "offset": 3313,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/personalConfirmation\/presentation\/passport\/views\/PassportPreScanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3499,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/updateNationalId\/presentation\/nationalId\/views\/UpdateNationalIdPreScanViewController.swift",
-      "kind": "BooleanLiteral",
-      "offset": 723,
+      "offset": 3488,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/updateNationalId\/presentation\/nationalId\/views\/UpdateNationalIdPreScanViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1542,
+      "offset": 1531,
       "length": 41,
       "value": "\"UpdateFrontNationalIdDataViewController\""
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/updateNationalId\/presentation\/nationalId\/views\/UpdateNationalIdPreScanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1777,
+      "offset": 1766,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/updateNationalId\/presentation\/nationalId\/views\/UpdateNationalIdPreScanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2521,
+      "offset": 2510,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/updateNationalId\/presentation\/nationalId\/views\/UpdateNationalIdPreScanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2803,
+      "offset": 2792,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/updateNationalId\/presentation\/nationalId\/views\/UpdateNationalIdPreScanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3276,
+      "offset": 3265,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/updateNationalId\/presentation\/nationalId\/views\/UpdateNationalIdPreScanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3546,
+      "offset": 3535,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/updateNationalId\/presentation\/nationalId\/views\/UpdateNationalIdPreScanViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 3877,
+      "offset": 3866,
       "length": 2,
       "value": "17"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/updateNationalId\/presentation\/nationalId\/views\/UpdateNationalIdPreScanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4252,
+      "offset": 4241,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/updateNationalId\/presentation\/nationalId\/views\/UpdateNationalIdPreScanViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4427,
+      "offset": 4416,
       "length": 4,
       "value": "true"
     },
@@ -37380,41 +37331,6 @@
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/documentScanner\/innovatricsDocumentScannerHelpers.swift",
-      "kind": "FloatLiteral",
-      "offset": 1508,
-      "length": 4,
-      "value": "0.05"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/documentScanner\/innovatricsDocumentScannerHelpers.swift",
-      "kind": "FloatLiteral",
-      "offset": 1532,
-      "length": 3,
-      "value": "0.5"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/documentScanner\/innovatricsDocumentScannerHelpers.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1634,
-      "length": 2,
-      "value": "10"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/documentScanner\/innovatricsDocumentScannerHelpers.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1669,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/documentScanner\/innovatricsDocumentScannerHelpers.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1680,
-      "length": 1,
-      "value": "0"
-    },
-    {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/faceRecognition\/presentastion\/views\/FaceAnimationViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 1205,
@@ -38018,78 +37934,71 @@
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/documentScanner\/InnovatricsDocumentScanner.swift",
-      "kind": "BooleanLiteral",
-      "offset": 715,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/documentScanner\/InnovatricsDocumentScanner.swift",
       "kind": "StringLiteral",
-      "offset": 1552,
+      "offset": 1543,
       "length": 13,
       "value": "\"INITIALIZED\""
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/documentScanner\/InnovatricsDocumentScanner.swift",
       "kind": "StringLiteral",
-      "offset": 2429,
+      "offset": 2420,
       "length": 23,
       "value": "\"document_front_screen\""
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/documentScanner\/InnovatricsDocumentScanner.swift",
       "kind": "StringLiteral",
-      "offset": 2572,
+      "offset": 2563,
       "length": 22,
       "value": "\"document_back_screen\""
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/documentScanner\/InnovatricsDocumentScanner.swift",
       "kind": "StringLiteral",
-      "offset": 2719,
+      "offset": 2710,
       "length": 17,
       "value": "\"passport_screen\""
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/documentScanner\/InnovatricsDocumentScanner.swift",
       "kind": "FloatLiteral",
-      "offset": 2869,
+      "offset": 2860,
       "length": 4,
       "value": "16.0"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/documentScanner\/InnovatricsDocumentScanner.swift",
       "kind": "BooleanLiteral",
-      "offset": 2982,
+      "offset": 2973,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/documentScanner\/InnovatricsDocumentScanner.swift",
       "kind": "IntegerLiteral",
-      "offset": 3079,
+      "offset": 3070,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/documentScanner\/InnovatricsDocumentScanner.swift",
       "kind": "BooleanLiteral",
-      "offset": 3094,
+      "offset": 3085,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/documentScanner\/InnovatricsDocumentScanner.swift",
       "kind": "IntegerLiteral",
-      "offset": 3182,
+      "offset": 3173,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/documentScanner\/InnovatricsDocumentScanner.swift",
       "kind": "BooleanLiteral",
-      "offset": 3197,
+      "offset": 3188,
       "length": 4,
       "value": "true"
     },
@@ -38579,56 +38488,56 @@
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/faceScanner\/InnovatricsSmileLivenessScanner.swift",
       "kind": "StringLiteral",
-      "offset": 1335,
+      "offset": 1328,
       "length": 23,
       "value": "\"smile_liveness_screen\""
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/faceScanner\/InnovatricsSmileLivenessScanner.swift",
       "kind": "BooleanLiteral",
-      "offset": 1442,
+      "offset": 1435,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/faceScanner\/InnovatricsSmileLivenessScanner.swift",
       "kind": "FloatLiteral",
-      "offset": 1498,
+      "offset": 1491,
       "length": 4,
       "value": "16.0"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/faceScanner\/InnovatricsSmileLivenessScanner.swift",
       "kind": "BooleanLiteral",
-      "offset": 1613,
+      "offset": 1606,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/faceScanner\/InnovatricsSmileLivenessScanner.swift",
       "kind": "IntegerLiteral",
-      "offset": 1708,
+      "offset": 1701,
       "length": 2,
       "value": "70"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/faceScanner\/InnovatricsSmileLivenessScanner.swift",
       "kind": "BooleanLiteral",
-      "offset": 1723,
+      "offset": 1716,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/faceScanner\/InnovatricsSmileLivenessScanner.swift",
       "kind": "IntegerLiteral",
-      "offset": 1809,
+      "offset": 1802,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/innovatrics\/faceScanner\/InnovatricsSmileLivenessScanner.swift",
       "kind": "BooleanLiteral",
-      "offset": 1824,
+      "offset": 1817,
       "length": 4,
       "value": "true"
     },
@@ -39839,14 +39748,14 @@
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/token\/AccessTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 903,
+      "offset": 1077,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/token\/AccessTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 1269,
+      "offset": 1769,
       "length": 2,
       "value": "\"\""
     },
@@ -45509,35 +45418,42 @@
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/EnrollConstants.swift",
       "kind": "StringLiteral",
-      "offset": 436,
+      "offset": 215,
+      "length": 19,
+      "value": "\"enrollAccessToken\""
+    },
+    {
+      "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/EnrollConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 496,
       "length": 12,
       "value": "\"frontImage\""
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/EnrollConstants.swift",
       "kind": "StringLiteral",
-      "offset": 489,
+      "offset": 549,
       "length": 11,
       "value": "\"backImage\""
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/EnrollConstants.swift",
       "kind": "StringLiteral",
-      "offset": 535,
+      "offset": 595,
       "length": 15,
       "value": "\"passportImage\""
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/EnrollConstants.swift",
       "kind": "StringLiteral",
-      "offset": 586,
+      "offset": 646,
       "length": 15,
       "value": "\"faceImage.png\""
     },
     {
       "filePath": "\/Users\/mac\/Desktop\/iOS\/enroll-ios-framework\/EnrollFramework\/core\/utils\/EnrollConstants.swift",
       "kind": "StringLiteral",
-      "offset": 646,
+      "offset": 706,
       "length": 24,
       "value": "\"smileLivenessImage.png\""
     },
