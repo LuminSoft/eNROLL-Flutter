@@ -1,5 +1,5 @@
-## 1.1.6
+## 1.1.7
 
-* Update iOS Framework
+* Update Android SDK
 
 
