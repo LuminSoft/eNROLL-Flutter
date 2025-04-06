@@ -1,33 +1,34 @@
 PODS:
-  - dot-camera (7.5.1)
-  - dot-capture (7.5.1)
-  - dot-core (7.5.1)
-  - dot-document (7.5.1):
-    - dot-camera (= 7.5.1)
-    - dot-capture (= 7.5.1)
-    - dot-core (= 7.5.1)
-    - dot-protobuf (= 1.5.1)
-    - sam (= 2.35.2)
-  - dot-face-background-uniformity (7.5.1):
-    - dot-face-core (= 7.5.1)
-  - dot-face-commons (7.5.1)
-  - dot-face-core (7.5.1):
-    - dot-camera (= 7.5.1)
-    - dot-capture (= 7.5.1)
-    - dot-core (= 7.5.1)
-    - dot-face-commons (= 7.5.1)
-    - dot-protobuf (= 1.5.1)
+  - dot-camera (8.7.0)
+  - dot-capture (8.7.0)
+  - dot-core (8.7.0)
+  - dot-document (8.7.0):
+    - dot-camera (= 8.7.0)
+    - dot-capture (= 8.7.0)
+    - dot-core (= 8.7.0)
+    - dot-document-commons (= 8.7.0)
+    - dot-protobuf (= 1.12.0)
+  - dot-document-commons (8.7.0)
+  - dot-face-background-uniformity (8.7.0):
+    - dot-face-core (= 8.7.0)
+  - dot-face-commons (8.7.0)
+  - dot-face-core (8.7.0):
+    - dot-camera (= 8.7.0)
+    - dot-capture (= 8.7.0)
+    - dot-core (= 8.7.0)
+    - dot-face-commons (= 8.7.0)
+    - dot-protobuf (= 1.12.0)
     - iface (= 5.1.2)
-  - dot-face-detection-fast (7.5.1):
-    - dot-face-core (= 7.5.1)
-  - dot-face-expression-neutral (7.5.1):
-    - dot-face-core (= 7.5.1)
-  - dot-protobuf (1.5.1)
+  - dot-face-detection-fast (8.7.0):
+    - dot-face-core (= 8.7.0)
+  - dot-face-expression-neutral (8.7.0):
+    - dot-face-core (= 8.7.0)
+  - dot-protobuf (1.12.0)
   - enroll_plugin (0.0.1):
-    - dot-document (= 7.5.1)
-    - dot-face-background-uniformity (= 7.5.1)
-    - dot-face-detection-fast (= 7.5.1)
-    - dot-face-expression-neutral (= 7.5.1)
+    - dot-document (= 8.7.0)
+    - dot-face-background-uniformity (= 8.7.0)
+    - dot-face-detection-fast (= 8.7.0)
+    - dot-face-expression-neutral (= 8.7.0)
     - Flutter
   - Flutter (1.0.0)
   - iface (5.1.2):
@@ -35,7 +36,6 @@ PODS:
   - integration_test (0.0.1):
     - Flutter
   - onnx (2.1.2)
-  - sam (2.35.2)
 
 DEPENDENCIES:
   - enroll_plugin (from `.symlinks/plugins/enroll_plugin/ios`)
@@ -48,6 +48,7 @@ SPEC REPOS:
     - dot-capture
     - dot-core
     - dot-document
+    - dot-document-commons
     - dot-face-background-uniformity
     - dot-face-commons
     - dot-face-core
@@ -56,7 +57,6 @@ SPEC REPOS:
     - dot-protobuf
     - iface
     - onnx
-    - sam
 
 EXTERNAL SOURCES:
   enroll_plugin:
@@ -67,23 +67,23 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/integration_test/ios"
 
 SPEC CHECKSUMS:
-  dot-camera: 3d05d4f62438df8b740a0f2b5ede7f1c76c78ec1
-  dot-capture: 1bb702eb3875b95cf9b7ceb17be4b933547d7c86
-  dot-core: 532ffaaec7f4552f2a26e0573136e3330d0ad239
-  dot-document: b5b4d6868064d1fb98eedee63567de1ff617f2f4
-  dot-face-background-uniformity: 117229116da5e2400681eedaf5c26b425b3dbf02
-  dot-face-commons: 17d56b644f70905e65f81c5cf5f31b43d63dfd0e
-  dot-face-core: 45a65571381d2fc0b408781c31aec49bbd0b5bed
-  dot-face-detection-fast: 6781ce082d5e2d635def421113f9c698440fa67f
-  dot-face-expression-neutral: 617e466fff92b73b6413af20b261ff86437d0f58
-  dot-protobuf: 843c3f4bfa35154a94acdfb004ba3fb0e8afac6c
-  enroll_plugin: d231fbd85c3c1e048225cdc6865ee6dad3c7d83c
+  dot-camera: 0f642adc3830ef9e972e6b1a17b0cc3d2657d396
+  dot-capture: 76accabe96bfb704a752b93e26003a5ddfd13040
+  dot-core: 6f5eacf2512010edbd58c6121d6406fc41eaa6b3
+  dot-document: dc40ee7b7431646c19c98521a999d7c3c03ed33e
+  dot-document-commons: fd6a31907c3923d38c4e9fb7fc76226e27770347
+  dot-face-background-uniformity: 25ea7db29b04b42869c1f57384a22d4cf1d4cfb4
+  dot-face-commons: 8c06dd50e04502dda7ba3c9ad0d91d4dbd9750db
+  dot-face-core: 680c68cd51c411d1c0a2e9989fb5d87bece8e24f
+  dot-face-detection-fast: 238598177a5099872eee2aa05cfa5fddbcfc31c3
+  dot-face-expression-neutral: f955b930aadad4902369cc2afe9cab7506aa56c0
+  dot-protobuf: c801e41197bcb48b2ee0dd5ef2a16e4fff9cc28e
+  enroll_plugin: 0f6114f0a2eeb5c41c2df0a1861e3dbd3306f58e
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   iface: 4767a90a11587115add991240183e96223848750
-  integration_test: 252f60fa39af5e17c3aa9899d35d908a0721b573
+  integration_test: ce0a3ffa1de96d1a89ca0ac26fca7ea18a749ef4
   onnx: ff81ed3e7860e32c3e6addda60834c3ea4d955cb
-  sam: 5c7e5f0787c3418716ca6e1788973b8b5949311f
 
 PODFILE CHECKSUM: 78f6459f58aed2aa3abf9818589366d4fdd7509f
 
-COCOAPODS: 1.12.0
+COCOAPODS: 1.16.2
