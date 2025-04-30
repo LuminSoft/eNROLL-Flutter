@@ -21,8 +21,8 @@ class _MyAppState extends State<MyApp> {
       return Scaffold(
         body: EnrollPlugin(
           mainScreenContext: context,
-          tenantId: '378a21e5-228d-4579-9c3e-4552196e57aa',
-          tenantSecret: 'a50b16fe-1899-40c3-b9de-bf086c720cc1',
+          tenantId: 'b80c37ed-9d27-4fac-b62c-816b8ddecb6a',
+          tenantSecret: 'e50c39df-da3c-4824-a425-f9d13cf85f5d',
           enrollMode: EnrollMode.onboarding,
           enrollEnvironment: EnrollEnvironment.staging,
           onSuccess: (applicantId) {
