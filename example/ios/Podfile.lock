@@ -1,0 +1,94 @@
+PODS:
+  - dot-camera (8.10.0)
+  - dot-capture (8.10.0)
+  - dot-core (8.10.0)
+  - dot-document (8.10.0):
+    - dot-camera (= 8.10.0)
+    - dot-capture (= 8.10.0)
+    - dot-core (= 8.10.0)
+    - dot-document-commons (= 8.10.0)
+    - dot-protobuf (= 1.13.0)
+    - dot-serialization (= 8.10.0)
+  - dot-document-commons (8.10.0)
+  - dot-face-background-uniformity (8.10.0):
+    - dot-face-core (= 8.10.0)
+  - dot-face-commons (8.10.0)
+  - dot-face-core (8.10.0):
+    - dot-camera (= 8.10.0)
+    - dot-capture (= 8.10.0)
+    - dot-core (= 8.10.0)
+    - dot-face-commons (= 8.10.0)
+    - dot-protobuf (= 1.13.0)
+    - dot-serialization (= 8.10.0)
+    - iface (= 6.5.0)
+  - dot-face-detection-fast (8.10.0):
+    - dot-face-core (= 8.10.0)
+  - dot-face-expression-neutral (8.10.0):
+    - dot-face-core (= 8.10.0)
+  - dot-protobuf (1.13.0)
+  - dot-serialization (8.10.0)
+  - enroll_plugin (0.0.1):
+    - dot-document (= 8.10.0)
+    - dot-face-background-uniformity (= 8.10.0)
+    - dot-face-detection-fast (= 8.10.0)
+    - dot-face-expression-neutral (= 8.10.0)
+    - Flutter
+  - Flutter (1.0.0)
+  - iface (6.5.0):
+    - onnx (= 6.5.0)
+  - integration_test (0.0.1):
+    - Flutter
+  - onnx (6.5.0)
+
+DEPENDENCIES:
+  - enroll_plugin (from `.symlinks/plugins/enroll_plugin/ios`)
+  - Flutter (from `Flutter`)
+  - integration_test (from `.symlinks/plugins/integration_test/ios`)
+
+SPEC REPOS:
+  https://github.com/innovatrics/innovatrics-podspecs:
+    - dot-camera
+    - dot-capture
+    - dot-core
+    - dot-document
+    - dot-document-commons
+    - dot-face-background-uniformity
+    - dot-face-commons
+    - dot-face-core
+    - dot-face-detection-fast
+    - dot-face-expression-neutral
+    - dot-protobuf
+    - dot-serialization
+    - iface
+    - onnx
+
+EXTERNAL SOURCES:
+  enroll_plugin:
+    :path: ".symlinks/plugins/enroll_plugin/ios"
+  Flutter:
+    :path: Flutter
+  integration_test:
+    :path: ".symlinks/plugins/integration_test/ios"
+
+SPEC CHECKSUMS:
+  dot-camera: fb678bc96520bc54dd18d5215f51310fc8b437a9
+  dot-capture: 8549d09fce05d283ffeaaca771bce06da4489350
+  dot-core: 54f3165ead77c1f1e45201e576c528a3c69aac82
+  dot-document: bb35e56a4d1bba8c823fb8425ecfbd12dd217bd5
+  dot-document-commons: 15f6b86e63371ac8aa9510d413af30e09c9faca8
+  dot-face-background-uniformity: 93b366443e51ef781e41fdf5bfd172af339b0d79
+  dot-face-commons: 4f5cac11c167cf858d0c635750891a0dddab5fe1
+  dot-face-core: 698fa251118367c1f60e140bc374b65d4a13a155
+  dot-face-detection-fast: a2f8335da53759f01c7196faf729482a22e93de1
+  dot-face-expression-neutral: 9ad7dfbeafddc8c56886121a8ff8c89979d8249b
+  dot-protobuf: 4dc2b8958ea969b96f002d840d96b4542e44b263
+  dot-serialization: ce74f333255f063a00b4ce4916fc6f334e74bcbe
+  enroll_plugin: 0b2d2085131797f7f48c320aa6390365f94dc6b1
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  iface: 430f01592dfed2b50d415e95d7cef868440cdf66
+  integration_test: 252f60fa39af5e17c3aa9899d35d908a0721b573
+  onnx: 8e5ab07b48af33e093f051a03b9895882db3072d
+
+PODFILE CHECKSUM: 78f6459f58aed2aa3abf9818589366d4fdd7509f
+
+COCOAPODS: 1.16.2

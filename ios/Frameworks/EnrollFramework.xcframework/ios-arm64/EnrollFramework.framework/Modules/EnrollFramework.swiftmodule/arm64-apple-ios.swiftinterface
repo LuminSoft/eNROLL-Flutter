@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
-// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name EnrollFramework
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name EnrollFramework
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import AVFoundation
 import AVKit
 import Combine
@@ -37,36 +37,36 @@ public enum EliteOTPAnimationTypes {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class EliteOTPField : UIKit.UITextField {
-  @_Concurrency.MainActor(unsafe) final public var spacing: CoreFoundation.CGFloat
-  @_Concurrency.MainActor(unsafe) final public var slotCount: Swift.UInt
-  @_Concurrency.MainActor(unsafe) final public var slotCornerRaduis: CoreFoundation.CGFloat
-  @_Concurrency.MainActor(unsafe) final public var slotPlaceHolder: Swift.String
-  @_Concurrency.MainActor(unsafe) final public var slotFontType: UIKit.UIFont
-  @_Concurrency.MainActor(unsafe) final public var slotPlaceHolderFontType: UIKit.UIFont
-  @_Concurrency.MainActor(unsafe) final public var filledSlotTextColor: UIKit.UIColor
-  @_Concurrency.MainActor(unsafe) final public var emptySlotTextColor: UIKit.UIColor
-  @_Concurrency.MainActor(unsafe) final public var emptySlotBackgroundColor: UIKit.UIColor
-  @_Concurrency.MainActor(unsafe) final public var filledSlotBackgroundColor: UIKit.UIColor
-  @_Concurrency.MainActor(unsafe) final public var isBorderEnabled: Swift.Bool
-  @_Concurrency.MainActor(unsafe) final public var filledSlotBorderWidth: CoreFoundation.CGFloat
-  @_Concurrency.MainActor(unsafe) final public var filledSlotBorderColor: CoreGraphics.CGColor
-  @_Concurrency.MainActor(unsafe) final public var emptySlotBorderWidth: CoreFoundation.CGFloat
-  @_Concurrency.MainActor(unsafe) final public var emptySlotBorderColor: CoreGraphics.CGColor
-  @_Concurrency.MainActor(unsafe) final public var isVibrateEnabled: Swift.Bool
-  @_Concurrency.MainActor(unsafe) final public var isAnimationEnabledOnLastDigit: Swift.Bool
-  @_Concurrency.MainActor(unsafe) final public var animationType: EnrollFramework.EliteOTPAnimationTypes
-  @_Concurrency.MainActor(unsafe) final public var enableUnderLineViews: Swift.Bool
-  @_Concurrency.MainActor(unsafe) final public var underlineViewWidthMultiplier: CoreFoundation.CGFloat
-  @_Concurrency.MainActor(unsafe) final public var underlineViewHeight: CoreFoundation.CGFloat
-  @_Concurrency.MainActor(unsafe) final public var underlineViewBottomSpace: CoreFoundation.CGFloat
-  @_Concurrency.MainActor(unsafe) final public var isFieldVerified: Swift.Bool
-  @_Concurrency.MainActor(unsafe) weak final public var otpDelegete: (any EnrollFramework.EliteOTPFieldDelegete)?
-  @_Concurrency.MainActor(unsafe) final public func build()
-  @_Concurrency.MainActor(unsafe) @objc override final public func layoutSubviews()
-  @_Concurrency.MainActor(unsafe) final public func clearAllSlotDigits()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency final public class EliteOTPField : UIKit.UITextField {
+  @_Concurrency.MainActor @preconcurrency final public var spacing: CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency final public var slotCount: Swift.UInt
+  @_Concurrency.MainActor @preconcurrency final public var slotCornerRaduis: CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency final public var slotPlaceHolder: Swift.String
+  @_Concurrency.MainActor @preconcurrency final public var slotFontType: UIKit.UIFont
+  @_Concurrency.MainActor @preconcurrency final public var slotPlaceHolderFontType: UIKit.UIFont
+  @_Concurrency.MainActor @preconcurrency final public var filledSlotTextColor: UIKit.UIColor
+  @_Concurrency.MainActor @preconcurrency final public var emptySlotTextColor: UIKit.UIColor
+  @_Concurrency.MainActor @preconcurrency final public var emptySlotBackgroundColor: UIKit.UIColor
+  @_Concurrency.MainActor @preconcurrency final public var filledSlotBackgroundColor: UIKit.UIColor
+  @_Concurrency.MainActor @preconcurrency final public var isBorderEnabled: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency final public var filledSlotBorderWidth: CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency final public var filledSlotBorderColor: CoreGraphics.CGColor
+  @_Concurrency.MainActor @preconcurrency final public var emptySlotBorderWidth: CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency final public var emptySlotBorderColor: CoreGraphics.CGColor
+  @_Concurrency.MainActor @preconcurrency final public var isVibrateEnabled: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency final public var isAnimationEnabledOnLastDigit: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency final public var animationType: EnrollFramework.EliteOTPAnimationTypes
+  @_Concurrency.MainActor @preconcurrency final public var enableUnderLineViews: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency final public var underlineViewWidthMultiplier: CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency final public var underlineViewHeight: CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency final public var underlineViewBottomSpace: CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency final public var isFieldVerified: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency weak final public var otpDelegete: (any EnrollFramework.EliteOTPFieldDelegete)?
+  @_Concurrency.MainActor @preconcurrency final public func build()
+  @_Concurrency.MainActor @preconcurrency @objc override final public func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency final public func clearAllSlotDigits()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 public protocol EliteOTPFieldDelegete : AnyObject {
@@ -77,11 +77,11 @@ public struct Enroll {
   public static func initViewController(enrollInitModel: EnrollFramework.EnrollInitModel, presenterVC: UIKit.UIViewController) -> UIKit.UIViewController
 }
 @objc @_inheritsConvenienceInitializers @available(tvOS, unavailable)
-@_Concurrency.MainActor(unsafe) public class KeyboardLayoutConstraint : UIKit.NSLayoutConstraint {
+@_Concurrency.MainActor @preconcurrency public class KeyboardLayoutConstraint : UIKit.NSLayoutConstraint {
   @available(tvOS, unavailable)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func awakeFromNib()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func awakeFromNib()
   @objc deinit
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init()
 }
 public class EnrollColors {
   public init(primary: UIKit.UIColor? = nil, secondary: UIKit.UIColor? = nil, appBackgroundColor: UIKit.UIColor? = nil, textColor: UIKit.UIColor? = nil, errorColor: UIKit.UIColor? = nil, successColor: UIKit.UIColor? = nil, warningColor: UIKit.UIColor? = nil, appWhite: UIKit.UIColor? = nil, appBlack: UIKit.UIColor? = nil)
@@ -108,9 +108,9 @@ public enum EnrollMode {
   }
 }
 extension EnrollFramework.EliteOTPField : UIKit.UITextFieldDelegate {
-  @_Concurrency.MainActor(unsafe) @objc final public func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
-  @_Concurrency.MainActor(unsafe) @objc final public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
-  @_Concurrency.MainActor(unsafe) @objc final public func textFieldDidEndEditing(_ textField: UIKit.UITextField)
+  @_Concurrency.MainActor @preconcurrency @objc final public func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+  @_Concurrency.MainActor @preconcurrency @objc final public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+  @_Concurrency.MainActor @preconcurrency @objc final public func textFieldDidEndEditing(_ textField: UIKit.UITextField)
 }
 public struct EnrollSuccessModel {
   public let documentNumber: Swift.String?
@@ -120,10 +120,10 @@ public struct EnrollInitModel {
   public init(tenantId: Swift.String, tenantSecret: Swift.String, enrollEnviroment: EnrollFramework.EnrollEnviroment = .staging, localizationCode: EnrollFramework.LocalizationEnum = .en, enrollCallBack: (any EnrollFramework.EnrollCallBack)?, enrollMode: EnrollFramework.EnrollMode, skipTutorial: Swift.Bool? = false, enrollColors: EnrollFramework.EnrollColors? = nil, levelOffTrustId: Swift.String? = nil, applicantId: Swift.String? = nil, correlationId: Swift.String? = nil, updateSteps: [EnrollFramework.EnrollUpdateTypes]? = nil, customFontName: Swift.String? = nil, isEgyptionNationalId: Swift.Bool = false) throws
 }
 extension UIKit.UIDevice {
-  @_Concurrency.MainActor(unsafe) public static let modelName: Swift.String
+  @_Concurrency.MainActor @preconcurrency public static let modelName: Swift.String
 }
 extension UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) public func addSubviews(_ views: UIKit.UIView...)
+  @_Concurrency.MainActor @preconcurrency public func addSubviews(_ views: UIKit.UIView...)
 }
 extension Foundation.Date {
   public func add(days: Swift.Int) -> Foundation.Date
@@ -247,8 +247,8 @@ public enum EnrollEnviroment {
   }
 }
 extension UIKit.UIViewController {
-  @_Concurrency.MainActor(unsafe) public func add(_ child: UIKit.UIViewController)
-  @_Concurrency.MainActor(unsafe) public func remove(_ child: UIKit.UIViewController)
+  @_Concurrency.MainActor @preconcurrency public func add(_ child: UIKit.UIViewController)
+  @_Concurrency.MainActor @preconcurrency public func remove(_ child: UIKit.UIViewController)
 }
 public enum LocalizationEnum {
   case ar
