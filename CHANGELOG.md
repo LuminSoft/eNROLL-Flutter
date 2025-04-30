@@ -1,5 +1,6 @@
-## 1.1.8
+## 1.1.9
 
-* Fix iOS Framework issue
+* Technical release. No changes.
+
 
 
