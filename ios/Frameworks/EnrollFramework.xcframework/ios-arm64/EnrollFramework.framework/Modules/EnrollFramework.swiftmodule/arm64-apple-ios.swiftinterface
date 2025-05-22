@@ -116,8 +116,18 @@ public struct EnrollSuccessModel {
   public let documentNumber: Swift.String?
   public let applicantId: Swift.String?
 }
+public enum EnrollForcedDocumentType : Swift.String {
+  case passport
+  case nationalId
+  case deafult
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
 public struct EnrollInitModel {
-  public init(tenantId: Swift.String, tenantSecret: Swift.String, enrollEnviroment: EnrollFramework.EnrollEnviroment = .staging, localizationCode: EnrollFramework.LocalizationEnum = .en, enrollCallBack: (any EnrollFramework.EnrollCallBack)?, enrollMode: EnrollFramework.EnrollMode, skipTutorial: Swift.Bool? = false, enrollColors: EnrollFramework.EnrollColors? = nil, levelOffTrustId: Swift.String? = nil, applicantId: Swift.String? = nil, correlationId: Swift.String? = nil, updateSteps: [EnrollFramework.EnrollUpdateTypes]? = nil, customFontName: Swift.String? = nil, isEgyptionNationalId: Swift.Bool = false) throws
+  public init(tenantId: Swift.String, tenantSecret: Swift.String, enrollEnviroment: EnrollFramework.EnrollEnviroment = .staging, localizationCode: EnrollFramework.LocalizationEnum = .en, enrollCallBack: (any EnrollFramework.EnrollCallBack)?, enrollMode: EnrollFramework.EnrollMode, skipTutorial: Swift.Bool? = false, enrollColors: EnrollFramework.EnrollColors? = nil, levelOffTrustId: Swift.String? = nil, applicantId: Swift.String? = nil, correlationId: Swift.String? = nil, updateSteps: [EnrollFramework.EnrollUpdateTypes]? = nil, customFontName: Swift.String? = nil, isEgyptionNationalId: Swift.Bool = false, forcedDocumentType: EnrollFramework.EnrollForcedDocumentType? = EnrollForcedDocumentType.deafult) throws
 }
 extension UIKit.UIDevice {
   @_Concurrency.MainActor @preconcurrency public static let modelName: Swift.String
@@ -290,6 +300,9 @@ extension EnrollFramework.EliteOTPAnimationTypes : Swift.Equatable {}
 extension EnrollFramework.EliteOTPAnimationTypes : Swift.Hashable {}
 extension EnrollFramework.EnrollMode : Swift.Equatable {}
 extension EnrollFramework.EnrollMode : Swift.Hashable {}
+extension EnrollFramework.EnrollForcedDocumentType : Swift.Equatable {}
+extension EnrollFramework.EnrollForcedDocumentType : Swift.Hashable {}
+extension EnrollFramework.EnrollForcedDocumentType : Swift.RawRepresentable {}
 extension EnrollFramework.RelativeTimeStringType : Swift.Equatable {}
 extension EnrollFramework.RelativeTimeStringType : Swift.Hashable {}
 extension EnrollFramework.DateComponentType : Swift.Equatable {}

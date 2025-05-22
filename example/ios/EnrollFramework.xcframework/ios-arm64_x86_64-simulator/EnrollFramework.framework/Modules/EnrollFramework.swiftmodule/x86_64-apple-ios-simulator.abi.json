@@ -7286,13 +7286,263 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "EnrollForcedDocumentType",
+        "printedName": "EnrollForcedDocumentType",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "passport",
+            "printedName": "passport",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(EnrollFramework.EnrollForcedDocumentType.Type) -> EnrollFramework.EnrollForcedDocumentType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "EnrollForcedDocumentType",
+                    "printedName": "EnrollFramework.EnrollForcedDocumentType",
+                    "usr": "s:15EnrollFramework0A18ForcedDocumentTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "EnrollFramework.EnrollForcedDocumentType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "EnrollForcedDocumentType",
+                        "printedName": "EnrollFramework.EnrollForcedDocumentType",
+                        "usr": "s:15EnrollFramework0A18ForcedDocumentTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:15EnrollFramework0A18ForcedDocumentTypeO8passportyA2CmF",
+            "mangledName": "$s15EnrollFramework0A18ForcedDocumentTypeO8passportyA2CmF",
+            "moduleName": "EnrollFramework"
+          },
+          {
+            "kind": "Var",
+            "name": "nationalId",
+            "printedName": "nationalId",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(EnrollFramework.EnrollForcedDocumentType.Type) -> EnrollFramework.EnrollForcedDocumentType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "EnrollForcedDocumentType",
+                    "printedName": "EnrollFramework.EnrollForcedDocumentType",
+                    "usr": "s:15EnrollFramework0A18ForcedDocumentTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "EnrollFramework.EnrollForcedDocumentType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "EnrollForcedDocumentType",
+                        "printedName": "EnrollFramework.EnrollForcedDocumentType",
+                        "usr": "s:15EnrollFramework0A18ForcedDocumentTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:15EnrollFramework0A18ForcedDocumentTypeO10nationalIdyA2CmF",
+            "mangledName": "$s15EnrollFramework0A18ForcedDocumentTypeO10nationalIdyA2CmF",
+            "moduleName": "EnrollFramework"
+          },
+          {
+            "kind": "Var",
+            "name": "deafult",
+            "printedName": "deafult",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(EnrollFramework.EnrollForcedDocumentType.Type) -> EnrollFramework.EnrollForcedDocumentType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "EnrollForcedDocumentType",
+                    "printedName": "EnrollFramework.EnrollForcedDocumentType",
+                    "usr": "s:15EnrollFramework0A18ForcedDocumentTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "EnrollFramework.EnrollForcedDocumentType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "EnrollForcedDocumentType",
+                        "printedName": "EnrollFramework.EnrollForcedDocumentType",
+                        "usr": "s:15EnrollFramework0A18ForcedDocumentTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:15EnrollFramework0A18ForcedDocumentTypeO7deafultyA2CmF",
+            "mangledName": "$s15EnrollFramework0A18ForcedDocumentTypeO7deafultyA2CmF",
+            "moduleName": "EnrollFramework"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "EnrollFramework.EnrollForcedDocumentType?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "EnrollForcedDocumentType",
+                    "printedName": "EnrollFramework.EnrollForcedDocumentType",
+                    "usr": "s:15EnrollFramework0A18ForcedDocumentTypeO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:15EnrollFramework0A18ForcedDocumentTypeO8rawValueACSgSS_tcfc",
+            "mangledName": "$s15EnrollFramework0A18ForcedDocumentTypeO8rawValueACSgSS_tcfc",
+            "moduleName": "EnrollFramework",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15EnrollFramework0A18ForcedDocumentTypeO8rawValueSSvp",
+            "mangledName": "$s15EnrollFramework0A18ForcedDocumentTypeO8rawValueSSvp",
+            "moduleName": "EnrollFramework",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15EnrollFramework0A18ForcedDocumentTypeO8rawValueSSvg",
+                "mangledName": "$s15EnrollFramework0A18ForcedDocumentTypeO8rawValueSSvg",
+                "moduleName": "EnrollFramework",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:15EnrollFramework0A18ForcedDocumentTypeO",
+        "mangledName": "$s15EnrollFramework0A18ForcedDocumentTypeO",
+        "moduleName": "EnrollFramework",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "EnrollInitModel",
         "printedName": "EnrollInitModel",
         "children": [
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(tenantId:tenantSecret:enrollEnviroment:localizationCode:enrollCallBack:enrollMode:skipTutorial:enrollColors:levelOffTrustId:applicantId:correlationId:updateSteps:customFontName:isEgyptionNationalId:)",
+            "printedName": "init(tenantId:tenantSecret:enrollEnviroment:localizationCode:enrollCallBack:enrollMode:skipTutorial:enrollColors:levelOffTrustId:applicantId:correlationId:updateSteps:customFontName:isEgyptionNationalId:forcedDocumentType:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -7465,11 +7715,26 @@
                 "printedName": "Swift.Bool",
                 "hasDefaultArg": true,
                 "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "EnrollFramework.EnrollForcedDocumentType?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "EnrollForcedDocumentType",
+                    "printedName": "EnrollFramework.EnrollForcedDocumentType",
+                    "usr": "s:15EnrollFramework0A18ForcedDocumentTypeO"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15EnrollFramework0A9InitModelV8tenantId0E6Secret16enrollEnviroment16localizationCode0H8CallBack0H4Mode12skipTutorial0H6Colors013levelOffTrustF009applicantF0011correlationF011updateSteps14customFontName018isEgyptionNationalF0ACSS_SSAA0aI0OAA16LocalizationEnumOAA0alM0_pSgAA0aN0OSbSgAA0aQ0CSgSSSgA2_A2_SayAA0A11UpdateTypesOGSgA2_SbtKcfc",
-            "mangledName": "$s15EnrollFramework0A9InitModelV8tenantId0E6Secret16enrollEnviroment16localizationCode0H8CallBack0H4Mode12skipTutorial0H6Colors013levelOffTrustF009applicantF0011correlationF011updateSteps14customFontName018isEgyptionNationalF0ACSS_SSAA0aI0OAA16LocalizationEnumOAA0alM0_pSgAA0aN0OSbSgAA0aQ0CSgSSSgA2_A2_SayAA0A11UpdateTypesOGSgA2_SbtKcfc",
+            "usr": "s:15EnrollFramework0A9InitModelV8tenantId0E6Secret16enrollEnviroment16localizationCode0H8CallBack0H4Mode12skipTutorial0H6Colors013levelOffTrustF009applicantF0011correlationF011updateSteps14customFontName018isEgyptionNationalF018forcedDocumentTypeACSS_SSAA0aI0OAA16LocalizationEnumOAA0alM0_pSgAA0aN0OSbSgAA0aQ0CSgSSSgA3_A3_SayAA0A11UpdateTypesOGSgA3_SbAA0A18ForcedDocumentTypeOSgtKcfc",
+            "mangledName": "$s15EnrollFramework0A9InitModelV8tenantId0E6Secret16enrollEnviroment16localizationCode0H8CallBack0H4Mode12skipTutorial0H6Colors013levelOffTrustF009applicantF0011correlationF011updateSteps14customFontName018isEgyptionNationalF018forcedDocumentTypeACSS_SSAA0aI0OAA16LocalizationEnumOAA0alM0_pSgAA0aN0OSbSgAA0aQ0CSgSSSgA3_A3_SayAA0A11UpdateTypesOGSgA3_SbAA0A18ForcedDocumentTypeOSgtKcfc",
             "moduleName": "EnrollFramework",
             "declAttributes": [
               "AccessControl",
@@ -20141,14 +20406,14 @@
     {
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/domain\/models\/enrollInitModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 1321,
+      "offset": 1514,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/domain\/models\/enrollInitModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 1555,
+      "offset": 1748,
       "length": 5,
       "value": "false"
     },
