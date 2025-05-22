@@ -1,0 +1,2 @@
+/Users/luminsoft/Andrew/Applications/Flutter/Lumin/SDKs/eNROLL_Flutter/example/android/app/.cxx/Debug/344j1i59/x86/CMakeFiles/edit_cache.dir
+/Users/luminsoft/Andrew/Applications/Flutter/Lumin/SDKs/eNROLL_Flutter/example/android/app/.cxx/Debug/344j1i59/x86/CMakeFiles/rebuild_cache.dir
