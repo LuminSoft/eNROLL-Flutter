@@ -1,6 +1,6 @@
-## 1.1.9
+## 1.2.0
 
-* Technical release. No changes.
+* Add a configuration option to enforce the document type when 'National ID' or 'Passport' is selected.
 
 
 
