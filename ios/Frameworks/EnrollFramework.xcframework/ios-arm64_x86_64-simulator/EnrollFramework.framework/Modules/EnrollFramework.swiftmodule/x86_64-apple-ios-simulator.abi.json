@@ -20364,6 +20364,13 @@
       "value": "false"
     },
     {
+      "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/modules\/splashScreen\/presentation\/SplashScreenViewModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1062,
+      "length": 4,
+      "value": "true"
+    },
+    {
       "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/modules\/update\/features\/updateFeatureSteps\/presentation\/views\/UpdateStepTableViewCell.swift",
       "kind": "StringLiteral",
       "offset": 198,
@@ -20611,91 +20618,91 @@
     {
       "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 254,
+      "offset": 263,
       "length": 24,
       "value": "\"enrollstg.nasps.org.eg\""
     },
     {
       "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 324,
+      "offset": 333,
       "length": 21,
       "value": "\"enroll.nasps.org.eg\""
     },
     {
       "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 514,
+      "offset": 532,
       "length": 20,
       "value": "\"\/OnBoarding\/api\/v1\""
     },
     {
       "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 581,
+      "offset": 599,
       "length": 20,
       "value": "\"\/OnBoarding\/api\/v1\""
     },
     {
       "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 682,
+      "offset": 709,
       "length": 46,
       "value": "\"\/AdminPanel\/api\/v1\/ApplicantProfile\/GetImage\""
     },
     {
       "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "IntegerLiteral",
-      "offset": 880,
+      "offset": 916,
       "length": 4,
       "value": "7400"
     },
     {
       "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "IntegerLiteral",
-      "offset": 930,
+      "offset": 966,
       "length": 4,
       "value": "7400"
     },
     {
       "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "IntegerLiteral",
-      "offset": 1110,
+      "offset": 1155,
       "length": 4,
       "value": "7400"
     },
     {
       "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "IntegerLiteral",
-      "offset": 1160,
+      "offset": 1205,
       "length": 4,
       "value": "7400"
     },
     {
       "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 1344,
+      "offset": 1398,
       "length": 7,
       "value": "\"https\""
     },
     {
       "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 1397,
+      "offset": 1451,
       "length": 7,
       "value": "\"https\""
     },
     {
       "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 1580,
+      "offset": 1643,
       "length": 4,
       "value": "\"ar\""
     },
     {
       "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 1622,
+      "offset": 1685,
       "length": 4,
       "value": "\"en\""
     },
@@ -24217,62 +24224,62 @@
       "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/network\/EnrollError.swift",
       "kind": "StringLiteral",
       "offset": 1657,
-      "length": 14,
-      "value": "\"noConnection\""
+      "length": 24,
+      "value": "\"connectionErrorMessage\""
     },
     {
       "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/network\/EnrollError.swift",
       "kind": "StringLiteral",
-      "offset": 1793,
+      "offset": 1803,
       "length": 17,
       "value": "\"unExpectedError\""
     },
     {
       "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/network\/EnrollError.swift",
       "kind": "StringLiteral",
-      "offset": 2062,
+      "offset": 2082,
       "length": 17,
       "value": "\"unExpectedError\""
     },
     {
       "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/network\/EnrollError.swift",
       "kind": "StringLiteral",
-      "offset": 2198,
+      "offset": 2218,
       "length": 17,
       "value": "\"timeoutExeption\""
     },
     {
       "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/network\/EnrollError.swift",
       "kind": "StringLiteral",
-      "offset": 2332,
+      "offset": 2352,
       "length": 12,
       "value": "\"scannError\""
     },
     {
       "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/network\/EnrollError.swift",
       "kind": "StringLiteral",
-      "offset": 2483,
+      "offset": 2503,
       "length": 19,
       "value": "\"dataProviderError\""
     },
     {
       "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/network\/EnrollError.swift",
       "kind": "IntegerLiteral",
-      "offset": 2516,
+      "offset": 2536,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/network\/EnrollError.swift",
       "kind": "StringLiteral",
-      "offset": 2684,
+      "offset": 2704,
       "length": 21,
       "value": "\"deviceSecurityError\""
     },
     {
       "filePath": "\/Users\/bahielfeky\/Documents\/Personal\/Projects\/lumin\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/network\/EnrollError.swift",
       "kind": "IntegerLiteral",
-      "offset": 2719,
+      "offset": 2739,
       "length": 1,
       "value": "0"
     },
