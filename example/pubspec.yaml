@@ -1,6 +1,6 @@
 name: enroll_plugin_example
 description: "Demonstrates how to use the enroll_plugin plugin."
-version: 3.5.01+10
+version: 3.5.02+11
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
