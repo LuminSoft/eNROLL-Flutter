@@ -74,3 +74,14 @@
 -dontwarn org.openjsse.javax.net.ssl.SSLParameters
 -dontwarn org.openjsse.javax.net.ssl.SSLSocket
 -dontwarn org.openjsse.net.ssl.OpenJSSE
+
+# Keep vector drawables
+-keepclassmembers class ** {
+    public static <fields>;
+}
+-keep class androidx.compose.ui.res.** { *; }
+
+# ✅ Keep all drawables in the R class
+-keepclassmembers class **.R$drawable {
+    public static <fields>;
+}
