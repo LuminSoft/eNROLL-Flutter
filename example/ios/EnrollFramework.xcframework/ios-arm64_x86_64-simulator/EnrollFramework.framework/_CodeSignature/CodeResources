@@ -120,6 +120,10 @@
 		<data>
 		7s+TL14CsFJHQs3q8DnbtfFKk0Y=
 		</data>
+		<key>EnrollConfig.xcconfig</key>
+		<data>
+		TN/pJjBBPQrZt//f3UyFpTj/xWA=
+		</data>
 		<key>FaceAuthenticationViewController.nib</key>
 		<data>
 		qPe05ohPLjCkJ4HRKWfhVF4T4DQ=
@@ -190,7 +194,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		DpOM6CtLgWyiOABTawG9Bc1p/7A=
+		PVsoI9+MJvcvXsnFmURnCgz/GjA=
 		</data>
 		<key>LocationAuthenticationViewController.nib</key>
 		<data>
@@ -250,7 +254,7 @@
 		</data>
 		<key>Modules/EnrollFramework.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		6iSPEEOv6RvCcr4UFDRT/jHFMLk=
+		hbjUkELeMtH7wd49lp1LxjJKkEI=
 		</data>
 		<key>Modules/EnrollFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -266,11 +270,11 @@
 		</data>
 		<key>Modules/EnrollFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		YbAVQetF4NaD4uUfh5xfvazTyMs=
+		JmOddcst2KQmWqWrx/rfF1YLLhQ=
 		</data>
 		<key>Modules/EnrollFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		6iSPEEOv6RvCcr4UFDRT/jHFMLk=
+		hbjUkELeMtH7wd49lp1LxjJKkEI=
 		</data>
 		<key>Modules/EnrollFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -286,7 +290,7 @@
 		</data>
 		<key>Modules/EnrollFramework.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		UkNS0jxSNrfZalobUALXo02FyRk=
+		UQMwN2goxyZMQA4TEYz5b0ebyF0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -644,6 +648,14 @@
 		<data>
 		e9CceGaEcvFSkuNfJL0fUlJtM44=
 		</data>
+		<key>luminsoft_cert.cer</key>
+		<data>
+		f4766auIxxKILhiNqWoq8C6qmII=
+		</data>
+		<key>luminsoft_cert.pem</key>
+		<data>
+		+i4wPfWzzLVp0M0qmzCq+k73LOA=
+		</data>
 		<key>tutorialStoryBoard.storyboardc/Info.plist</key>
 		<data>
 		zCoITVFfJoNPx+qgZ05Ya21Y1tE=
@@ -860,6 +872,13 @@
 			<key>hash2</key>
 			<data>
 			VBfefstZzP0lM9aUrZ0VjEGI5uWL0OCGCjKZG4C5nKg=
+			</data>
+		</dict>
+		<key>EnrollConfig.xcconfig</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wYXoj7GJWdJaN8IOdTXIOLDFQodIoFC78n3Ho5io198=
 			</data>
 		</dict>
 		<key>FaceAuthenticationViewController.nib</key>
@@ -1083,7 +1102,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			trTjWGR3m5qR+cdh4CwRD8DltcBv7GGFl1Rsap4ebcQ=
+			A6VLxRONprYZAKqZ+xmEoq3oUpiO+UQq1vJN4J6PpHs=
 			</data>
 		</dict>
 		<key>Modules/EnrollFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -1111,14 +1130,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tHxFyTMVyBoQnsBrYlINUkDXQLi+vCOGJ309nqMF2xo=
+			zWC6mgdQAnEnofOf0OiLacZC8lYK72om0CRbo2R8qCc=
 			</data>
 		</dict>
 		<key>Modules/EnrollFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			trTjWGR3m5qR+cdh4CwRD8DltcBv7GGFl1Rsap4ebcQ=
+			A6VLxRONprYZAKqZ+xmEoq3oUpiO+UQq1vJN4J6PpHs=
 			</data>
 		</dict>
 		<key>Modules/EnrollFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -1146,7 +1165,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ns0MfdWfV4DXhwHoByf+4YVPeGyyQRT0nDvakv/reTU=
+			bvoJ7y+Ff/+LIvaoiJ06xHjGVSvt1KohCqmAFz6Q8R8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -1770,6 +1789,20 @@
 			<key>hash2</key>
 			<data>
 			9rcBX+xsBqxQ2rwq2e6ZGd9WXHOaglidK7UEyqPDKtU=
+			</data>
+		</dict>
+		<key>luminsoft_cert.cer</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ai5EniOU+cE/NhnT61Zj+nPJbikjzUlN+273a4bL/lg=
+			</data>
+		</dict>
+		<key>luminsoft_cert.pem</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			iMREQ/kce+5SR48siCgjTRTSBE+pOChQ3E7hDkn728w=
 			</data>
 		</dict>
 		<key>tutorialStoryBoard.storyboardc/Info.plist</key>

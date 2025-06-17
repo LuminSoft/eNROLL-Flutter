@@ -8547,6 +8547,23 @@
       },
       {
         "kind": "Import",
+        "name": "Combine",
+        "printedName": "Combine",
+        "declKind": "Import",
+        "moduleName": "EnrollFramework"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "EnrollFramework",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -13605,6 +13622,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "EnrollFramework",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Combine",
         "printedName": "Combine",
         "declKind": "Import",
@@ -15424,10 +15451,7 @@
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
-        "moduleName": "EnrollFramework",
-        "declAttributes": [
-          "RawDocComment"
-        ]
+        "moduleName": "EnrollFramework"
       },
       {
         "kind": "Import",
@@ -15850,6 +15874,23 @@
         "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "EnrollFramework"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "EnrollFramework",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Combine",
+        "printedName": "Combine",
         "declKind": "Import",
         "moduleName": "EnrollFramework"
       },
@@ -19279,7 +19320,28 @@
     {
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/tutorial\/data\/models\/request\/initializeRequestRequestModel.swift",
       "kind": "StringLiteral",
-      "offset": 315,
+      "offset": 345,
+      "length": 5,
+      "value": "\"iOS\""
+    },
+    {
+      "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/tutorial\/data\/models\/request\/initializeRequestRequestModel.swift",
+      "kind": "StringLiteral",
+      "offset": 1001,
+      "length": 13,
+      "value": "\"SDK_VERSION\""
+    },
+    {
+      "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/tutorial\/data\/models\/request\/initializeRequestRequestModel.swift",
+      "kind": "StringLiteral",
+      "offset": 1030,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/tutorial\/data\/models\/request\/initializeRequestRequestModel.swift",
+      "kind": "StringLiteral",
+      "offset": 1060,
       "length": 5,
       "value": "\"iOS\""
     },
@@ -20154,23 +20216,30 @@
     {
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/presentation\/views\/baseViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 6806,
+      "offset": 5735,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/presentation\/views\/baseViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 7370,
+      "offset": 6299,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/presentation\/views\/baseViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 11904,
+      "offset": 10833,
       "length": 1,
       "value": "4"
+    },
+    {
+      "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/presentation\/views\/baseViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 12610,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/modules\/onboarding\/securityQuestions\/presentastion\/viewModels\/securityQuestionsViewModel.swift",
@@ -20376,6 +20445,20 @@
       "value": "\"\""
     },
     {
+      "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/model\/GetCurrentStepResponseModel.swift",
+      "kind": "StringLiteral",
+      "offset": 290,
+      "length": 21,
+      "value": "\"currentStepSettings\""
+    },
+    {
+      "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/model\/GetCurrentStepResponseModel.swift",
+      "kind": "StringLiteral",
+      "offset": 336,
+      "length": 18,
+      "value": "\"nextStepSettings\""
+    },
+    {
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/utils\/Extensions\/Data+ext.swift",
       "kind": "Dictionary",
       "offset": 190,
@@ -20526,90 +20609,76 @@
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
       "offset": 254,
-      "length": 24,
-      "value": "\"enrollstg.nasps.org.eg\""
+      "length": 25,
+      "value": "\"enrollstg.luminsoft.net\""
     },
     {
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 324,
-      "length": 21,
-      "value": "\"enroll.nasps.org.eg\""
+      "offset": 325,
+      "length": 29,
+      "value": "\"enrollgateway.luminsoft.net\""
     },
     {
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 514,
+      "offset": 523,
       "length": 20,
       "value": "\"\/OnBoarding\/api\/v1\""
     },
     {
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 581,
+      "offset": 590,
       "length": 20,
       "value": "\"\/OnBoarding\/api\/v1\""
     },
     {
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 682,
+      "offset": 691,
       "length": 46,
       "value": "\"\/AdminPanel\/api\/v1\/ApplicantProfile\/GetImage\""
     },
     {
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "IntegerLiteral",
-      "offset": 880,
+      "offset": 895,
       "length": 4,
       "value": "7400"
     },
     {
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "IntegerLiteral",
-      "offset": 930,
-      "length": 4,
-      "value": "7400"
-    },
-    {
-      "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1110,
-      "length": 4,
-      "value": "7400"
-    },
-    {
-      "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1160,
+      "offset": 1130,
       "length": 4,
       "value": "7400"
     },
     {
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 1344,
+      "offset": 1363,
       "length": 7,
       "value": "\"https\""
     },
     {
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 1397,
+      "offset": 1416,
       "length": 7,
       "value": "\"https\""
     },
     {
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 1580,
+      "offset": 1599,
       "length": 4,
       "value": "\"ar\""
     },
     {
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/APIConstants.swift",
       "kind": "StringLiteral",
-      "offset": 1622,
+      "offset": 1641,
       "length": 4,
       "value": "\"en\""
     },
@@ -23556,21 +23625,21 @@
     {
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/appConfigurationsViewModel.swift",
       "kind": "Array",
-      "offset": 248,
+      "offset": 308,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/appConfigurationsViewModel.swift",
       "kind": "Array",
-      "offset": 287,
+      "offset": 347,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/appConfigurationsViewModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 315,
+      "offset": 375,
       "length": 1,
       "value": "0"
     },
@@ -23982,22 +24051,15 @@
     },
     {
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/network\/APIManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 558,
-      "length": 2,
-      "value": "30"
-    },
-    {
-      "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/network\/APIManager.swift",
       "kind": "StringLiteral",
-      "offset": 760,
+      "offset": 897,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/luminsoft\/Andrew\/Applications\/iOS\/SDKs\/eNROLL\/enroll-ios-framework\/EnrollFramework\/core\/data\/api\/network\/APIManager.swift",
       "kind": "StringLiteral",
-      "offset": 5130,
+      "offset": 2731,
       "length": 2,
       "value": "\"\""
     },
