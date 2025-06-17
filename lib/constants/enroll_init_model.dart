@@ -36,6 +36,9 @@ class EnrollInitModel {
   /// Custom colors used in the eNROLL plugin UI.
   EnrollColors? colors;
 
+  /// Custom enroll forced document type used in the eNROLL plugin UI.
+  String? enrollForcedDocumentType;
+
   /// Constructor for initializing [EnrollInitModel] with optional settings.
   ///
   /// [onGettingRequestId] is a callback function that triggers when a request ID is generated.
@@ -43,6 +46,7 @@ class EnrollInitModel {
       {this.localizationCode,
       this.enrollEnvironment,
       this.enrollMode,
+      this.enrollForcedDocumentType,
       this.tenantId,
       this.tenantSecret,
       this.googleApiKey,
@@ -68,6 +72,7 @@ class EnrollInitModel {
     googleApiKey = json['googleApiKey'];
     correlationId = json['correlationId'];
     colors = json['colors'];
+    enrollForcedDocumentType = json['enrollForcedDocumentType'];
   }
 
   /// Converts the [EnrollInitModel] object into a JSON map.
@@ -79,6 +84,7 @@ class EnrollInitModel {
     data['enrollEnvironment'] = enrollEnvironment;
     data['tenantId'] = tenantId;
     data['enrollMode'] = enrollMode;
+    data['enrollForcedDocumentType'] = enrollForcedDocumentType;
     data['tenantSecret'] = tenantSecret;
     data['googleApiKey'] = googleApiKey;
     data['applicationId'] = applicantId;

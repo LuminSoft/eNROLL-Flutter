@@ -189,13 +189,39 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
             if (jsonObject.has("levelOfTrust") && !jsonObject.get("levelOfTrust").isJsonNull) {
                 levelOfTrust = jsonObject.get("levelOfTrust").asString
             }
-            val enrollMode = if (jsonObject.get("enrollMode")?.asString == "onboarding") {
-                EnrollMode.ONBOARDING
-            } else if (jsonObject.get("enrollMode")?.asString == "auth") {
-                EnrollMode.AUTH
-            } else {
-                EnrollMode.UPDATE
+            val enrollMode = when (jsonObject.get("enrollMode")?.asString) {
+                "onboarding" -> {
+                    EnrollMode.ONBOARDING
+                }
+
+                "auth" -> {
+                    EnrollMode.AUTH
+                }
+
+                else -> {
+                    EnrollMode.UPDATE
+                }
             }
+//            Log.d("enrollForcedDocumentType", jsonObject.get("enrollForcedDocumentType")?.asString)
+
+            val enrollForcedDocumentType =
+                if (jsonObject.has("enrollForcedDocumentType") && !jsonObject.get("enrollForcedDocumentType").isJsonNull) {
+                    when (jsonObject.get("enrollForcedDocumentType")?.asString) {
+                        "nationalIdOnly" -> {
+                            EnrollForcedDocumentType.NATIONAL_ID_ONLY
+                        }
+
+                        "passportOnly" -> {
+                            EnrollForcedDocumentType.PASSPORT_ONLY
+                        }
+
+                        else -> {
+                            EnrollForcedDocumentType.NATIONAL_ID_OR_PASSPORT
+                        }
+                    }
+                } else {
+                    EnrollForcedDocumentType.NATIONAL_ID_OR_PASSPORT
+                }
 
             val enrollEnvironment =
                 if (jsonObject.get("enrollEnvironment")?.asString == "production") {
@@ -283,7 +309,9 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
                 googleApiKey = googleApiKey,
                 skipTutorial = skipTutorial,
                 correlationId = correlationId,
-                appColors = appColors
+                appColors = appColors,
+                enrollForcedDocumentType = enrollForcedDocumentType
+
             )
 
             eNROLL.launch(activity!!)

@@ -1,41 +1,44 @@
 PODS:
-  - dot-camera (8.7.0)
-  - dot-capture (8.7.0)
-  - dot-core (8.7.0)
-  - dot-document (8.7.0):
-    - dot-camera (= 8.7.0)
-    - dot-capture (= 8.7.0)
-    - dot-core (= 8.7.0)
-    - dot-document-commons (= 8.7.0)
-    - dot-protobuf (= 1.12.0)
-  - dot-document-commons (8.7.0)
-  - dot-face-background-uniformity (8.7.0):
-    - dot-face-core (= 8.7.0)
-  - dot-face-commons (8.7.0)
-  - dot-face-core (8.7.0):
-    - dot-camera (= 8.7.0)
-    - dot-capture (= 8.7.0)
-    - dot-core (= 8.7.0)
-    - dot-face-commons (= 8.7.0)
-    - dot-protobuf (= 1.12.0)
-    - iface (= 5.1.2)
-  - dot-face-detection-fast (8.7.0):
-    - dot-face-core (= 8.7.0)
-  - dot-face-expression-neutral (8.7.0):
-    - dot-face-core (= 8.7.0)
-  - dot-protobuf (1.12.0)
+  - dot-camera (8.10.0)
+  - dot-capture (8.10.0)
+  - dot-core (8.10.0)
+  - dot-document (8.10.0):
+    - dot-camera (= 8.10.0)
+    - dot-capture (= 8.10.0)
+    - dot-core (= 8.10.0)
+    - dot-document-commons (= 8.10.0)
+    - dot-protobuf (= 1.13.0)
+    - dot-serialization (= 8.10.0)
+  - dot-document-commons (8.10.0)
+  - dot-face-background-uniformity (8.10.0):
+    - dot-face-core (= 8.10.0)
+  - dot-face-commons (8.10.0)
+  - dot-face-core (8.10.0):
+    - dot-camera (= 8.10.0)
+    - dot-capture (= 8.10.0)
+    - dot-core (= 8.10.0)
+    - dot-face-commons (= 8.10.0)
+    - dot-protobuf (= 1.13.0)
+    - dot-serialization (= 8.10.0)
+    - iface (= 6.5.0)
+  - dot-face-detection-fast (8.10.0):
+    - dot-face-core (= 8.10.0)
+  - dot-face-expression-neutral (8.10.0):
+    - dot-face-core (= 8.10.0)
+  - dot-protobuf (1.13.0)
+  - dot-serialization (8.10.0)
   - enroll_plugin (0.0.1):
-    - dot-document (= 8.7.0)
-    - dot-face-background-uniformity (= 8.7.0)
-    - dot-face-detection-fast (= 8.7.0)
-    - dot-face-expression-neutral (= 8.7.0)
+    - dot-document (= 8.10.0)
+    - dot-face-background-uniformity (= 8.10.0)
+    - dot-face-detection-fast (= 8.10.0)
+    - dot-face-expression-neutral (= 8.10.0)
     - Flutter
   - Flutter (1.0.0)
-  - iface (5.1.2):
-    - onnx (= 2.1.2)
+  - iface (6.5.0):
+    - onnx (= 6.5.0)
   - integration_test (0.0.1):
     - Flutter
-  - onnx (2.1.2)
+  - onnx (6.5.0)
 
 DEPENDENCIES:
   - enroll_plugin (from `.symlinks/plugins/enroll_plugin/ios`)
@@ -55,6 +58,7 @@ SPEC REPOS:
     - dot-face-detection-fast
     - dot-face-expression-neutral
     - dot-protobuf
+    - dot-serialization
     - iface
     - onnx
 
@@ -67,22 +71,23 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/integration_test/ios"
 
 SPEC CHECKSUMS:
-  dot-camera: 0f642adc3830ef9e972e6b1a17b0cc3d2657d396
-  dot-capture: 76accabe96bfb704a752b93e26003a5ddfd13040
-  dot-core: 6f5eacf2512010edbd58c6121d6406fc41eaa6b3
-  dot-document: dc40ee7b7431646c19c98521a999d7c3c03ed33e
-  dot-document-commons: fd6a31907c3923d38c4e9fb7fc76226e27770347
-  dot-face-background-uniformity: 25ea7db29b04b42869c1f57384a22d4cf1d4cfb4
-  dot-face-commons: 8c06dd50e04502dda7ba3c9ad0d91d4dbd9750db
-  dot-face-core: 680c68cd51c411d1c0a2e9989fb5d87bece8e24f
-  dot-face-detection-fast: 238598177a5099872eee2aa05cfa5fddbcfc31c3
-  dot-face-expression-neutral: f955b930aadad4902369cc2afe9cab7506aa56c0
-  dot-protobuf: c801e41197bcb48b2ee0dd5ef2a16e4fff9cc28e
-  enroll_plugin: 0f6114f0a2eeb5c41c2df0a1861e3dbd3306f58e
+  dot-camera: fb678bc96520bc54dd18d5215f51310fc8b437a9
+  dot-capture: 8549d09fce05d283ffeaaca771bce06da4489350
+  dot-core: 54f3165ead77c1f1e45201e576c528a3c69aac82
+  dot-document: bb35e56a4d1bba8c823fb8425ecfbd12dd217bd5
+  dot-document-commons: 15f6b86e63371ac8aa9510d413af30e09c9faca8
+  dot-face-background-uniformity: 93b366443e51ef781e41fdf5bfd172af339b0d79
+  dot-face-commons: 4f5cac11c167cf858d0c635750891a0dddab5fe1
+  dot-face-core: 698fa251118367c1f60e140bc374b65d4a13a155
+  dot-face-detection-fast: a2f8335da53759f01c7196faf729482a22e93de1
+  dot-face-expression-neutral: 9ad7dfbeafddc8c56886121a8ff8c89979d8249b
+  dot-protobuf: 4dc2b8958ea969b96f002d840d96b4542e44b263
+  dot-serialization: ce74f333255f063a00b4ce4916fc6f334e74bcbe
+  enroll_plugin: 0b2d2085131797f7f48c320aa6390365f94dc6b1
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  iface: 4767a90a11587115add991240183e96223848750
-  integration_test: ce0a3ffa1de96d1a89ca0ac26fca7ea18a749ef4
-  onnx: ff81ed3e7860e32c3e6addda60834c3ea4d955cb
+  iface: 430f01592dfed2b50d415e95d7cef868440cdf66
+  integration_test: 252f60fa39af5e17c3aa9899d35d908a0721b573
+  onnx: 8e5ab07b48af33e093f051a03b9895882db3072d
 
 PODFILE CHECKSUM: 78f6459f58aed2aa3abf9818589366d4fdd7509f
 

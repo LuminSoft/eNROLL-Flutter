@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'constants/enroll_environment.dart';
+import 'constants/enroll_forced_document_type.dart';
 import 'constants/enroll_init_model.dart';
 import 'constants/enroll_localizations.dart';
 import 'constants/enroll_mode.dart';
@@ -69,28 +70,31 @@ class EnrollPlugin extends StatefulWidget {
   /// Custom colors used in the enrollment process UI.
   final EnrollColors? enrollColors;
 
+  /// The mode of the forced document type process (e.g., nationalIdOnly, passportOnly or nationalIdOrPassport).
+  final EnrollForcedDocumentType? enrollForcedDocumentType;
+
   /// Constructor for the [EnrollPlugin] widget.
   ///
   /// Various configurations and callbacks must be provided for handling the
   /// success, error, and request ID retrieval during the enrollment process.
-  const EnrollPlugin({
-    super.key,
-    this.localizationCode = EnrollLocalizations.en,
-    this.enrollEnvironment = EnrollEnvironment.staging,
-    this.enrollMode = EnrollMode.onboarding,
-    required this.tenantId,
-    required this.tenantSecret,
-    required this.onSuccess,
-    required this.onError,
-    required this.onGettingRequestId,
-    required this.mainScreenContext,
-    this.googleApiKey,
-    this.enrollColors,
-    this.levelOfTrust,
-    this.applicationId,
-    this.skipTutorial,
-    this.correlationId,
-  });
+  const EnrollPlugin(
+      {super.key,
+      this.localizationCode = EnrollLocalizations.en,
+      this.enrollEnvironment = EnrollEnvironment.staging,
+      this.enrollMode = EnrollMode.onboarding,
+      required this.tenantId,
+      required this.tenantSecret,
+      required this.onSuccess,
+      required this.onError,
+      required this.onGettingRequestId,
+      required this.mainScreenContext,
+      this.googleApiKey,
+      this.enrollColors,
+      this.levelOfTrust,
+      this.applicationId,
+      this.skipTutorial,
+      this.correlationId,
+      this.enrollForcedDocumentType});
 
   @override
   State<EnrollPlugin> createState() => _EnrollPluginState();
@@ -173,19 +177,19 @@ class _EnrollPluginState extends State<EnrollPlugin> {
 
     // Initialize the enrollment model.
     model = EnrollInitModel(
-      applicantId: widget.applicationId ?? '',
-      levelOfTrust: widget.levelOfTrust ?? '',
-      skipTutorial: widget.skipTutorial ?? false,
-      tenantId: widget.tenantId,
-      tenantSecret: widget.tenantSecret,
-      googleApiKey: widget.googleApiKey ?? '',
-      enrollEnvironment: widget.enrollEnvironment.name,
-      localizationCode: widget.localizationCode.name,
-      enrollMode: widget.enrollMode.name,
-      onGettingRequestId: widget.onGettingRequestId,
-      correlationId: widget.correlationId ?? '',
-      colors: widget.enrollColors ?? EnrollColors(),
-    );
+        applicantId: widget.applicationId ?? '',
+        levelOfTrust: widget.levelOfTrust ?? '',
+        skipTutorial: widget.skipTutorial ?? false,
+        tenantId: widget.tenantId,
+        tenantSecret: widget.tenantSecret,
+        googleApiKey: widget.googleApiKey ?? '',
+        enrollEnvironment: widget.enrollEnvironment.name,
+        localizationCode: widget.localizationCode.name,
+        enrollMode: widget.enrollMode.name,
+        onGettingRequestId: widget.onGettingRequestId,
+        correlationId: widget.correlationId ?? '',
+        colors: widget.enrollColors ?? EnrollColors(),
+        enrollForcedDocumentType: widget.enrollForcedDocumentType?.name);
   }
 
   @override
