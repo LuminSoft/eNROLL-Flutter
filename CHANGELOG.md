@@ -1,4 +1,4 @@
-## 1.2.4
+## 1.2.5
 
 * Technical release. No changes.
 
