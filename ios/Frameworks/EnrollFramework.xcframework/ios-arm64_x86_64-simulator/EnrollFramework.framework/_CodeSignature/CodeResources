@@ -10,7 +10,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		bOwfTous7y0TyoXstbk/uzUekIA=
+		P8EcS3c+ef6uUuQruWjsViKWgOs=
 		</data>
 		<key>Cairo-Regular.ttf</key>
 		<data>
@@ -186,7 +186,7 @@
 		</data>
 		<key>Headers/EnrollFramework-Swift.h</key>
 		<data>
-		S4fVo7H3aXB/Nqo7bH5R0aPt5pw=
+		gLb02gK81rjF0mD9vpa/S3tJfwg=
 		</data>
 		<key>Headers/EnrollFramework.h</key>
 		<data>
@@ -194,7 +194,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		GHSK1mIfRuyY5LXCsdsS4ULx/jQ=
+		5fQ38CXuUvGj5eOMnLjSM/HvdIc=
 		</data>
 		<key>LocationAuthenticationViewController.nib</key>
 		<data>
@@ -254,43 +254,43 @@
 		</data>
 		<key>Modules/EnrollFramework.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		uJfChGMp42SaC6MpulI4HThd4wU=
+		qWXqIuSZXpjyPhxOSsqLCPClOqE=
 		</data>
 		<key>Modules/EnrollFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		8plj7wPcWkBZvCsElhbfMtpKgdU=
+		g0MkC56IFXDxygSrn0oIzXdOed8=
 		</data>
 		<key>Modules/EnrollFramework.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		v4rTxcjBexXT8PhyI0bQO7I0wCw=
+		rmL4mCKSfN2P7CT1HG36FtsY8Ic=
 		</data>
 		<key>Modules/EnrollFramework.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		8plj7wPcWkBZvCsElhbfMtpKgdU=
+		g0MkC56IFXDxygSrn0oIzXdOed8=
 		</data>
 		<key>Modules/EnrollFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		n5A02p/tCMnF723WyzTdPjXabp4=
+		3tJ3JmJHa9LQtYfPNSagrkQ2Rug=
 		</data>
 		<key>Modules/EnrollFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		uJfChGMp42SaC6MpulI4HThd4wU=
+		qWXqIuSZXpjyPhxOSsqLCPClOqE=
 		</data>
 		<key>Modules/EnrollFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		TUT6E0qEaqWbjNXw4LZscKvncRM=
+		uK5oRG9AP41GFCAyaIucAdLmITE=
 		</data>
 		<key>Modules/EnrollFramework.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		QRNRBBZhfJTH6fB9zH7MYAgP2n0=
+		F/bwVSF4PdsLi3FEjN3UaNlzumI=
 		</data>
 		<key>Modules/EnrollFramework.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		TUT6E0qEaqWbjNXw4LZscKvncRM=
+		uK5oRG9AP41GFCAyaIucAdLmITE=
 		</data>
 		<key>Modules/EnrollFramework.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Zxs8nuMJnLLmELXI06utlRrdM7U=
+		tSom1IRJ6bFNo+gTSWW0ILGAY94=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -438,7 +438,7 @@
 		</data>
 		<key>TermsAndConditionsViewController.nib</key>
 		<data>
-		1ULA/2d53Wm8sa3+W3iADEcE9Po=
+		28JCi8PxnWRq7zscW6MxrNOq5IM=
 		</data>
 		<key>UpdateDeviceLocationViewController.nib</key>
 		<data>
@@ -674,7 +674,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QB92tnADHOgS0Z9pEg+S9NapBBHOQLbMJJIs2vwdzmI=
+			0G+2679ilPDlhpD2hMsMVdOGIymX+TGTenIryxxCUxs=
 			</data>
 		</dict>
 		<key>Cairo-Regular.ttf</key>
@@ -982,7 +982,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			N9dlCMLfUc1w82EA9DDfHFr9l6kL4rfpe7A14pDk+n4=
+			im1B/etkh5NcGkhUL4O0WAo9I2eoydLBlHFV+9Lv2s4=
 			</data>
 		</dict>
 		<key>Headers/EnrollFramework.h</key>
@@ -1094,70 +1094,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4ggLD/DsaA8VKvGU63ytfwrdwonXrhalNtBSeHKiUCA=
+			yTgmH13UUlKKWSGDOaLMWyegkgv6xFlUFqSPbtYRcWQ=
 			</data>
 		</dict>
 		<key>Modules/EnrollFramework.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			MTSVUPxuwR5nNDfn28YwiqkVLZNAabkutJn8UItBuvc=
+			FUigJBY0hrotAwA4Pw9t2RA4MUtsrAYCfjoOWD5TqdA=
 			</data>
 		</dict>
 		<key>Modules/EnrollFramework.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9soxZaeZY9OdfdYC9vyK6gHPE9Q/1B7GVOUAvgH565Y=
+			kh8W/loRMgJputyeyFGAv5d7dt5/AZoGC8ANiT0J6gU=
 			</data>
 		</dict>
 		<key>Modules/EnrollFramework.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			MTSVUPxuwR5nNDfn28YwiqkVLZNAabkutJn8UItBuvc=
+			FUigJBY0hrotAwA4Pw9t2RA4MUtsrAYCfjoOWD5TqdA=
 			</data>
 		</dict>
 		<key>Modules/EnrollFramework.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			S2bR2MqDVjBeoP+l0BT3N55NNk6lssW3aBf9IEXRqzY=
+			9ILAdS2IXGDoYSU0OSLDJGnVy1Ql1APhbfw19M+wXJ4=
 			</data>
 		</dict>
 		<key>Modules/EnrollFramework.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4ggLD/DsaA8VKvGU63ytfwrdwonXrhalNtBSeHKiUCA=
+			yTgmH13UUlKKWSGDOaLMWyegkgv6xFlUFqSPbtYRcWQ=
 			</data>
 		</dict>
 		<key>Modules/EnrollFramework.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			x6SwcO4Tw/IoRXAfBLSx8sKlkcU8dZhYIvW6tLzsC/E=
+			oU3yLn17LQfnyOFUh8cWZEpP8S8hnOy5+5Ev7IHD7lg=
 			</data>
 		</dict>
 		<key>Modules/EnrollFramework.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Lgm3RoWTJHqjKA/Y8ZQzj+SH25Zck2QnZ6r+QHN1qS0=
+			7M0iGolyJzXYi3pH8gUBEQLi5BAH4JCkFgXOsjPfQl4=
 			</data>
 		</dict>
 		<key>Modules/EnrollFramework.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			x6SwcO4Tw/IoRXAfBLSx8sKlkcU8dZhYIvW6tLzsC/E=
+			oU3yLn17LQfnyOFUh8cWZEpP8S8hnOy5+5Ev7IHD7lg=
 			</data>
 		</dict>
 		<key>Modules/EnrollFramework.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7JXSOsPWR6Vi7xmpXxC/aQZD0BFT4BrHqcXjI79L6/8=
+			4TAl1qujvM3C+hg1HFFBrWoSvA1AewBgGCeHB7VXbG8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -1416,7 +1416,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dxtgVsW7C4fDbel21SmAF+DRPOeH+xBV6Tqh/Spq8Gc=
+			U+F4nKZfiQYxJrcGLJYUxx/vdfFfTLlqy6cuzXjOsm4=
 			</data>
 		</dict>
 		<key>UpdateDeviceLocationViewController.nib</key>
