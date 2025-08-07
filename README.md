@@ -170,7 +170,7 @@ import 'package:enroll_plugin/enroll_plugin.dart';
 | `appColors`                | **Optional**. Collection of the app colors that you could override like (primary - secondary - backGround - successColor - warningColor - errorColor - textColor). |
 | `correlationId`            | **Optional**. Correlation ID to connect your User ID with our Request ID.                                                                                          |
 | `enrollForcedDocumentType` | **Optional**. Enroll forced document type to force the users to use national id only on passport only and can choose on of them.                                   |
-| `requestId`                | **Optional**. Write you request id to allow continuing a previously initiated request (runaway) instead of starting from the beginning.                            |
+| `requestId`                | **Optional**. Write your request id to allow continuing a previously initiated request (runaway) instead of starting from the beginning.                           |
 
 
 
