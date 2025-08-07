@@ -83,10 +83,10 @@ SPEC CHECKSUMS:
   dot-face-expression-neutral: 9ad7dfbeafddc8c56886121a8ff8c89979d8249b
   dot-protobuf: 4dc2b8958ea969b96f002d840d96b4542e44b263
   dot-serialization: ce74f333255f063a00b4ce4916fc6f334e74bcbe
-  enroll_plugin: 0b2d2085131797f7f48c320aa6390365f94dc6b1
+  enroll_plugin: 8ad5434a343dea2bbfe40b476e51d952ce876059
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   iface: 430f01592dfed2b50d415e95d7cef868440cdf66
-  integration_test: 252f60fa39af5e17c3aa9899d35d908a0721b573
+  integration_test: 4a889634ef21a45d28d50d622cf412dc6d9f586e
   onnx: 8e5ab07b48af33e093f051a03b9895882db3072d
 
 PODFILE CHECKSUM: 78f6459f58aed2aa3abf9818589366d4fdd7509f

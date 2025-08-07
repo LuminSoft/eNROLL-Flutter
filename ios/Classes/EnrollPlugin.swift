@@ -79,6 +79,7 @@ public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enroll
             
             var tenatId: String = ""
             var tenantSecret: String = ""
+            var requestId: String?
             var enrollEnvironment: EnrollFramework.EnrollEnviroment = .staging
             var localizationCode: EnrollFramework.LocalizationEnum = .en
             var enrollColors: EnrollColors?
@@ -110,6 +111,9 @@ public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enroll
                     }
                     if let appId =  dict["applicationId"] as? String {
                         applicantId = appId
+                    }
+                    if let reqId =  dict["requestId"] as? String {
+                                            requestId = reqId
                     }
                     
                     if let correlId =  dict["correlationId"] as? String {
@@ -155,7 +159,7 @@ public class EnrollPlugin: NSObject, FlutterPlugin, FlutterStreamHandler, Enroll
                 }
             }
             
-            UIApplication.shared.delegate?.window??.rootViewController?.present(try Enroll.initViewController(enrollInitModel: EnrollInitModel(tenantId: tenatId, tenantSecret: tenantSecret, enrollEnviroment: enrollEnvironment, localizationCode: localizationCode, enrollCallBack: self, enrollMode: mode ?? .onboarding, skipTutorial: skip ?? false, enrollColors: enrollColors, levelOffTrustId: levelOfTrust, applicantId: applicantId, correlationId: correlationId,forcedDocumentType: enrollForcedDocumentType), presenterVC: (UIApplication.shared.delegate?.window??.rootViewController!)!), animated: true)
+            UIApplication.shared.delegate?.window??.rootViewController?.present(try Enroll.initViewController(enrollInitModel: EnrollInitModel(tenantId: tenatId, tenantSecret: tenantSecret, enrollEnviroment: enrollEnvironment, localizationCode: localizationCode, enrollCallBack: self, enrollMode: mode ?? .onboarding, skipTutorial: skip ?? false, enrollColors: enrollColors, levelOffTrustId: levelOfTrust, applicantId: applicantId, correlationId: correlationId,forcedDocumentType: enrollForcedDocumentType,requestId: requestId), presenterVC: (UIApplication.shared.delegate?.window??.rootViewController!)!), animated: true)
         }catch{
             if let eventSink = eventSink {
                 eventSink("unexpected error")

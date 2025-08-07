@@ -127,7 +127,7 @@ public enum EnrollForcedDocumentType : Swift.String {
   }
 }
 public struct EnrollInitModel {
-  public init(tenantId: Swift.String, tenantSecret: Swift.String, enrollEnviroment: EnrollFramework.EnrollEnviroment = .staging, localizationCode: EnrollFramework.LocalizationEnum = .en, enrollCallBack: (any EnrollFramework.EnrollCallBack)?, enrollMode: EnrollFramework.EnrollMode, skipTutorial: Swift.Bool? = false, enrollColors: EnrollFramework.EnrollColors? = nil, levelOffTrustId: Swift.String? = nil, applicantId: Swift.String? = nil, correlationId: Swift.String? = nil, updateSteps: [EnrollFramework.EnrollUpdateTypes]? = nil, customFontName: Swift.String? = nil, isEgyptionNationalId: Swift.Bool = false, forcedDocumentType: EnrollFramework.EnrollForcedDocumentType? = EnrollForcedDocumentType.deafult) throws
+  public init(tenantId: Swift.String, tenantSecret: Swift.String, enrollEnviroment: EnrollFramework.EnrollEnviroment = .staging, localizationCode: EnrollFramework.LocalizationEnum = .en, enrollCallBack: (any EnrollFramework.EnrollCallBack)?, enrollMode: EnrollFramework.EnrollMode, skipTutorial: Swift.Bool? = false, enrollColors: EnrollFramework.EnrollColors? = nil, levelOffTrustId: Swift.String? = nil, applicantId: Swift.String? = nil, correlationId: Swift.String? = nil, updateSteps: [EnrollFramework.EnrollUpdateTypes]? = nil, customFontName: Swift.String? = nil, isEgyptionNationalId: Swift.Bool = false, forcedDocumentType: EnrollFramework.EnrollForcedDocumentType? = EnrollForcedDocumentType.deafult, requestId: Swift.String?) throws
 }
 extension UIKit.UIDevice {
   @_Concurrency.MainActor @preconcurrency public static let modelName: Swift.String

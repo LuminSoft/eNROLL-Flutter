@@ -23,6 +23,7 @@ class _MyAppState extends State<MyApp> {
           mainScreenContext: context,
           tenantId: 'TENANT_ID',
           tenantSecret: 'TENANT_SECRET',
+          requestId: 'REQUEST_ID',
           enrollMode: EnrollMode.onboarding,
           enrollEnvironment: EnrollEnvironment.staging,
           onSuccess: (applicantId) {
