@@ -316,7 +316,7 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
                 correlationId = correlationId,
                 appColors = appColors,
                 enrollForcedDocumentType = enrollForcedDocumentType,
-//                requestId = requestId
+                requestId = requestId
             )
 
             eNROLL.launch(activity!!)
