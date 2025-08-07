@@ -18,6 +18,9 @@ class EnrollInitModel {
   /// The ID of the applicant (user) undergoing the enrollment process.
   String? applicantId;
 
+  /// The ID of the user undergoing the enrollment process.
+  String? requestId;
+
   /// The level of trust assigned to the applicant, which can affect the enrollment process.
   String? levelOfTrust;
 
@@ -52,6 +55,7 @@ class EnrollInitModel {
       this.googleApiKey,
       this.colors,
       this.applicantId,
+      this.requestId,
       this.levelOfTrust,
       this.skipTutorial,
       this.correlationId,
@@ -66,6 +70,7 @@ class EnrollInitModel {
     tenantId = json['tenantId'];
     enrollMode = json['enrollMode'];
     applicantId = json['applicationId'];
+    requestId = json['requestId'];
     levelOfTrust = json['levelOfTrust'];
     skipTutorial = json['skipTutorial'];
     tenantSecret = json['tenantSecret'];
@@ -88,6 +93,7 @@ class EnrollInitModel {
     data['tenantSecret'] = tenantSecret;
     data['googleApiKey'] = googleApiKey;
     data['applicationId'] = applicantId;
+    data['requestId'] = requestId;
     data['levelOfTrust'] = levelOfTrust;
     data['skipTutorial'] = skipTutorial;
     data['correlationId'] = correlationId;

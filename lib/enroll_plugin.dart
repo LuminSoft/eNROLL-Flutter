@@ -61,6 +61,9 @@ class EnrollPlugin extends StatefulWidget {
   /// The ID of the application, used for authentication mode.
   final String? applicationId;
 
+  /// The ID of the request, used for breaking the request.
+  final String? requestId;
+
   /// A unique correlation ID for tracking the enrollment session.
   final String? correlationId;
 
@@ -92,6 +95,7 @@ class EnrollPlugin extends StatefulWidget {
       this.enrollColors,
       this.levelOfTrust,
       this.applicationId,
+      this.requestId,
       this.skipTutorial,
       this.correlationId,
       this.enrollForcedDocumentType});
@@ -178,6 +182,7 @@ class _EnrollPluginState extends State<EnrollPlugin> {
     // Initialize the enrollment model.
     model = EnrollInitModel(
         applicantId: widget.applicationId ?? '',
+        requestId: widget.requestId ?? '',
         levelOfTrust: widget.levelOfTrust ?? '',
         skipTutorial: widget.skipTutorial ?? false,
         tenantId: widget.tenantId,

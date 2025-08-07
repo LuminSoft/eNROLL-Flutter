@@ -185,6 +185,10 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
             if (jsonObject.has("applicationId") && !jsonObject.get("applicationId").isJsonNull) {
                 applicationId = jsonObject.get("applicationId").asString
             }
+            var requestId = ""
+            if (jsonObject.has("requestId") && !jsonObject.get("requestId").isJsonNull) {
+                requestId = jsonObject.get("requestId").asString
+            }
             var levelOfTrust = ""
             if (jsonObject.has("levelOfTrust") && !jsonObject.get("levelOfTrust").isJsonNull) {
                 levelOfTrust = jsonObject.get("levelOfTrust").asString
@@ -261,6 +265,7 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
             Log.d("EnrollPlugin", "tenantId is $tenantId")
             Log.d("EnrollPlugin", "tenantSecret is $tenantSecret")
             Log.d("EnrollPlugin", "applicationId is $applicationId")
+            Log.d("EnrollPlugin", "requestId is $requestId")
             Log.d("EnrollPlugin", "levelOfTrust is $levelOfTrust")
             Log.d("EnrollPlugin", "skipTutorial is $skipTutorial")
             Log.d("EnrollPlugin", "correlationId is $correlationId")
@@ -310,8 +315,8 @@ class EnrollPlugin : FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAwa
                 skipTutorial = skipTutorial,
                 correlationId = correlationId,
                 appColors = appColors,
-                enrollForcedDocumentType = enrollForcedDocumentType
-
+                enrollForcedDocumentType = enrollForcedDocumentType,
+//                requestId = requestId
             )
 
             eNROLL.launch(activity!!)
